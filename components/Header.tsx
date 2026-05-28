@@ -30,6 +30,7 @@ const commingSoon = [
 
 const products = [
   { name: 'LetScrum', description: 'Agile & Scrum Project Management System!', href: '/letscrum', icon: CursorArrowRaysIcon },
+  { name: 'llmxy', description: 'LLM token distribution and intelligent routing solution', href: '/llmxy', icon: SquaresPlusIcon },
 ]
 
 const solutions = [
@@ -47,6 +48,7 @@ const callsToAction = [
 
 const openSource = [
   { name: 'LetScrum', description: 'Lighweight Agile & Scrum Project Management System!', href: 'https://github.com/letscrum', icon: CursorArrowRaysIcon },
+  { name: 'llmxy', description: 'LLM token distribution and intelligent routing solution', href: 'https://github.com/wilsonwu/llmxy', icon: SquaresPlusIcon },
 ]
 
 export default function Example() {
