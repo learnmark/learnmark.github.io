@@ -24,21 +24,21 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import Banner from './Banner'
 
-const commingSoon = [
-  { name: 'Comming Soon!', description: 'Learnmark offers cloud-based, enterprise-grade software products!', href: '#', icon: ChartPieIcon },
+const comingSoon = [
+  { name: 'Coming Soon!', description: 'Learnmark shares AI and Cloud consulting resources for modern software teams.', href: '#', icon: ChartPieIcon },
 ]
 
 const products = [
-  { name: 'LetScrum', description: 'Agile & Scrum Project Management System!', href: '/letscrum', icon: CursorArrowRaysIcon },
-  { name: 'llmxy', description: 'LLM token distribution and intelligent routing solution', href: '/llmxy', icon: SquaresPlusIcon },
+  { name: 'llmxy', description: 'Open-source LLM gateway for routing, usage, and billing operations.', href: '/llmxy', icon: SquaresPlusIcon },
+  { name: 'LetScrum', description: 'Lightweight Agile and Scrum project management for delivery teams.', href: '/letscrum', icon: CursorArrowRaysIcon },
 ]
 
 const solutions = [
-  { name: 'AI', description: 'Leverage artificial intelligence to drive business innovation.', href: '/solutions/ai', icon: ArrowPathIcon },
-  { name: 'Microservices', description: 'Architect scalable and resilient systems with microservices.', href: '/solutions/microservices', icon: ChartPieIcon },
-  { name: 'Gateway', description: 'Secure and manage your API traffic efficiently.', href: '/solutions/gateway', icon: CursorArrowRaysIcon },
-  { name: 'Agile & Scrum', description: 'Accelerate delivery with proven Agile and Scrum methodologies.', href: '/solutions/agile-scrum', icon: FingerPrintIcon },
-  { name: 'DevOps', description: 'Streamline development and operations for faster deployment.', href: '/solutions/devops', icon: SquaresPlusIcon },
+  { name: 'AI Consulting', description: 'Move from AI ideas to production-ready products and workflows.', href: '/solutions/ai', icon: ArrowPathIcon },
+  { name: 'Cloud Consulting', description: 'Modernize platforms, architecture, and operations for cloud-native delivery.', href: '/solutions/cloud', icon: ChartPieIcon },
+  { name: 'Platform Engineering', description: 'Build reliable CI/CD, infrastructure as code, and developer platforms.', href: '/solutions/devops', icon: SquaresPlusIcon },
+  { name: 'Microservices Modernization', description: 'Evolve monoliths into scalable, observable distributed systems.', href: '/solutions/microservices', icon: FingerPrintIcon },
+  { name: 'API & AI Gateway', description: 'Secure, route, observe, and govern API and LLM traffic.', href: '/solutions/gateway', icon: CursorArrowRaysIcon },
 ]
 
 const callsToAction = [
@@ -47,8 +47,8 @@ const callsToAction = [
 ]
 
 const openSource = [
-  { name: 'LetScrum', description: 'Lighweight Agile & Scrum Project Management System!', href: 'https://github.com/letscrum', icon: CursorArrowRaysIcon },
-  { name: 'llmxy', description: 'LLM token distribution and intelligent routing solution', href: 'https://github.com/wilsonwu/llmxy', icon: SquaresPlusIcon },
+  { name: 'llmxy', description: 'LLM gateway for token routing, provider management, and usage visibility.', href: 'https://github.com/wilsonwu/llmxy', icon: SquaresPlusIcon },
+  { name: 'LetScrum', description: 'Lightweight Agile and Scrum project management system.', href: 'https://github.com/letscrum', icon: CursorArrowRaysIcon },
 ]
 
 export default function Example() {

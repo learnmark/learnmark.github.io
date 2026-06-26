@@ -7,7 +7,7 @@ export default function Feedback() {
           <figure className="mt-10">
             <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
               <p>
-                “Learnmark's expertise in Cloud Native architecture and Agile practices was instrumental in our digital transformation journey. Their team not only provided technical solutions but also helped us cultivate a culture of innovation.”
+                “Learnmark helped us connect AI strategy with a cloud architecture we could actually operate. Their team brought practical engineering depth, clear delivery guidance, and a strong focus on production readiness.”
               </p>
             </blockquote>
             <figcaption className="mt-10">
@@ -21,7 +21,7 @@ export default function Feedback() {
                 <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
                   <circle r={1} cx={1} cy={1} />
                 </svg>
-                <div className="text-gray-600">CTO at TechFlow</div>
+                <div className="text-gray-600">CTO at CloudFlow</div>
               </div>
             </figcaption>
           </figure>

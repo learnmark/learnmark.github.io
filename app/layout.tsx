@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://learnmark.com'),
   title: {
     template: '%s | Learnmark',
-    default: 'Learnmark - Leading Cloud-based Products and Solutions',
+    default: 'Learnmark - AI and Cloud Consulting',
   },
-  description: 'Learnmark provides leading cloud-native consulting, products, and solutions to help enterprises transform their technology.',
+  description: 'Learnmark is an AI and Cloud consulting company helping teams design intelligent products, modernize cloud platforms, and ship reliable software systems.',
   openGraph: {
-    title: 'Learnmark - Leading Cloud-based Products and Solutions',
-    description: 'Learnmark provides leading cloud-native consulting, products, and solutions to help enterprises transform their technology.',
+    title: 'Learnmark - AI and Cloud Consulting',
+    description: 'Learnmark helps teams design intelligent products, modernize cloud platforms, and ship reliable software systems.',
     url: 'https://learnmark.com',
     siteName: 'Learnmark',
     locale: 'en_US',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Learnmark - Leading Cloud-based Products and Solutions',
-    description: 'Learnmark provides leading cloud-native consulting, products, and solutions.',
+    title: 'Learnmark - AI and Cloud Consulting',
+    description: 'AI and Cloud consulting for intelligent products, modern platforms, and reliable delivery.',
   },
   robots: {
     index: true,

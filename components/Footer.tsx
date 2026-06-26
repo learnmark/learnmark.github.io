@@ -45,6 +45,11 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-600">
                 <li className="mb-4">
+                  <a href="/llmxy" className="hover:underline ">
+                    llmxy
+                  </a>
+                </li>
+                <li className="mb-4">
                   <a href="/letscrum" className="hover:underline ">
                     LetScrum
                   </a>
@@ -62,23 +67,28 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="mb-4">
+                  <a href="/solutions/cloud" className="hover:underline">
+                    Cloud Consulting
+                  </a>
+                </li>
+                <li className="mb-4">
                   <a href="/solutions/microservices" className="hover:underline">
-                    Microservices
+                    Microservices Modernization
                   </a>
                 </li>
                 <li className="mb-4">
                   <a href="/solutions/gateway" className="hover:underline">
-                    Gateway
+                    API & AI Gateway
                   </a>
                 </li>
                 <li className="mb-4">
                   <a href="/solutions/agile-scrum" className="hover:underline">
-                    Agile & Scrum
+                    Delivery Coaching
                   </a>
                 </li>
                 <li className="mb-4">
                   <a href="/solutions/devops" className="hover:underline">
-                    DevOps
+                    Platform Engineering
                   </a>
                 </li>
               </ul>

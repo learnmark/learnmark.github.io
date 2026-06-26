@@ -44,9 +44,9 @@ export default function Subscribe() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our Newsletter</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our AI and Cloud notes</h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-              Get the latest Learnmark resources delivered to your inbox
+              Get practical architecture notes, AI delivery lessons, and cloud modernization ideas from Learnmark.
             </p>
             <form onSubmit={handleSubmit} className="mt-6 flex max-w-md gap-x-4">
               <label htmlFor="email-address" className="sr-only">
@@ -82,9 +82,9 @@ export default function Subscribe() {
               <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                 <CalendarDaysIcon aria-hidden="true" className="h-6 w-6 text-white" />
               </div>
-              <dt className="mt-4 font-semibold text-white">Weekly articles</dt>
+              <dt className="mt-4 font-semibold text-white">Practical field notes</dt>
               <dd className="mt-2 leading-7 text-gray-400">
-                Receive our weekly newsletter with the latest updates and insights.
+                Receive concise resources for AI product delivery, cloud platforms, and engineering leadership.
               </dd>
             </div>
             <div className="flex flex-col items-start">
@@ -93,7 +93,7 @@ export default function Subscribe() {
               </div>
               <dt className="mt-4 font-semibold text-white">No spam</dt>
               <dd className="mt-2 leading-7 text-gray-400">
-                No-spam with the option to unsubscribe at any time.
+                No spam, only useful consulting notes with the option to unsubscribe at any time.
               </dd>
             </div>
           </dl>

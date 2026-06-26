@@ -3,24 +3,24 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about Learnmark, our mission, values, and the team dedicated to transforming enterprise technology.',
+  description: 'Learn about Learnmark, an AI and Cloud consulting company helping teams build intelligent products and modern cloud platforms.',
 }
 
 const people = [
   {
     name: 'WW',
     role: 'Founder / Chief Solution Consultant',
-    bio: 'Expert in Cloud Native architectures and Enterprise Digital Transformation.',
+    bio: 'Expert in AI-enabled product architecture, cloud-native systems, and enterprise technology modernization.',
   },
   {
     name: 'YY',
     role: 'Co-Founder / Chief Architect',
-    bio: 'Specializes in distributed systems, microservices, and high-performance computing.',
+    bio: 'Specializes in distributed systems, platform engineering, microservices, and cloud reliability.',
   },
   {
     name: 'LL',
     role: 'Co-Founder / Chief Product Specialist',
-    bio: 'Passionate about product strategy, user experience, and agile product management.',
+    bio: 'Passionate about AI product strategy, user experience, and practical delivery management.',
   },
 ]
 
@@ -43,7 +43,7 @@ export default function Example() {
           <figure className="mt-10">
             <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
               <p>
-                “Learnmark is a software and Internet technology consulting organization that focuses on Cloud Native, Enterprise Software Architecture, Agile Practices, and Software R&D Management.”
+                “Learnmark is an AI and Cloud consulting company focused on intelligent product delivery, cloud-native architecture, platform engineering, and practical software modernization.”
               </p>
             </blockquote>
             <figcaption className="mt-10">
@@ -65,10 +65,10 @@ export default function Example() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-primary-900 sm:text-4xl">Our Mission</h2>
             <p className="mt-6 text-2xl font-semibold leading-9 text-gray-900">
-              Make every application easy with Cloud and AI.
+              Make every application intelligent, reliable, and cloud-ready.
             </p>
             <p className="mt-4 text-lg leading-8 text-gray-600">
-              We empower organizations to navigate the complexities of modern technology, enabling them to build scalable, efficient, and intelligent software solutions.
+              We help organizations navigate AI adoption and cloud modernization, turning complex technology decisions into secure, scalable, and maintainable software systems.
             </p>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function Example() {
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet our leadership</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Our leadership team has a wealth of experience in software and Internet technology consulting. We are passionate about helping our clients achieve their goals.
+            Our leadership team brings deep experience across AI delivery, cloud-native architecture, distributed systems, and product engineering. We are passionate about helping clients make practical technology decisions and ship durable systems.
           </p>
         </div>
         <ul role="list" className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">

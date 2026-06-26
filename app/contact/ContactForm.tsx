@@ -80,7 +80,7 @@ export default function Example() {
           Talk to Sales
         </h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          Ready to get started with the Learnmark Products or Solutions?
+          Ready to discuss an AI or Cloud project with Learnmark?
         </p>
       </div>
       <form
@@ -183,8 +183,11 @@ export default function Example() {
                 className="block w-full rounded-md border-0 pl-3.5 pr-9 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               >
                 <option disabled>Please Select</option>
+                <option>AI Consulting</option>
+                <option>Cloud Consulting</option>
+                <option>Platform Engineering</option>
+                <option>llmxy</option>
                 <option>LetScrum</option>
-                <option>Solution / Service</option>
                 <option>Others</option>
               </select>
             </div>

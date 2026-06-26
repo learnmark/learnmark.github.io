@@ -1,11 +1,13 @@
 const links = [
-  { name: 'Open Roles', href: '/careers' },
+  { name: 'Start a consulting conversation', href: '/contact' },
+  { name: 'AI consulting', href: '/solutions/ai' },
+  { name: 'Cloud consulting', href: '/solutions/cloud' },
 ]
 const stats = [
-  { name: 'Roles are hiring', value: '5' },
-  { name: 'Locations worldwide', value: '3' },
-  { name: 'Work from home', value: 'All time' },
-  { name: 'Paid time off', value: 'Unlimited' },
+  { name: 'AI strategy and delivery', value: 'AI' },
+  { name: 'Cloud architecture and migration', value: 'Cloud' },
+  { name: 'Platform engineering and DevOps', value: 'Ops' },
+  { name: 'Architecture reviews and coaching', value: 'Advisory' },
 ]
 
 export default function WorkWith() {
@@ -37,9 +39,9 @@ export default function WorkWith() {
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl lg:mx-0">
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with us</h2>
+          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with AI and Cloud specialists</h2>
           <p className="mt-4 text-lg leading-8 text-gray-300">
-          We are looking for talented individuals to join our team. If you are passionate about technology and want to work on exciting projects, we would love to hear from you.
+          We partner with engineering and product leaders to assess strategy, design production architecture, and deliver the hard parts of AI-enabled and cloud-native systems.
           </p>
         </div>
         <div className="mx-auto mt-5 max-w-2xl lg:mx-0 lg:max-w-none">

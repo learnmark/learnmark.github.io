@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Careers',
-  description: 'Join our team and help us build the future of cloud-native technology.',
+  description: 'Join Learnmark and help teams deliver AI products, cloud platforms, and reliable modern software systems.',
 }
 
   const stats = [

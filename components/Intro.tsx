@@ -21,20 +21,20 @@ export default function Intro() {
         <Background />
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-          Leading Cloud-based Products and Solutions
+          AI and Cloud Consulting for Modern Software Teams
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Focused on transforming technology into valuable applications, leading the best practices of cloud computing in enterprises!
+            Learnmark helps organizations turn AI opportunities into production systems and build cloud platforms that are secure, scalable, and ready for continuous delivery.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
-              href="/about"
+              href="/contact"
               className="rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold !text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800 transition-all duration-300"
             >
-              Learn more about us
+              Plan an AI or Cloud project
             </a>
-            <a href="/contact" className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary-800 transition-colors">
-              Contact Sales <span aria-hidden="true">→</span>
+            <a href="/solutions/ai" className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary-800 transition-colors">
+              Explore AI consulting <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
