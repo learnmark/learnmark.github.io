@@ -1,4 +1,3 @@
-import Background from "@/components/Background"
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -28,7 +27,6 @@ const capabilities = [
 export default function CloudConsulting() {
   return (
     <div className="relative isolate py-24 sm:py-32">
-      <Background />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-base font-semibold leading-7 text-primary-600">Cloud Consulting</p>

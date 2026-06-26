@@ -17,7 +17,6 @@
 import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Field, Label, Switch } from "@headlessui/react";
-import Background from "@/components/Background";
 
 export default function Example() {
   const [agreed, setAgreed] = useState(false);
@@ -73,8 +72,7 @@ export default function Example() {
   };
 
   return (
-    <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-      <Background />
+    <div className="isolate bg-transparent px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-2xl text-center pt-24">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Talk to Sales

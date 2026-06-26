@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${manrope.className} bg-slate-50 text-slate-900 antialiased`}>
+      <body className={`${manrope.className} site-shell text-slate-900 antialiased`}>
         <Header />
         {children}
         <Footer />

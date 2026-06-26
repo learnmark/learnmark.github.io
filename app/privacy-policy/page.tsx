@@ -1,4 +1,3 @@
-import Background from "@/components/Background";
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -8,8 +7,7 @@ export const metadata: Metadata = {
 
 export default function Example() {
   return (
-    <div className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-      <Background />
+    <div className="relative isolate bg-transparent px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
         <p className="text-base font-semibold leading-7 text-primary-600">Legal</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Privacy Policy</h1>

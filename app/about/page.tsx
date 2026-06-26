@@ -1,4 +1,3 @@
-import Background from "@/components/Background"
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -45,9 +44,8 @@ const operatingModel = [
 
 export default function Example() {
   return (
-    <main className="relative isolate overflow-hidden bg-slate-50">
+    <main className="relative isolate overflow-hidden bg-transparent">
       <section className="relative isolate px-6 py-20 sm:py-28 lg:px-8">
-        <Background />
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p className="text-sm font-semibold uppercase text-primary-700">About Learnmark</p>

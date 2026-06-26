@@ -1,5 +1,3 @@
-import Background from './Background'
-
 const capabilities = ['AI product delivery', 'Cloud platforms', 'LLM gateways', 'Reliability engineering']
 
 const architectureLayers = [
@@ -16,8 +14,7 @@ const signals = [
 
 export default function Intro() {
   return (
-    <section className="relative isolate overflow-hidden bg-slate-50 px-6 pb-20 pt-20 sm:pb-28 sm:pt-28 lg:px-8">
-        <Background />
+    <section className="relative isolate overflow-hidden bg-transparent px-6 pb-20 pt-20 sm:pb-28 sm:pt-28 lg:px-8">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_0.92fr]">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase text-primary-700">AI + Cloud Consulting</p>
