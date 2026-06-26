@@ -7,6 +7,33 @@ export const metadata: Metadata = {
   description: 'llmxy is an LLM token distribution and intelligent routing solution that helps teams manage, balance, and optimize traffic across multiple large language model providers.',
 }
 
+const screenshots = [
+  {
+    src: '/images/llmxy/user-overview.png',
+    alt: 'llmxy user overview dashboard',
+    title: 'User overview',
+    description: 'Account balance, subscriptions, and quick-start API examples give users a clear path from signup to first request.',
+  },
+  {
+    src: '/images/llmxy/user-models-api.png',
+    alt: 'llmxy available models and API examples',
+    title: 'Models and API snippets',
+    description: 'Expose available models with protocol tags and copy-ready curl, JavaScript, and Python request examples.',
+  },
+  {
+    src: '/images/llmxy/admin-smart-routing.png',
+    alt: 'llmxy admin smart routing configuration',
+    title: 'Smart routing rules',
+    description: 'Configure weighted, fallback, and prompt-aware routes across upstream providers from the admin console.',
+  },
+  {
+    src: '/images/llmxy/admin-usage-billing.png',
+    alt: 'llmxy admin usage and billing logs',
+    title: 'Usage and billing logs',
+    description: 'Filter usage by user, key, model, status, and label while tracking cost, latency, and token consumption.',
+  },
+]
+
 export default function Example() {
   return (
     <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
@@ -26,9 +53,9 @@ export default function Example() {
         </div>
         <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <img
-            alt="llmxy Dashboard"
-            src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-            className="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+            alt="llmxy smart routing dashboard"
+            src="/images/llmxy/admin-smart-routing.png"
+            className="w-[48rem] max-w-none rounded-xl bg-white object-cover object-left-top shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
           />
         </div>
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -72,6 +99,28 @@ export default function Example() {
               <p className="mt-8">
                 Built for modern cloud-native environments, llmxy is lightweight, horizontally scalable, and easy to deploy. Stop managing keys, quotas, and provider quirks by hand — let llmxy handle the plumbing so your team can focus on building great AI products.
               </p>
+              <div className="mt-16">
+                <h2 className="text-2xl font-bold tracking-tight text-gray-900">Product Screenshots</h2>
+                <p className="mt-6">
+                  The llmxy interface combines a self-service user console with an admin workspace for routing, monitoring, and billing operations.
+                </p>
+                <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-10">
+                  {screenshots.map((screenshot) => (
+                    <figure key={screenshot.src} className="overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-900/10">
+                      <img
+                        src={screenshot.src}
+                        alt={screenshot.alt}
+                        className="aspect-[16/10] w-full bg-gray-50 object-cover object-left-top"
+                        loading="lazy"
+                      />
+                      <figcaption className="border-t border-gray-200 p-5">
+                        <h3 className="font-semibold text-gray-900">{screenshot.title}</h3>
+                        <p className="mt-2 text-sm leading-6 text-gray-600">{screenshot.description}</p>
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
               <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Open Source & Enterprise Ready</h2>
               <p className="mt-6">
                 llmxy is open source and community driven. Use the community edition to get started in minutes, or talk to us about enterprise deployments with advanced security, multi-tenant isolation, and dedicated support.
