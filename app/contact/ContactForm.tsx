@@ -104,7 +104,7 @@ export default function Example() {
                 value={formData.firstName}
                 onChange={handleInputChange}
                 required
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function Example() {
                 value={formData.lastName}
                 onChange={handleInputChange}
                 required
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -143,7 +143,7 @@ export default function Example() {
                 autoComplete="organization"
                 value={formData.company}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function Example() {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -180,7 +180,7 @@ export default function Example() {
                 name="interest"
                 value={formData.interest}
                 onChange={handleInputChange}
-                className="block w-full rounded-md border-0 pl-3.5 pr-9 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 pl-3.5 pr-9 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
               >
                 <option disabled>Please Select</option>
                 <option>AI Consulting</option>
@@ -200,7 +200,7 @@ export default function Example() {
                 type="checkbox"
                 checked={agreed}
                 onChange={handleChange}
-                className="h-4 w-4 rounded border-gray-300 text-red-800 focus:ring-red-900"
+                className="h-4 w-4 rounded border-gray-300 text-primary-700 focus:ring-primary-700"
               />
             </div>
             <label htmlFor="offers" className="text-sm leading-6">
@@ -210,7 +210,7 @@ export default function Example() {
               <a
                 href="/privacy-policy"
                 target="_blank"
-                className="font-semibold text-red-600"
+                className="font-semibold text-primary-700"
               >
                 Privacy Policy
               </a>

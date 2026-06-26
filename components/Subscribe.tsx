@@ -40,7 +40,8 @@ export default function Subscribe() {
   }
 
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+    <div className="relative isolate overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:linear-gradient(to_top,black,transparent_86%)]" />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
@@ -61,12 +62,12 @@ export default function Subscribe() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 autoComplete="email"
-                className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                className="min-w-0 flex-auto rounded-full border-0 bg-white/5 px-4 py-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-primary-400 sm:text-sm sm:leading-6"
               />
               <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="flex-none rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold !text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-none rounded-full bg-primary-600 px-4 py-3 text-sm font-semibold !text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === 'submitting' ? 'Subscribing...' : 'Subscribe'}
               </button>
@@ -79,7 +80,7 @@ export default function Subscribe() {
           </div>
           <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
             <div className="flex flex-col items-start">
-              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+              <div className="rounded-xl bg-white/5 p-2 ring-1 ring-white/10">
                 <CalendarDaysIcon aria-hidden="true" className="h-6 w-6 text-white" />
               </div>
               <dt className="mt-4 font-semibold text-white">Practical field notes</dt>
@@ -88,7 +89,7 @@ export default function Subscribe() {
               </dd>
             </div>
             <div className="flex flex-col items-start">
-              <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+              <div className="rounded-xl bg-white/5 p-2 ring-1 ring-white/10">
                 <HandRaisedIcon aria-hidden="true" className="h-6 w-6 text-white" />
               </div>
               <dt className="mt-4 font-semibold text-white">No spam</dt>
@@ -98,15 +99,6 @@ export default function Subscribe() {
             </div>
           </dl>
         </div>
-      </div>
-      <div aria-hidden="true" className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6">
-        <div
-          style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-          className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#900] to-[#999] opacity-30"
-        />
       </div>
     </div>
   )

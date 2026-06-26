@@ -24,99 +24,148 @@ const people = [
   },
 ]
 
-const values = [
-  { name: 'Innovation', description: 'We constantly push the boundaries of what is possible with technology.' },
-  { name: 'Excellence', description: 'We are committed to delivering the highest quality solutions to our clients.' },
-  { name: 'Integrity', description: 'We conduct our business with honesty and transparency.' },
-  { name: 'Collaboration', description: 'We believe in the power of teamwork and partnership.' },
+const capabilities = [
+  { name: 'AI Product Delivery', description: 'From opportunity discovery to LLM integration, evaluation, governance, and production rollout.' },
+  { name: 'Cloud Modernization', description: 'Cloud architecture, landing zones, migration planning, platform engineering, and operational readiness.' },
+  { name: 'Architecture Advisory', description: 'System reviews, technical roadmaps, engineering coaching, and pragmatic modernization decisions.' },
+]
+
+const principles = [
+  { name: 'Production over prototypes', description: 'We care about reliability, security, cost, observability, and maintainability from the beginning.' },
+  { name: 'Architecture with delivery', description: 'We connect strategy to executable increments so teams can ship while modernizing.' },
+  { name: 'Clear technical judgment', description: 'We help leaders make tradeoffs across platforms, models, teams, and operating constraints.' },
+  { name: 'Partnership with teams', description: 'We work alongside product and engineering groups instead of handing over abstract slide decks.' },
+]
+
+const operatingModel = [
+  { step: '01', name: 'Assess', description: 'Clarify goals, constraints, architecture risks, and business context.' },
+  { step: '02', name: 'Design', description: 'Shape AI and cloud architecture into an implementation-ready roadmap.' },
+  { step: '03', name: 'Deliver', description: 'Build foundations, coach teams, and move production systems forward.' },
 ]
 
 export default function Example() {
   return (
-    <div className="relative isolate">
-      <Background />
-      
-      {/* Hero Section */}
-      <div className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:max-w-4xl">
-          <img alt="Learnmark" src="/logo.svg" className="mx-auto h-20" />
-          <figure className="mt-10">
-            <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-              <p>
-                “Learnmark is an AI and Cloud consulting company focused on intelligent product delivery, cloud-native architecture, platform engineering, and practical software modernization.”
-              </p>
-            </blockquote>
-            <figcaption className="mt-10">
-              <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                <div className="font-semibold text-gray-900">The Team</div>
-                <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
-                  <circle r={1} cx={1} cy={1} />
-                </svg>
-                <div className="text-gray-600">Learnmark</div>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
+    <main className="relative isolate overflow-hidden bg-slate-50">
+      <section className="relative isolate px-6 py-20 sm:py-28 lg:px-8">
+        <Background />
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase text-primary-700">About Learnmark</p>
+            <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+              Practical AI and Cloud consulting for teams that need to ship.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              Learnmark helps organizations navigate AI adoption and cloud modernization, turning complex technology decisions into secure, scalable, and maintainable software systems.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="/contact" className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold !text-white shadow-lg shadow-primary-950/20 transition hover:bg-primary-700">
+                Work with us
+              </a>
+              <a href="/solutions/ai" className="inline-flex justify-center rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-primary-300 hover:text-primary-800">
+                Explore AI consulting
+              </a>
+            </div>
+          </div>
 
-      {/* Mission Section */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-24">
-        <div className="rounded-2xl bg-primary-50 p-10 sm:p-16">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-primary-900 sm:text-4xl">Our Mission</h2>
-            <p className="mt-6 text-2xl font-semibold leading-9 text-gray-900">
-              Make every application intelligent, reliable, and cloud-ready.
-            </p>
-            <p className="mt-4 text-lg leading-8 text-gray-600">
-              We help organizations navigate AI adoption and cloud modernization, turning complex technology decisions into secure, scalable, and maintainable software systems.
-            </p>
+          <div className="relative">
+            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl bg-primary-900/10 blur-2xl" />
+            <div className="relative rounded-3xl border border-slate-200 bg-white/85 p-5 shadow-2xl shadow-slate-900/10 backdrop-blur-xl">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+                <div>
+                  <p className="text-sm font-semibold text-slate-950">Operating model</p>
+                  <p className="text-xs text-slate-500">How we move from strategy to production</p>
+                </div>
+                <span className="rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-800 ring-1 ring-primary-700/20">AI / Cloud</span>
+              </div>
+              <div className="mt-5 grid gap-3">
+                {operatingModel.map((item) => (
+                  <div key={item.step} className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                    <div className="flex gap-4">
+                      <span className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-800">{item.step}</span>
+                      <div>
+                        <p className="font-semibold text-slate-950">{item.name}</p>
+                        <p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Values Section */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-24">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Values</h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Our core values guide everything we do, from how we work with our clients to how we collaborate as a team.
-          </p>
-        </div>
-        <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
-          {values.map((value) => (
-            <div key={value.name}>
-              <dt className="font-semibold text-gray-900">{value.name}</dt>
-              <dd className="mt-1 text-gray-600">{value.description}</dd>
+      <section className="px-6 pb-20 lg:px-8">
+        <div className="mx-auto max-w-7xl rounded-3xl bg-slate-950 p-8 shadow-2xl shadow-slate-900/10 sm:p-10 lg:p-12">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase text-primary-200">Our mission</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                Make every application intelligent, reliable, and cloud-ready.
+              </h2>
+              <p className="mt-5 text-base leading-7 text-slate-400">
+                We combine senior engineering judgment with hands-on delivery support, helping teams make clear technical decisions and build durable systems.
+              </p>
             </div>
-          ))}
-        </dl>
-      </div>
-
-      {/* Team Section */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 mb-24">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet our leadership</h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Our leadership team brings deep experience across AI delivery, cloud-native architecture, distributed systems, and product engineering. We are passionate about helping clients make practical technology decisions and ship durable systems.
-          </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {capabilities.map((capability) => (
+                <div key={capability.name} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                  <h3 className="font-semibold text-white">{capability.name}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-400">{capability.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <ul role="list" className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {people.map((person) => (
-            <li key={person.name} className="group">
-              <div className="flex items-center gap-x-6">
-                <div className="h-16 w-16 flex-none rounded-full bg-primary-100 flex items-center justify-center text-xl font-bold text-primary-700 group-hover:bg-primary-200 transition-colors">
-                  {person.name}
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
-                  <p className="text-sm font-semibold leading-6 text-primary-600">{person.role}</p>
-                </div>
+      </section>
+
+      <section className="px-6 pb-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase text-primary-700">Working principles</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">What guides our consulting work</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              We focus on the decisions, platforms, and delivery habits that make AI and cloud systems useful after launch.
+            </p>
+          </div>
+          <dl className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {principles.map((principle) => (
+              <div key={principle.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <dt className="font-semibold text-slate-950">{principle.name}</dt>
+                <dd className="mt-3 text-sm leading-6 text-slate-600">{principle.description}</dd>
               </div>
-              <p className="mt-4 text-base leading-7 text-gray-600">{person.bio}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      <section className="px-6 pb-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <p className="text-sm font-semibold uppercase text-primary-700">Leadership</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Experienced across AI, Cloud, and product engineering</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Our leadership team brings deep experience across AI delivery, cloud-native architecture, distributed systems, and product engineering.
+            </p>
+          </div>
+          <ul role="list" className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {people.map((person) => (
+              <li key={person.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex items-center gap-x-4">
+                  <div className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-primary-100 text-lg font-bold text-primary-800">
+                    {person.name}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold tracking-tight text-slate-950">{person.name}</h3>
+                    <p className="text-sm font-semibold leading-6 text-primary-700">{person.role}</p>
+                  </div>
+                </div>
+                <p className="mt-5 text-sm leading-6 text-slate-600">{person.bio}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </main>
   )
 }

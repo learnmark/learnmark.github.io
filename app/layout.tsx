@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Banner from "@/components/Banner";
 
-const inter = Inter({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://learnmark.com'),
@@ -42,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${manrope.className} bg-slate-50 text-slate-900 antialiased`}>
         <Header />
         {children}
         <Footer />

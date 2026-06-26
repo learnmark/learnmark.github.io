@@ -1,5 +1,4 @@
 @import url(//db.onlinewebfonts.com/c/e5c490a944bc2b2746f0c851501e46c7?family=AvenirNextW10-Bold);
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
@@ -8,8 +7,7 @@ body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #f8fafc;
 }
 
 a {
@@ -62,7 +60,7 @@ a {
 }
 
 .font-4 {
-  font-family: Inter, sans-serif;
+  font-family: inherit;
 }
 
 .tr04 {
@@ -91,5 +89,5 @@ a {
 }
 
 .fkrr1 {
-  font-family: "Inter", sans-serif;
+  font-family: inherit;
 }
