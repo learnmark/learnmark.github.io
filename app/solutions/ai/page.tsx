@@ -1,13 +1,35 @@
-import { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from '../../seo'
 
-export const metadata: Metadata = {
+const aiDescription = 'AI consulting for strategy, product delivery, LLM integration, AI gateways, evaluation, governance, and production readiness.'
+const aiKeywords = ['AI consulting services', 'LLM integration consulting', 'AI product strategy', 'AI governance', 'AI evaluation']
+
+export const metadata = createPageMetadata({
   title: 'AI Consulting',
-  description: 'AI consulting for strategy, product delivery, LLM integration, AI gateways, evaluation, governance, and production readiness.',
-}
+  description: aiDescription,
+  path: '/solutions/ai',
+  keywords: aiKeywords,
+})
+
+const aiJsonLd = [
+  createServiceJsonLd({
+    name: 'AI Consulting',
+    description: aiDescription,
+    path: '/solutions/ai',
+    serviceType: 'AI consulting',
+    keywords: aiKeywords,
+  }),
+  createBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'AI Consulting', path: '/solutions/ai' },
+  ]),
+]
 
 export default function AI() {
   return (
-    <div className="relative isolate py-24 sm:py-32">
+    <>
+      <JsonLd data={aiJsonLd} />
+      <div className="relative isolate py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-base font-semibold leading-7 text-primary-600">AI Consulting</p>
@@ -33,6 +55,7 @@ export default function AI() {
            </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

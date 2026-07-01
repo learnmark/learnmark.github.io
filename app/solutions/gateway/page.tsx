@@ -1,13 +1,35 @@
-import { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from '../../seo'
 
-export const metadata: Metadata = {
+const gatewayDescription = 'Gateway consulting for API and LLM traffic, authentication, rate limiting, routing, observability, and governance.'
+const gatewayKeywords = ['API gateway consulting', 'AI gateway consulting', 'LLM traffic routing', 'API governance', 'gateway observability']
+
+export const metadata = createPageMetadata({
   title: 'API and AI Gateway Consulting',
-  description: 'Gateway consulting for API and LLM traffic, authentication, rate limiting, routing, observability, and governance.',
-}
+  description: gatewayDescription,
+  path: '/solutions/gateway',
+  keywords: gatewayKeywords,
+})
+
+const gatewayJsonLd = [
+  createServiceJsonLd({
+    name: 'API and AI Gateway Consulting',
+    description: gatewayDescription,
+    path: '/solutions/gateway',
+    serviceType: 'API and AI gateway consulting',
+    keywords: gatewayKeywords,
+  }),
+  createBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'API and AI Gateway Consulting', path: '/solutions/gateway' },
+  ]),
+]
 
 export default function Gateway() {
   return (
-    <div className="relative isolate py-24 sm:py-32">
+    <>
+      <JsonLd data={gatewayJsonLd} />
+      <div className="relative isolate py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-base font-semibold leading-7 text-primary-600">AI and Cloud Consulting</p>
@@ -33,6 +55,7 @@ export default function Gateway() {
            </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

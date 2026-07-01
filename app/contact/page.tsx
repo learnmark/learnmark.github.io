@@ -1,10 +1,12 @@
-import { Metadata } from 'next'
+import { createPageMetadata } from '../seo'
 import ContactForm from './ContactForm'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Contact Us',
-  description: 'Get in touch with our sales team to learn more about our products and solutions.',
-}
+  description: 'Contact Learnmark to discuss AI consulting, cloud modernization, platform engineering, and reliable software delivery needs.',
+  path: '/contact',
+  keywords: ['contact Learnmark', 'AI consulting contact', 'cloud consulting contact', 'software consulting inquiry'],
+})
 
 export default function ContactPage() {
   return <ContactForm />

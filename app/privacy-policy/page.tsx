@@ -1,9 +1,11 @@
-import { Metadata } from 'next'
+import { createPageMetadata } from '../seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Privacy Policy',
   description: 'Read our privacy policy to understand how we collect, use, and protect your data.',
-}
+  path: '/privacy-policy',
+  keywords: ['Learnmark privacy policy', 'privacy statement', 'data protection'],
+})
 
 export default function Example() {
   return (

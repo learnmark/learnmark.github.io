@@ -1,10 +1,39 @@
 import { ChartBarIcon, ClipboardDocumentCheckIcon, LockClosedIcon, ServerIcon, UserGroupIcon } from '@heroicons/react/20/solid'
-import { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { createBreadcrumbJsonLd, createPageMetadata, createSoftwareApplicationJsonLd } from '../seo'
 
-export const metadata: Metadata = {
+const letscrumDescription = 'LetScrum is a lightweight, open-source Scrum project management system for sprint planning, backlog management, taskboards, and team delivery.'
+const letscrumKeywords = ['LetScrum', 'open source Scrum tool', 'sprint planning software', 'Scrum taskboard', 'agile project management']
+
+export const metadata = createPageMetadata({
   title: 'LetScrum - Open Source Scrum Project Management',
-  description: 'LetScrum is a lightweight, open-source Scrum project management system for sprint planning, backlog management, taskboards, and team delivery.',
-}
+  description: letscrumDescription,
+  path: '/letscrum',
+  keywords: letscrumKeywords,
+  images: [
+    {
+      url: '/images/letscrum/sprint-taskboard.png',
+      width: 1200,
+      height: 750,
+      alt: 'LetScrum sprint taskboard screenshot',
+    },
+  ],
+})
+
+const letscrumJsonLd = [
+  createSoftwareApplicationJsonLd({
+    name: 'LetScrum',
+    description: letscrumDescription,
+    path: '/letscrum',
+    applicationCategory: 'ProjectManagementApplication',
+    image: '/images/letscrum/sprint-taskboard.png',
+    keywords: letscrumKeywords,
+  }),
+  createBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'LetScrum', path: '/letscrum' },
+  ]),
+]
 
 const screenshots = [
   {
@@ -63,7 +92,9 @@ const features = [
 
 export default function LetScrum() {
   return (
-    <div className="relative isolate overflow-hidden bg-transparent px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+    <>
+      <JsonLd data={letscrumJsonLd} />
+      <div className="relative isolate overflow-hidden bg-transparent px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
 
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -158,6 +189,7 @@ export default function LetScrum() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

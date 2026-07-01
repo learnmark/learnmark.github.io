@@ -1,13 +1,35 @@
-import { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from '../../seo'
 
-export const metadata: Metadata = {
+const microservicesDescription = 'Microservices modernization consulting for cloud-native architecture, incremental migration, observability, and resilient distributed systems.'
+const microservicesKeywords = ['microservices consulting', 'microservices modernization', 'cloud-native architecture', 'distributed systems', 'service decomposition']
+
+export const metadata = createPageMetadata({
   title: 'Microservices Modernization',
-  description: 'Microservices modernization consulting for cloud-native architecture, incremental migration, observability, and resilient distributed systems.',
-}
+  description: microservicesDescription,
+  path: '/solutions/microservices',
+  keywords: microservicesKeywords,
+})
+
+const microservicesJsonLd = [
+  createServiceJsonLd({
+    name: 'Microservices Modernization',
+    description: microservicesDescription,
+    path: '/solutions/microservices',
+    serviceType: 'Microservices modernization consulting',
+    keywords: microservicesKeywords,
+  }),
+  createBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Microservices Modernization', path: '/solutions/microservices' },
+  ]),
+]
 
 export default function Microservices() {
   return (
-    <div className="relative isolate py-24 sm:py-32">
+    <>
+      <JsonLd data={microservicesJsonLd} />
+      <div className="relative isolate py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-base font-semibold leading-7 text-primary-600">Cloud Consulting</p>
@@ -33,6 +55,7 @@ export default function Microservices() {
            </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

@@ -1,10 +1,39 @@
 import { ArrowsRightLeftIcon, BoltIcon, ChartBarIcon, CpuChipIcon, ShieldCheckIcon } from '@heroicons/react/20/solid'
-import { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { createBreadcrumbJsonLd, createPageMetadata, createSoftwareApplicationJsonLd } from '../seo'
 
-export const metadata: Metadata = {
+const llmxyDescription = 'llmxy is an LLM token distribution and intelligent routing solution that helps teams manage, balance, and optimize traffic across multiple large language model providers.'
+const llmxyKeywords = ['llmxy', 'LLM gateway', 'LLM routing', 'token distribution', 'multi-provider LLM API', 'AI billing analytics']
+
+export const metadata = createPageMetadata({
   title: 'llmxy - LLM Token Distribution and Intelligent Routing',
-  description: 'llmxy is an LLM token distribution and intelligent routing solution that helps teams manage, balance, and optimize traffic across multiple large language model providers.',
-}
+  description: llmxyDescription,
+  path: '/llmxy',
+  keywords: llmxyKeywords,
+  images: [
+    {
+      url: '/images/llmxy/admin-smart-routing.png',
+      width: 1200,
+      height: 750,
+      alt: 'llmxy smart routing dashboard screenshot',
+    },
+  ],
+})
+
+const llmxyJsonLd = [
+  createSoftwareApplicationJsonLd({
+    name: 'llmxy',
+    description: llmxyDescription,
+    path: '/llmxy',
+    applicationCategory: 'DeveloperApplication',
+    image: '/images/llmxy/admin-smart-routing.png',
+    keywords: llmxyKeywords,
+  }),
+  createBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'llmxy', path: '/llmxy' },
+  ]),
+]
 
 const screenshots = [
   {
@@ -35,7 +64,9 @@ const screenshots = [
 
 export default function Example() {
   return (
-    <div className="relative isolate overflow-hidden bg-transparent px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+    <>
+      <JsonLd data={llmxyJsonLd} />
+      <div className="relative isolate overflow-hidden bg-transparent px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
 
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -53,7 +84,7 @@ export default function Example() {
           <img
             alt="llmxy smart routing dashboard"
             src="/images/llmxy/admin-smart-routing.png"
-            className="w-[48rem] max-w-none rounded-xl bg-white object-cover object-left-top shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+            className="w-3xl max-w-none rounded-xl bg-white object-cover object-top-left shadow-xl ring-1 ring-gray-400/10 sm:w-228"
           />
         </div>
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -108,7 +139,7 @@ export default function Example() {
                       <img
                         src={screenshot.src}
                         alt={screenshot.alt}
-                        className="aspect-[16/10] w-full bg-gray-50 object-cover object-left-top"
+                        className="aspect-16/10 w-full bg-gray-50 object-cover object-top-left"
                         loading="lazy"
                       />
                       <figcaption className="border-t border-gray-200 p-5">
@@ -127,7 +158,7 @@ export default function Example() {
                 <a
                   href="https://github.com/wilsonwu/llmxy"
                   target="_blank"
-                  className="rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold !text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900 transition-all duration-300"
+                  className="rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold text-white! shadow-sm hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900 transition-all duration-300"
                 >
                   View on GitHub
                 </a>
@@ -139,6 +170,7 @@ export default function Example() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

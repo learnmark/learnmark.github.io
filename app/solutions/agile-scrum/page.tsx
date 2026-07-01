@@ -1,13 +1,35 @@
-import { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from '../../seo'
 
-export const metadata: Metadata = {
+const deliveryDescription = 'Delivery coaching for AI and cloud teams, including agile practices, product discovery, technical planning, and execution rhythm.'
+const deliveryKeywords = ['delivery coaching', 'agile coaching', 'Scrum consulting', 'AI delivery planning', 'cloud delivery coaching']
+
+export const metadata = createPageMetadata({
   title: 'Delivery Coaching',
-  description: 'Delivery coaching for AI and cloud teams, including agile practices, product discovery, technical planning, and execution rhythm.',
-}
+  description: deliveryDescription,
+  path: '/solutions/agile-scrum',
+  keywords: deliveryKeywords,
+})
+
+const deliveryJsonLd = [
+  createServiceJsonLd({
+    name: 'Delivery Coaching',
+    description: deliveryDescription,
+    path: '/solutions/agile-scrum',
+    serviceType: 'Delivery coaching',
+    keywords: deliveryKeywords,
+  }),
+  createBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Delivery Coaching', path: '/solutions/agile-scrum' },
+  ]),
+]
 
 export default function AgileScrum() {
   return (
-    <div className="relative isolate py-24 sm:py-32">
+    <>
+      <JsonLd data={deliveryJsonLd} />
+      <div className="relative isolate py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-base font-semibold leading-7 text-primary-600">Delivery Coaching</p>
@@ -33,6 +55,7 @@ export default function AgileScrum() {
            </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

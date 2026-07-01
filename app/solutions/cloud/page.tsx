@@ -1,9 +1,29 @@
-import { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from '../../seo'
 
-export const metadata: Metadata = {
+const cloudDescription = 'Cloud consulting for platform modernization, cloud-native architecture, migration, DevOps, reliability, and cost optimization.'
+const cloudKeywords = ['cloud consulting services', 'cloud modernization', 'cloud-native architecture', 'cloud migration', 'FinOps']
+
+export const metadata = createPageMetadata({
   title: 'Cloud Consulting',
-  description: 'Cloud consulting for platform modernization, cloud-native architecture, migration, DevOps, reliability, and cost optimization.',
-}
+  description: cloudDescription,
+  path: '/solutions/cloud',
+  keywords: cloudKeywords,
+})
+
+const cloudJsonLd = [
+  createServiceJsonLd({
+    name: 'Cloud Consulting',
+    description: cloudDescription,
+    path: '/solutions/cloud',
+    serviceType: 'Cloud consulting',
+    keywords: cloudKeywords,
+  }),
+  createBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Cloud Consulting', path: '/solutions/cloud' },
+  ]),
+]
 
 const capabilities = [
   {
@@ -26,7 +46,9 @@ const capabilities = [
 
 export default function CloudConsulting() {
   return (
-    <div className="relative isolate py-24 sm:py-32">
+    <>
+      <JsonLd data={cloudJsonLd} />
+      <div className="relative isolate py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-base font-semibold leading-7 text-primary-600">Cloud Consulting</p>
@@ -48,7 +70,7 @@ export default function CloudConsulting() {
         <div className="mt-16 flex items-center gap-x-6">
           <a
             href="/contact"
-            className="rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold !text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900 transition-all duration-300"
+            className="rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold text-white! shadow-sm hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900 transition-all duration-300"
           >
             Discuss a cloud project
           </a>
@@ -57,6 +79,7 @@ export default function CloudConsulting() {
           </a>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

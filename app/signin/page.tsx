@@ -1,3 +1,12 @@
+import { createPageMetadata } from '../seo'
+
+export const metadata = createPageMetadata({
+  title: 'Sign In',
+  description: 'Sign in to Learnmark.',
+  path: '/signin',
+  noIndex: true,
+})
+
 /*
   This example requires some changes to your config:
   

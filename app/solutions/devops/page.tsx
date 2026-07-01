@@ -1,13 +1,35 @@
-import { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
+import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from '../../seo'
 
-export const metadata: Metadata = {
+const platformDescription = 'Platform engineering and cloud operations consulting for CI/CD, infrastructure as code, observability, security, and reliable delivery.'
+const platformKeywords = ['platform engineering consulting', 'DevOps consulting', 'CI/CD automation', 'infrastructure as code', 'cloud operations']
+
+export const metadata = createPageMetadata({
   title: 'Platform Engineering',
-  description: 'Platform engineering and cloud operations consulting for CI/CD, infrastructure as code, observability, security, and reliable delivery.',
-}
+  description: platformDescription,
+  path: '/solutions/devops',
+  keywords: platformKeywords,
+})
+
+const platformJsonLd = [
+  createServiceJsonLd({
+    name: 'Platform Engineering',
+    description: platformDescription,
+    path: '/solutions/devops',
+    serviceType: 'Platform engineering consulting',
+    keywords: platformKeywords,
+  }),
+  createBreadcrumbJsonLd([
+    { name: 'Home', path: '/' },
+    { name: 'Platform Engineering', path: '/solutions/devops' },
+  ]),
+]
 
 export default function DevOps() {
   return (
-    <div className="relative isolate py-24 sm:py-32">
+    <>
+      <JsonLd data={platformJsonLd} />
+      <div className="relative isolate py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <p className="text-base font-semibold leading-7 text-primary-600">Cloud Consulting</p>
@@ -33,6 +55,7 @@ export default function DevOps() {
            </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

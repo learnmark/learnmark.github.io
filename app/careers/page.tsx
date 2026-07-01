@@ -1,9 +1,11 @@
-import { Metadata } from 'next'
+import { createPageMetadata } from '../seo'
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Careers',
   description: 'Join Learnmark and help teams deliver AI products, cloud platforms, and reliable modern software systems.',
-}
+  path: '/careers',
+  keywords: ['Learnmark careers', 'AI consulting jobs', 'cloud consulting jobs', 'remote software roles'],
+})
 
   const stats = [
     { name: 'Roles are hiring', value: '5' },
