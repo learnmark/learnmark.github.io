@@ -2,8 +2,8 @@ import type { Metadata, MetadataRoute } from 'next'
 
 export const siteUrl = 'https://learnmark.com'
 export const siteName = 'Learnmark'
-export const defaultTitle = 'Learnmark - AI and Cloud Consulting'
-export const defaultDescription = 'Learnmark is an AI and Cloud consulting company helping teams design intelligent products, modernize cloud platforms, and ship reliable software systems.'
+export const defaultTitle = 'Learnmark - AI, Cloud, and Shopify Services'
+export const defaultDescription = 'Learnmark helps teams design intelligent products, modernize cloud platforms, build Shopify stores, and ship reliable software systems.'
 
 export const defaultKeywords = [
   'AI consulting',
@@ -14,13 +14,14 @@ export const defaultKeywords = [
   'platform engineering',
   'microservices modernization',
   'software delivery consulting',
+  'Shopify store development',
 ]
 
 export const defaultOpenGraphImage = {
   url: '/opengraph-image',
   width: 1200,
   height: 630,
-  alt: 'Learnmark AI and Cloud Consulting',
+  alt: 'Learnmark AI, Cloud, and Shopify Services',
 }
 
 type OpenGraphImage = typeof defaultOpenGraphImage
@@ -118,6 +119,7 @@ export const publicRoutes: MetadataRoute.Sitemap = [
   { url: absoluteUrl('/llmxy'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.9 },
   { url: absoluteUrl('/letscrum'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.9 },
   { url: absoluteUrl('/sello'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.9 },
+  { url: absoluteUrl('/services/shopify'), lastModified: '2026-08-07', changeFrequency: 'monthly', priority: 0.9 },
   { url: absoluteUrl('/open-source/llmxy'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.8 },
   { url: absoluteUrl('/open-source/letscrum'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.8 },
   { url: absoluteUrl('/open-source/sello'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.8 },

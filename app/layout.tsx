@@ -5,6 +5,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ThemeProvider from "@/components/ThemeProvider";
 import { defaultDescription, defaultKeywords, defaultOpenGraphImage, defaultTitle, siteJsonLd, siteName, siteUrl } from "./seo";
 
 const manrope = Manrope({ subsets: ["latin"] });
@@ -61,13 +62,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${manrope.className} site-shell text-slate-900 antialiased`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
-        />
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+          />
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-R5GXYQ84NP" />
     </html>

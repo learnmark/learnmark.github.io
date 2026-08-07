@@ -9,6 +9,12 @@ const footerSections = [
     ],
   },
   {
+    title: 'Services',
+    links: [
+      { name: 'Shopify Store Development', href: '/services/shopify' },
+    ],
+  },
+  {
     title: 'Solutions',
     links: [
       { name: 'AI Consulting', href: '/solutions/ai' },
@@ -46,12 +52,12 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_2.1fr]">
           <div>
-            <a href="/" className="inline-flex rounded-full bg-white px-4 py-3 shadow-sm">
+            <a href="/" className="theme-light-surface inline-flex rounded-full bg-white px-4 py-3 shadow-sm">
               <span className="sr-only">Learnmark</span>
               <img src="/logo.svg" className="h-9 w-auto" alt="Learnmark Logo" />
             </a>
             <p className="mt-6 max-w-md text-base leading-7 text-slate-400">
-              AI and Cloud consulting for teams building intelligent products, modern platforms, and reliable software delivery systems.
+              AI, Cloud, and Shopify services for teams building intelligent products, modern platforms, and trusted commerce experiences.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -61,15 +67,15 @@ export default function Footer() {
                 Start a project
               </a>
               <a
-                href="/solutions/cloud"
+                href="/services/shopify"
                 className="inline-flex justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold !text-white transition hover:bg-white/10"
               >
-                Explore cloud consulting
+                Explore Shopify development
               </a>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-5">
             {footerSections.map((section) => (
               <div key={section.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                 <h2 className="text-sm font-semibold uppercase tracking-wide text-white">{section.title}</h2>
@@ -96,7 +102,7 @@ export default function Footer() {
             . All Rights Reserved.
           </p>
           <p className="mt-4 text-sm text-slate-500 sm:mt-0">
-            AI strategy. Cloud architecture. Reliable delivery.
+            AI strategy. Cloud architecture. Commerce delivery.
           </p>
         </div>
       </div>

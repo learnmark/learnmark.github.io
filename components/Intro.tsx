@@ -52,7 +52,7 @@ export default function Intro() {
                   <p className="text-sm font-semibold text-slate-950">AI Cloud Operating Model</p>
                   <p className="text-xs text-slate-500">Strategy to production loop</p>
                 </div>
-                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-600/20">Live</span>
+                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-600/20 dark:bg-emerald-950/60 dark:text-emerald-300 dark:ring-emerald-400/30">Live</span>
               </div>
 
               <div className="mt-5 grid gap-3">

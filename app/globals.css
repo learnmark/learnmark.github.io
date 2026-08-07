@@ -1,17 +1,42 @@
 @import url(//db.onlinewebfonts.com/c/e5c490a944bc2b2746f0c851501e46c7?family=AvenirNextW10-Bold);
 @import "tailwindcss";
 @config "../tailwind.config.ts";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --site-background: #f8fafc;
+  --site-surface: #ffffff;
+  --site-surface-muted: #f1f5f9;
+  --site-border: #e2e8f0;
+  --site-border-strong: #cbd5e1;
+  --site-text: #0f172a;
+  --site-text-soft: #334155;
+  --site-text-muted: #475569;
+}
+
+:root.dark {
+  color-scheme: dark;
+  --site-background: #0b0c0f;
+  --site-surface: #14161b;
+  --site-surface-muted: #1b1e25;
+  --site-border: #353a45;
+  --site-border-strong: #4b5260;
+  --site-text: #f8fafc;
+  --site-text-soft: #d8dee9;
+  --site-text-muted: #aab4c3;
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-  background: #f8fafc;
+  background: var(--site-background);
 }
 
 body.site-shell {
-  background-color: #f8fafc;
+  background-color: var(--site-background);
   background-image:
     linear-gradient(to right, rgba(15, 23, 42, 0.07) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(15, 23, 42, 0.07) 1px, transparent 1px),
@@ -19,6 +44,119 @@ body.site-shell {
   background-size: 56px 56px, 56px 56px, 100% 34rem;
   background-position: top left, top left, top center;
   background-repeat: repeat, repeat, no-repeat;
+}
+
+:root.dark body.site-shell {
+  background-image:
+    linear-gradient(to right, rgba(226, 232, 240, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.055) 1px, transparent 1px),
+    radial-gradient(ellipse at top, rgba(136, 19, 55, 0.28), rgba(63, 63, 70, 0.14) 42%, transparent 72%);
+}
+
+:root.dark :where(.text-slate-950, .text-slate-900, .text-gray-900) {
+  color: var(--site-text);
+}
+
+:root.dark :where(.text-slate-800, .text-gray-800) {
+  color: var(--site-text-soft);
+}
+
+:root.dark :where(.text-slate-700, .text-gray-700) {
+  color: #cbd5e1;
+}
+
+:root.dark :where(.text-slate-600, .text-gray-600) {
+  color: var(--site-text-muted);
+}
+
+:root.dark :where(.text-slate-500, .text-gray-500) {
+  color: #94a3b8;
+}
+
+:root.dark :where(.text-primary-900, .text-primary-800, .text-primary-700) {
+  color: #fda4af;
+}
+
+:root.dark :where(.bg-white) {
+  background-color: var(--site-surface);
+}
+
+:root.dark :where(
+  [class~="bg-white/95"],
+  [class~="bg-white/85"],
+  [class~="bg-white/80"],
+  [class~="bg-white/70"],
+  [class~="bg-white/65"]
+) {
+  background-color: rgb(20 22 27 / 0.88);
+}
+
+:root.dark :where(.bg-slate-50, .bg-gray-50, [class~="bg-slate-50/80"]) {
+  background-color: var(--site-surface-muted);
+}
+
+:root.dark :where(.bg-slate-100, .bg-gray-100) {
+  background-color: #242832;
+}
+
+:root.dark :where(.bg-primary-50, .bg-primary-100) {
+  background-color: rgb(136 19 55 / 0.2);
+}
+
+:root.dark :where(.border-slate-200, .border-gray-200, [class~="border-slate-200/80"]) {
+  border-color: var(--site-border);
+}
+
+:root.dark :where(.border-slate-300, .border-gray-300) {
+  border-color: var(--site-border-strong);
+}
+
+:root.dark :where(.divide-slate-200, .divide-gray-200, [class~="divide-slate-900/5"]) > :not(:last-child) {
+  border-color: var(--site-border);
+}
+
+:root.dark :where(
+  .ring-slate-200,
+  .ring-gray-300,
+  .ring-primary-100,
+  [class~="ring-slate-900/5"],
+  [class~="ring-slate-900/10"],
+  [class~="ring-gray-900/5"],
+  [class~="ring-gray-400/10"]
+) {
+  --tw-ring-color: rgb(148 163 184 / 0.22);
+}
+
+:root.dark :where([class~="hover:bg-gray-50"], [class~="hover:bg-gray-100"], [class~="hover:bg-slate-50"], [class~="hover:bg-white"]):hover,
+:root.dark :where([class~="focus:bg-white"]):focus {
+  background-color: #242832;
+}
+
+:root.dark .group:hover :where([class~="group-hover:bg-white"]) {
+  background-color: #242832;
+}
+
+:root.dark :where([class~="hover:text-primary-800"], [class~="hover:text-primary-700"]):hover {
+  color: #fda4af;
+}
+
+:root.dark .theme-toggle {
+  border-color: var(--site-border);
+  background-color: rgb(20 22 27 / 0.88);
+  color: #e2e8f0;
+}
+
+:root.dark .theme-toggle:hover {
+  background-color: #242832;
+}
+
+:root.dark .theme-light-surface {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+:root.dark .theme-logo {
+  filter: brightness(1.45) saturate(0.9);
 }
 
 a {

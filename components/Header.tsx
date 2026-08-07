@@ -16,6 +16,7 @@ import {
   ArrowPathIcon,
   Bars3Icon,
   ChartPieIcon,
+  ComputerDesktopIcon,
   CursorArrowRaysIcon,
   FingerPrintIcon,
   ShoppingBagIcon,
@@ -23,6 +24,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import ThemeToggle from './ThemeToggle'
 
 const products = [
   { name: 'llmxy', description: 'Managed LLM gateway deployment, routing operations, and production support.', href: '/llmxy', icon: SquaresPlusIcon },
@@ -36,6 +38,15 @@ const solutions = [
   { name: 'Platform Engineering', description: 'Build reliable CI/CD, infrastructure as code, and developer platforms.', href: '/solutions/devops', icon: SquaresPlusIcon },
   { name: 'Microservices Modernization', description: 'Evolve monoliths into scalable, observable distributed systems.', href: '/solutions/microservices', icon: FingerPrintIcon },
   { name: 'API & AI Gateway', description: 'Secure, route, observe, and govern API and LLM traffic.', href: '/solutions/gateway', icon: CursorArrowRaysIcon },
+]
+
+const services = [
+  {
+    name: 'Shopify Store Development',
+    description: 'Store setup, theme development, commerce integrations, and launch support for Shopify brands.',
+    href: '/services/shopify',
+    icon: ComputerDesktopIcon,
+  },
 ]
 
 const callsToAction = [
@@ -58,10 +69,11 @@ export default function Example() {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Learnmark</span>
-            <img alt="Learnmark Logo" src="/logo.svg" className="h-8 w-auto" />
+            <img alt="Learnmark Logo" src="/logo.svg" className="theme-logo h-8 w-auto" />
           </a>
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex items-center gap-1 lg:hidden">
+          <ThemeToggle />
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
@@ -84,6 +96,50 @@ export default function Example() {
             >
               <div className="p-4">
                 {products.map((item) => (
+                  <div
+                    key={item.name}
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                  >
+                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-primary-50 ring-1 ring-primary-100 group-hover:bg-white">
+                      <item.icon aria-hidden="true" className="h-6 w-6 text-primary-700" />
+                    </div>
+                    <div className="flex-auto">
+                      <a href={item.href} className="block font-semibold text-slate-900">
+                        {item.name}
+                        <span className="absolute inset-0" />
+                      </a>
+                      <p className="mt-1 text-slate-600">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 divide-x divide-slate-900/5 bg-slate-50">
+                {callsToAction.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-slate-900 hover:bg-white"
+                  >
+                    <item.icon aria-hidden="true" className="h-5 w-5 flex-none text-primary-700" />
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </PopoverPanel>
+          </Popover>
+
+          <Popover className="relative">
+            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-slate-900 focus:outline-none hover:text-primary-800">
+              Services
+              <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
+            </PopoverButton>
+
+            <PopoverPanel
+              transition
+              className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-white/95 shadow-xl shadow-slate-900/10 backdrop-blur-xl transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+            >
+              <div className="p-4">
+                {services.map((item) => (
                   <div
                     key={item.name}
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -187,7 +243,8 @@ export default function Example() {
             About Us
           </a>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden items-center gap-2 lg:flex lg:flex-1 lg:justify-end">
+          <ThemeToggle />
           <a
             href="/contact"
             className="rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold !text-white shadow-sm shadow-slate-900/10 transition-all duration-300 hover:bg-primary-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900"
@@ -203,7 +260,7 @@ export default function Example() {
           <div aria-hidden="true" className="absolute inset-x-0 top-0 -z-10 h-40 rounded-3xl bg-[radial-gradient(ellipse_at_top,rgba(136,19,55,0.32),transparent_68%)]" />
 
           <div className="flex items-center justify-between">
-            <a href="/" className="rounded-full bg-white px-3 py-2 shadow-sm" onClick={() => setMobileMenuOpen(false)}>
+            <a href="/" className="theme-light-surface rounded-full bg-white px-3 py-2 shadow-sm" onClick={() => setMobileMenuOpen(false)}>
               <span className="sr-only">Learnmark</span>
               <img alt="Learnmark Logo" src="/logo.svg" className="h-8 w-auto" />
             </a>
@@ -218,8 +275,8 @@ export default function Example() {
           </div>
 
           <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-            <p className="text-xs font-semibold uppercase text-primary-200">AI + Cloud Consulting</p>
-            <p className="mt-3 text-xl font-bold leading-7 text-white">Build intelligent products on reliable cloud platforms.</p>
+            <p className="text-xs font-semibold uppercase text-primary-200">AI + Cloud + Commerce</p>
+            <p className="mt-3 text-xl font-bold leading-7 text-white">Build intelligent products, reliable platforms, and Shopify stores.</p>
             <a
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
@@ -237,6 +294,30 @@ export default function Example() {
               </DisclosureButton>
               <DisclosurePanel className="space-y-2 border-t border-white/10 p-3">
                 {products.map((item) => (
+                  <DisclosureButton
+                    key={item.name}
+                    as="a"
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex gap-x-3 rounded-xl px-3 py-3 text-left hover:bg-white/[0.06]"
+                  >
+                    <item.icon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-200" />
+                    <span>
+                      <span className="block font-semibold text-white">{item.name}</span>
+                      <span className="mt-1 block text-sm leading-6 text-slate-400">{item.description}</span>
+                    </span>
+                  </DisclosureButton>
+                ))}
+              </DisclosurePanel>
+            </Disclosure>
+
+            <Disclosure as="div" className="rounded-2xl border border-white/10 bg-white/[0.04]">
+              <DisclosureButton className="group flex w-full items-center justify-between px-4 py-4 text-base font-semibold leading-7 text-white">
+                Services
+                <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-slate-400 transition group-data-[open]:rotate-180" />
+              </DisclosureButton>
+              <DisclosurePanel className="space-y-2 border-t border-white/10 p-3">
+                {services.map((item) => (
                   <DisclosureButton
                     key={item.name}
                     as="a"

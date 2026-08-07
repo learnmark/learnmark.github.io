@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRightIcon,
   CheckCircleIcon,
@@ -23,7 +23,7 @@ const initialFormData = {
 const contactHighlights = [
   {
     name: "Focused discovery",
-    description: "We start with goals, constraints, architecture risks, and the delivery context behind the request.",
+    description: "We start with commerce or product goals, customer journeys, constraints, risks, and the delivery context behind the request.",
     icon: LightBulbIcon,
   },
   {
@@ -33,19 +33,27 @@ const contactHighlights = [
   },
   {
     name: "Production mindset",
-    description: "AI, cloud, gateway, and delivery work is shaped around reliability, security, cost, and maintainability.",
+    description: "Shopify, AI, cloud, and delivery work is shaped around usability, reliability, security, performance, and maintainability.",
     icon: ShieldCheckIcon,
   },
 ];
 
-const focusAreas = ["AI strategy", "LLM integration", "Cloud modernization", "Platform engineering", "Gateway architecture", "Delivery coaching"];
-const interestOptions = ["AI Consulting", "Cloud Consulting", "Platform Engineering", "API and AI Gateway", "llmxy", "LetScrum", "Other"];
+const focusAreas = ["Shopify stores", "Custom themes", "AI strategy", "LLM integration", "Cloud modernization", "Platform engineering"];
+const interestOptions = ["Shopify Store Development", "AI Consulting", "Cloud Consulting", "Platform Engineering", "API and AI Gateway", "llmxy", "LetScrum", "Other"];
 const timelineOptions = ["This quarter", "Next quarter", "Exploring options", "Urgent support"];
 
 export default function ContactForm() {
   const [agreed, setAgreed] = useState(false);
   const [formData, setFormData] = useState(initialFormData);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  useEffect(() => {
+    const requestedInterest = new URLSearchParams(window.location.search).get("interest");
+
+    if (requestedInterest && interestOptions.includes(requestedInterest)) {
+      setFormData((prev) => ({ ...prev, interest: requestedInterest }));
+    }
+  }, []);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -92,10 +100,10 @@ export default function ContactForm() {
           <div>
             <p className="text-sm font-semibold uppercase text-primary-700">Contact Learnmark</p>
             <h1 className="mt-5 max-w-xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-              Shape your next AI or cloud initiative.
+              Shape your next Shopify, AI, or cloud initiative.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Tell us what you are trying to build, modernize, or unblock. We will help clarify the technical path and identify the right next conversation.
+              Tell us about the store, product, or platform you are building. We will help clarify the customer experience, technical path, and right next conversation.
             </p>
 
             <div className="mt-7 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2.5">
@@ -242,7 +250,7 @@ export default function ContactForm() {
                   rows={5}
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Briefly describe the product, platform, team, or architecture challenge."
+                  placeholder="Briefly describe the storefront, product, platform, team, or architecture challenge."
                   className="mt-2 block w-full resize-y rounded-xl border-0 bg-slate-50 px-4 py-3 text-slate-900 ring-1 ring-inset ring-slate-200 transition placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm"
                 />
               </div>
