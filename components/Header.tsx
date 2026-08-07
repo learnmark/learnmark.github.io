@@ -63,9 +63,10 @@ type HeaderProps = {
   messages: CommonMessages['header']
   themeToggleLabel: string
   languageSwitcherLabel: string
+  showLanguageSwitcher: boolean
 }
 
-export default function Header({ locale, messages, themeToggleLabel, languageSwitcherLabel }: HeaderProps) {
+export default function Header({ locale, messages, themeToggleLabel, languageSwitcherLabel, showLanguageSwitcher }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const products = productDefinitions.map((item) => ({ ...item, ...messages.products[item.key] }))
   const solutions = solutionDefinitions.map((item) => ({ ...item, ...messages.solutions[item.key] }))
@@ -83,7 +84,7 @@ export default function Header({ locale, messages, themeToggleLabel, languageSwi
           </a>
         </div>
         <div className="flex items-center gap-1 lg:hidden">
-          <LanguageSwitcher locale={locale} label={languageSwitcherLabel} />
+          {showLanguageSwitcher && <LanguageSwitcher locale={locale} label={languageSwitcherLabel} />}
           <ThemeToggle label={themeToggleLabel} />
           <button
             type="button"
@@ -255,7 +256,7 @@ export default function Header({ locale, messages, themeToggleLabel, languageSwi
           </a>
         </PopoverGroup>
         <div className="hidden items-center gap-2 lg:flex lg:flex-1 lg:justify-end">
-          <LanguageSwitcher locale={locale} label={languageSwitcherLabel} />
+          {showLanguageSwitcher && <LanguageSwitcher locale={locale} label={languageSwitcherLabel} />}
           <ThemeToggle label={themeToggleLabel} />
           <a
             href="/contact"

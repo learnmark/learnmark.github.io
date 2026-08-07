@@ -71,6 +71,7 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = commonMessages[locale];
   const pageMessages = homeMessages[locale];
+  const showLanguageSwitcher = process.env.BUILD_OUTPUT_MODE !== 'export';
   const siteJsonLd = createSiteJsonLd({
     description: pageMessages.seoDescription,
     locale,
@@ -85,7 +86,7 @@ export default async function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
           />
-          <Header locale={locale} messages={messages.header} themeToggleLabel={messages.themeToggleLabel} languageSwitcherLabel={messages.languageSwitcherLabel} />
+          <Header locale={locale} messages={messages.header} themeToggleLabel={messages.themeToggleLabel} languageSwitcherLabel={messages.languageSwitcherLabel} showLanguageSwitcher={showLanguageSwitcher} />
           {children}
           <Footer messages={messages.footer} />
         </ThemeProvider>
