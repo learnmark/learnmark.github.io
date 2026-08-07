@@ -117,6 +117,7 @@ export const publicRoutes: MetadataRoute.Sitemap = [
   { url: absoluteUrl('/privacy-policy'), lastModified: '2026-07-01', changeFrequency: 'yearly', priority: 0.3 },
   { url: absoluteUrl('/llmxy'), lastModified: '2026-07-01', changeFrequency: 'weekly', priority: 0.9 },
   { url: absoluteUrl('/letscrum'), lastModified: '2026-07-01', changeFrequency: 'weekly', priority: 0.9 },
+  { url: absoluteUrl('/sello'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.9 },
   { url: absoluteUrl('/solutions/ai'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.8 },
   { url: absoluteUrl('/solutions/cloud'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.8 },
   { url: absoluteUrl('/solutions/microservices'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.8 },

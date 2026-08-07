@@ -18,6 +18,7 @@ import {
   ChartPieIcon,
   CursorArrowRaysIcon,
   FingerPrintIcon,
+  ShoppingBagIcon,
   SquaresPlusIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
@@ -42,8 +43,9 @@ const callsToAction = [
 ]
 
 const openSource = [
-  { name: 'llmxy', description: 'LLM gateway for token routing, provider management, and usage visibility.', href: 'https://github.com/wilsonwu/llmxy', icon: SquaresPlusIcon },
-  { name: 'LetScrum', description: 'Lightweight Agile and Scrum project management system.', href: 'https://github.com/letscrum', icon: CursorArrowRaysIcon },
+  { name: 'llmxy', description: 'LLM gateway for token routing, provider management, and usage visibility.', href: 'https://github.com/wilsonwu/llmxy', icon: SquaresPlusIcon, external: true },
+  { name: 'LetScrum', description: 'Lightweight Agile and Scrum project management system.', href: 'https://github.com/letscrum', icon: CursorArrowRaysIcon, external: true },
+  { name: 'Sello', description: 'AI-assisted workspace for multi-store commerce teams.', href: '/sello', icon: ShoppingBagIcon, external: false },
 ]
 
 export default function Example() {
@@ -165,7 +167,12 @@ export default function Example() {
                       <item.icon aria-hidden="true" className="h-6 w-6 text-primary-700" />
                     </div>
                     <div className="flex-auto">
-                      <a href={item.href} target="_blank" className="block font-semibold text-slate-900">
+                      <a
+                        href={item.href}
+                        target={item.external ? '_blank' : undefined}
+                        rel={item.external ? 'noreferrer' : undefined}
+                        className="block font-semibold text-slate-900"
+                      >
                         {item.name}
                         <span className="absolute inset-0" />
                       </a>
@@ -289,7 +296,8 @@ export default function Example() {
                     key={item.name}
                     as="a"
                     href={item.href}
-                    target="_blank"
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noreferrer' : undefined}
                     onClick={() => setMobileMenuOpen(false)}
                     className="flex gap-x-3 rounded-xl px-3 py-3 text-left hover:bg-white/[0.06]"
                   >
