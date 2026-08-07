@@ -61,7 +61,7 @@ export default function Example() {
               <a href="/contact" className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold !text-white shadow-lg shadow-primary-950/20 transition hover:bg-primary-700">
                 Work with us
               </a>
-              <a href="/solutions/ai" className="inline-flex justify-center rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-primary-300 hover:text-primary-800">
+              <a href="/solutions/ai" className="inline-flex justify-center rounded-full border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-800">
                 Explore AI consulting
               </a>
             </div>

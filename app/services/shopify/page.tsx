@@ -1,12 +1,10 @@
 import Image from 'next/image'
 import {
+  ArrowDownIcon,
   ArrowRightIcon,
   ArrowTopRightOnSquareIcon,
   CircleStackIcon,
-  CodeBracketSquareIcon,
-  CreditCardIcon,
   GlobeAltIcon,
-  MagnifyingGlassIcon,
   PaintBrushIcon,
   RocketLaunchIcon,
   ShoppingBagIcon,
@@ -40,35 +38,68 @@ const shopifyJsonLd = [
   ]),
 ]
 
-const capabilities = [
+const launchBarriers = [
   {
-    name: 'Store strategy & architecture',
-    description: 'Shape the storefront around your markets, products, customers, navigation, content, and operational requirements.',
-    icon: Squares2X2Icon,
-  },
-  {
-    name: 'Store setup & configuration',
-    description: 'Configure markets, domains, payments, shipping, taxes, policies, customer accounts, and the settings behind daily operations.',
+    name: 'Configuration is interconnected',
+    description: 'Markets, domains, payments, shipping, tax, policies, and customer accounts must agree before real orders can flow safely.',
     icon: WrenchScrewdriverIcon,
   },
   {
-    name: 'Custom theme development',
-    description: 'Build responsive Shopify theme sections and templates that express your brand and remain practical for your team to manage.',
+    name: 'Catalog structure comes first',
+    description: 'Products, variants, collections, filters, metafields, and URLs need a model that still works as the range grows.',
+    icon: Squares2X2Icon,
+  },
+  {
+    name: 'A theme is only a starting point',
+    description: 'Brand expression, mobile behavior, accessibility, performance, and editable sections require deliberate theme engineering.',
     icon: PaintBrushIcon,
   },
   {
-    name: 'Catalog & merchandising',
-    description: 'Structure products, variants, collections, search, filters, product content, recommendations, and personalized purchase paths.',
-    icon: ShoppingBagIcon,
-  },
-  {
-    name: 'Apps & integrations',
-    description: 'Connect payments, analytics, email, fulfillment, customer service, and custom APIs without weighing down the buying experience.',
+    name: 'Every app is an architecture choice',
+    description: 'Overlapping apps add recurring cost, slow pages, fragment data, and create dependencies that become difficult to remove.',
     icon: CircleStackIcon,
   },
   {
-    name: 'Quality, launch & support',
-    description: 'Test responsive behavior, accessibility, performance, SEO, analytics, and critical purchase flows before and after launch.',
+    name: 'International selling multiplies rules',
+    description: 'Currencies, regional pricing, duties, delivery promises, translations, and consent requirements change by market.',
+    icon: GlobeAltIcon,
+  },
+  {
+    name: 'Going live requires evidence',
+    description: 'Test orders, analytics, SEO, redirects, email, fulfillment, legal content, and team workflows all need validation.',
+    icon: RocketLaunchIcon,
+  },
+]
+
+const capabilities = [
+  {
+    name: 'Commerce strategy & architecture',
+    description: 'Turn markets, products, customer journeys, content, and operating requirements into an implementation-ready store plan.',
+    icon: Squares2X2Icon,
+  },
+  {
+    name: 'Configuration, Markets & checkout',
+    description: 'Configure domains, Shopify Markets, payments, shipping, taxes, policies, customer accounts, and the settings behind daily trade.',
+    icon: WrenchScrewdriverIcon,
+  },
+  {
+    name: 'Shopify theme & Liquid development',
+    description: 'Build responsive sections, templates, and theme logic that express the brand while remaining practical for teams to manage.',
+    icon: PaintBrushIcon,
+  },
+  {
+    name: 'Catalog, variants & store data',
+    description: 'Model products, variants, collections, metafields, filters, search, product content, recommendations, and migration data.',
+    icon: ShoppingBagIcon,
+  },
+  {
+    name: 'App selection & integrations',
+    description: 'Choose the smallest useful app stack and connect analytics, email, fulfillment, support, ERP, and custom APIs cleanly.',
+    icon: CircleStackIcon,
+  },
+  {
+    name: 'Launch QA, training & support',
+    description: 'Validate orders, mobile behavior, accessibility, performance, SEO, analytics, and operations, then prepare the team to run the store.',
     icon: RocketLaunchIcon,
   },
 ]
@@ -80,45 +111,22 @@ const process = [
   { step: '04', name: 'Launch', description: 'Validate the full purchase path, train the team, release the store, and support measured iteration.' },
 ]
 
-const caseFacts = [
-  { value: '4', label: 'primary category paths on the homepage' },
-  { value: '10', label: 'payment methods presented at checkout' },
-  { value: '6', label: 'international service regions' },
-  { value: 'End-to-end', label: 'journey from discovery to support' },
-]
-
-const caseScope = [
+const caseStudies = [
   {
-    name: 'Brand-led responsive storefront',
-    description: 'A warm, practical visual system carries MooGoo from its first-viewport brand promise through category discovery, editorial content, and mobile navigation.',
+    slug: 'moogoo',
+    name: 'MooGoo',
+    category: 'International direct-to-consumer pet supplies',
+    summary: 'A Shopify storefront that turns a varied pet-accessory catalog into a clear path from product discovery to checkout and support.',
+    href: 'https://imoogoo.com',
+    image: '/images/shopify/moogoo-hero.webp',
+    imageAlt: 'MooGoo Shopify storefront for everyday pet essentials',
+    services: ['Store configuration', 'Theme development', 'Catalog architecture', 'International commerce'],
+    delivered: [
+      'Need-led collection navigation and responsive merchandising',
+      'Detailed product pages with variants and structured buying information',
+      'Regional currencies, multiple payment methods, accounts, policies, and support paths',
+    ],
   },
-  {
-    name: 'Catalog built for discovery',
-    description: 'Customers can browse by pet and need, including Walk & Travel, Feeding & Hydration, Toys & Enrichment, Beds & Home, Pet Apparel, Personalized, and Gifts.',
-  },
-  {
-    name: 'Detailed product decisions',
-    description: 'Product pages combine image galleries, variants, materials, dimensions, care information, shipping guidance, quantity controls, and installment messaging.',
-  },
-  {
-    name: 'Connected customer journey',
-    description: 'Search, customer accounts, cart, newsletter signup, contact, support, and policy content form one consistent experience around the catalog.',
-  },
-  {
-    name: 'International commerce foundation',
-    description: 'Regional selection, localized currencies, global service information, delivery guidance, and ten visible payment methods support cross-border shopping.',
-  },
-  {
-    name: 'Trust at every stage',
-    description: 'Free-shipping messaging, clear product information, customer support, returns, privacy, terms, and legal content reduce uncertainty before purchase.',
-  },
-]
-
-const categoryImages = [
-  { name: 'Walk & Travel', description: 'Out-the-door essentials', src: '/images/shopify/moogoo-walk-travel.webp' },
-  { name: 'Feeding & Hydration', description: 'Practical bowls and drinkware', src: '/images/shopify/moogoo-feeding.webp' },
-  { name: 'Toys & Enrichment', description: 'Products made for busy paws', src: '/images/shopify/moogoo-toys.webp' },
-  { name: 'Beds & Home', description: 'Soft places to land', src: '/images/shopify/moogoo-beds.webp' },
 ]
 
 export default function ShopifyStoreDevelopmentPage() {
@@ -126,26 +134,18 @@ export default function ShopifyStoreDevelopmentPage() {
     <>
       <JsonLd data={shopifyJsonLd} />
       <main className="relative isolate overflow-hidden">
-        <section className="relative flex min-h-[calc(100svh-8rem)] max-h-[760px] min-h-150 items-end overflow-hidden sm:items-center">
-          <Image
-            priority
-            fill
-            src="/images/shopify/moogoo-hero.webp"
-            alt="MooGoo Shopify storefront featuring a dog and cat with everyday pet products"
-            className="object-cover object-[62%_center]"
-            sizes="100vw"
-          />
-          <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,23,42,0.94)_0%,rgba(15,23,42,0.82)_43%,rgba(15,23,42,0.2)_78%,rgba(15,23,42,0.08)_100%)]" />
-          <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950/55 to-transparent" />
+        <section className="relative flex min-h-[calc(100svh-8rem)] min-h-150 items-center overflow-hidden bg-transparent px-6 py-20 lg:px-8">
+          <div aria-hidden="true" className="absolute inset-y-0 right-[12%] w-px bg-primary-700/20 dark:bg-primary-500/35" />
+          <div aria-hidden="true" className="absolute inset-y-0 right-[28%] w-px bg-slate-200 dark:bg-white/10" />
 
-          <div className="relative mx-auto w-full max-w-7xl px-6 pb-14 pt-24 lg:px-8 lg:py-20">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase text-emerald-300">Shopify Store Development</p>
-              <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Shopify stores built for how your brand sells.
+          <div className="relative mx-auto w-full max-w-7xl pt-6">
+            <div className="max-w-4xl">
+              <p className="text-sm font-semibold uppercase text-emerald-700 dark:text-emerald-300">Shopify Store Development</p>
+              <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
+                Shopify store development, without the setup maze.
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
-                From store configuration and custom theme development to catalogs, integrations, and launch, we build commerce experiences customers can trust and teams can operate.
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-200 sm:text-xl">
+                Shopify makes it easy to open an account. Making the store ready for customers, search engines, payments, fulfillment, and your internal team is the harder part. We take ownership from architecture to launch.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -156,34 +156,89 @@ export default function ShopifyStoreDevelopmentPage() {
                   <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
                 </a>
                 <a
-                  href="#moogoo-case-study"
-                  className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold !text-white backdrop-blur-sm transition hover:bg-white/20"
+                  href="#shopify-barriers"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-900 backdrop-blur-sm transition hover:bg-slate-50 dark:border-white/40 dark:bg-white/10 dark:!text-white dark:hover:bg-white/20"
                 >
-                  See the MooGoo case study
+                  See what makes launch difficult
                 </a>
               </div>
+            </div>
+
+            <div className="mt-12 border-t border-slate-200 pt-6 dark:border-white/15">
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400">Selected Shopify work</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">{caseStudies.length} {caseStudies.length === 1 ? 'case study' : 'case studies'}</p>
+              </div>
+              <div className="mt-4 flex gap-3 overflow-x-auto pb-1">
+                {caseStudies.map((caseStudy, index) => (
+                  <a
+                    key={caseStudy.slug}
+                    href={`#case-study-${caseStudy.slug}`}
+                    className="group flex w-72 flex-none items-center gap-4 rounded-lg border border-slate-200 bg-white/80 p-2.5 shadow-sm transition hover:border-primary-300 hover:bg-white dark:border-white/15 dark:bg-white/[0.06] dark:hover:border-primary-300 dark:hover:bg-white/10"
+                  >
+                    <span className="relative h-16 w-20 flex-none overflow-hidden rounded-md bg-slate-100">
+                      <Image
+                        fill
+                        priority={index === 0}
+                        src={caseStudy.image}
+                        alt=""
+                        className="object-cover"
+                        sizes="80px"
+                      />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block font-semibold text-slate-950">{caseStudy.name}</span>
+                      <span className="mt-1 block truncate text-xs text-slate-500">{caseStudy.category}</span>
+                    </span>
+                    <ArrowDownIcon aria-hidden="true" className="h-4 w-4 flex-none text-primary-700 transition group-hover:translate-y-0.5" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 grid border-y border-slate-200 dark:border-white/15 sm:grid-cols-3">
+              {[
+                { name: 'Storefront', detail: 'Theme, content, search, conversion' },
+                { name: 'Commerce', detail: 'Catalog, markets, checkout, payments' },
+                { name: 'Operations', detail: 'Apps, analytics, fulfillment, support' },
+              ].map((area) => (
+                <div key={area.name} className="border-b border-slate-200 py-5 last:border-b-0 dark:border-white/15 sm:border-b-0 sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0">
+                  <p className="text-xs font-semibold uppercase text-primary-700 dark:text-primary-200">{area.name}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{area.detail}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="border-y border-slate-200 bg-white/85 px-6 py-8 backdrop-blur-xl lg:px-8">
-          <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-7 lg:grid-cols-4">
-            {['Store configuration', 'Custom Shopify themes', 'Commerce integrations', 'Launch & optimization'].map((item, index) => (
-              <div key={item} className="flex items-start gap-3">
-                <span className="mt-0.5 text-sm font-bold text-primary-700">0{index + 1}</span>
-                <p className="text-sm font-semibold leading-6 text-slate-900">{item}</p>
-              </div>
-            ))}
+        <section id="shopify-barriers" className="scroll-mt-24 border-b border-slate-200 bg-white/85 px-6 py-20 backdrop-blur-xl sm:py-24 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+            <div>
+              <p className="text-sm font-semibold uppercase text-primary-700">The real Shopify learning curve</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">A store can look open long before it is ready to trade.</h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                The platform removes infrastructure work, but it does not make the decisions across merchandising, customer experience, integrations, compliance, and operations. Those decisions are where launches slow down and avoidable rework begins.
+              </p>
+            </div>
+            <div className="grid border-t border-slate-200 sm:grid-cols-2">
+              {launchBarriers.map((barrier, index) => (
+                <article key={barrier.name} className={`border-b border-slate-200 py-6 sm:px-6 ${index % 2 === 0 ? 'sm:border-r sm:pl-0' : 'sm:pr-0'}`}>
+                  <barrier.icon aria-hidden="true" className="h-6 w-6 text-primary-700" />
+                  <h3 className="mt-4 font-semibold text-slate-950">{barrier.name}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{barrier.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="px-6 py-20 sm:py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase text-primary-700">What we deliver</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">A complete Shopify build, not just a theme install.</h2>
+              <p className="text-sm font-semibold uppercase text-primary-700">What Learnmark takes ownership of</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">The specialist work between signup and a dependable store.</h2>
               <p className="mt-5 text-lg leading-8 text-slate-600">
-                We connect the visible storefront to the configuration, content, integrations, and operating model that make it useful after launch.
+                We connect the visible storefront to the configuration, data, integrations, quality controls, and operating model that make it useful after launch.
               </p>
             </div>
 
@@ -222,128 +277,54 @@ export default function ShopifyStoreDevelopmentPage() {
           </div>
         </section>
 
-        <section id="moogoo-case-study" className="scroll-mt-24 px-6 py-20 sm:py-28 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div className="max-w-4xl">
-                <p className="text-sm font-semibold uppercase text-emerald-700">Success story · MooGoo</p>
-                <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">Turning everyday pet care into a clear, global shopping experience.</h2>
-                <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-                  MooGoo needed a storefront that could make a broad pet-accessory catalog feel approachable while supporting product detail, personalized ranges, international customers, and the trust signals shoppers expect from a modern store.
-                </p>
-              </div>
-              <a
-                href="https://imoogoo.com"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-primary-800 transition hover:text-primary-700"
-              >
-                Visit the live store
-                <ArrowTopRightOnSquareIcon aria-hidden="true" className="h-4 w-4" />
-              </a>
+        <section id="shopify-work" className="scroll-mt-24 border-b border-slate-200 px-6 py-20 sm:py-24 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.6fr_1.4fr] lg:gap-16">
+            <div>
+              <p className="text-sm font-semibold uppercase text-emerald-700">Selected Shopify work</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">How the capability shows up in real stores.</h2>
+              <p className="mt-5 text-base leading-7 text-slate-600">
+                Each engagement applies the same delivery disciplines to a different brand, catalog, market, and operating model. This collection will grow as more stores launch.
+              </p>
             </div>
 
-            <div className="relative mt-12 aspect-[16/9] min-h-80 overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-2xl shadow-slate-900/10">
-              <Image
-                fill
-                src="/images/shopify/moogoo-hero.webp"
-                alt="MooGoo homepage hero for everyday pet essentials"
-                className="object-cover"
-                sizes="(min-width: 1280px) 1216px, 100vw"
-              />
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 bg-gradient-to-t from-slate-950/80 to-transparent px-5 pb-5 pt-24 sm:px-8 sm:pb-8">
-                <div>
-                  <p className="text-xs font-semibold uppercase text-emerald-200">MooGoo</p>
-                  <p className="mt-2 max-w-xl text-lg font-semibold text-white sm:text-2xl">Everyday essentials for life with pets</p>
-                </div>
-                <span className="hidden rounded-full border border-white/25 bg-slate-950/30 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm sm:inline-flex">Live Shopify store</span>
-              </div>
-            </div>
+            <div className="grid gap-6">
+              {caseStudies.map((caseStudy) => (
+                <article id={`case-study-${caseStudy.slug}`} key={caseStudy.slug} className="scroll-mt-28 grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm sm:grid-cols-[0.85fr_1.15fr]">
+                  <div className="relative min-h-64 bg-slate-100 sm:min-h-full">
+                    <Image fill src={caseStudy.image} alt={caseStudy.imageAlt} className="object-cover" sizes="(min-width: 1024px) 33vw, 100vw" />
+                  </div>
+                  <div className="p-6 sm:p-8">
+                    <p className="text-xs font-semibold uppercase text-emerald-700">{caseStudy.category}</p>
+                    <h3 className="mt-3 text-2xl font-bold tracking-tight text-slate-950">{caseStudy.name}</h3>
+                    <p className="mt-4 text-sm leading-6 text-slate-600">{caseStudy.summary}</p>
 
-            <dl className="mt-10 grid grid-cols-2 border-y border-slate-200 lg:grid-cols-4">
-              {caseFacts.map((fact) => (
-                <div key={fact.label} className="border-slate-200 px-4 py-7 first:pl-0 odd:border-r lg:border-r lg:last:border-r-0 lg:px-7">
-                  <dt className="text-2xl font-bold text-slate-950 sm:text-3xl">{fact.value}</dt>
-                  <dd className="mt-2 text-xs leading-5 text-slate-500 sm:text-sm">{fact.label}</dd>
-                </div>
-              ))}
-            </dl>
-
-            <div className="mt-20 grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
-              <div>
-                <p className="text-sm font-semibold uppercase text-primary-700">The delivered experience</p>
-                <h3 className="mt-4 text-3xl font-bold tracking-tight text-slate-950">Every customer-facing detail works as one store.</h3>
-                <p className="mt-5 text-base leading-7 text-slate-600">
-                  The storefront joins merchandising and operations rather than treating them as separate layers. Customers can understand the brand, find the right range, evaluate a product, complete a purchase, and get support without leaving the same visual and content system.
-                </p>
-              </div>
-              <div className="grid border-t border-slate-200 sm:grid-cols-2">
-                {caseScope.map((item, index) => (
-                  <article key={item.name} className={`border-b border-slate-200 py-6 sm:px-6 ${index % 2 === 0 ? 'sm:border-r sm:pl-0' : 'sm:pr-0'}`}>
-                    <h4 className="font-semibold text-slate-950">{item.name}</h4>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-20">
-              <div className="max-w-3xl">
-                <p className="text-sm font-semibold uppercase text-primary-700">Merchandising system</p>
-                <h3 className="mt-4 text-3xl font-bold tracking-tight text-slate-950">Multiple ways into the catalog, one coherent brand.</h3>
-                <p className="mt-5 text-base leading-7 text-slate-600">
-                  Need-based category imagery helps customers move quickly from the homepage into focused collections while preserving the practical, companionable MooGoo identity.
-                </p>
-              </div>
-              <div className="mt-10 grid grid-cols-1 gap-x-5 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
-                {categoryImages.map((category) => (
-                  <figure key={category.name}>
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-slate-100">
-                      <Image fill src={category.src} alt={`${category.name} category on the MooGoo Shopify store`} className="object-cover" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {caseStudy.services.map((service) => (
+                        <span key={service} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700">{service}</span>
+                      ))}
                     </div>
-                    <figcaption className="mt-4">
-                      <p className="font-semibold text-slate-950">{category.name}</p>
-                      <p className="mt-1 text-sm text-slate-500">{category.description}</p>
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
-            </div>
 
-            <div className="mt-20 grid items-center gap-10 border-y border-slate-200 py-12 lg:grid-cols-2 lg:gap-16 lg:py-16">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-slate-100">
-                  <Image fill src="/images/shopify/moogoo-product-hammock.jpg" alt="MooGoo product photography for a hanging cat hammock" className="object-cover" sizes="(min-width: 1024px) 25vw, 50vw" />
-                </div>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-slate-100">
-                  <Image fill src="/images/shopify/moogoo-personalized.webp" alt="MooGoo personalized pet accessories collection" className="object-cover" sizes="(min-width: 1024px) 25vw, 50vw" />
-                </div>
-              </div>
-              <div>
-                <p className="text-sm font-semibold uppercase text-emerald-700">From product to relationship</p>
-                <h3 className="mt-4 text-3xl font-bold tracking-tight text-slate-950">Detailed products, personalized paths, and reasons to return.</h3>
-                <p className="mt-5 text-base leading-7 text-slate-600">
-                  Rich product media and structured specifications support confident decisions. A dedicated personalized collection path creates room for made-for-your-pet offers, while customer accounts and email updates extend the relationship beyond a single order.
-                </p>
-                <div className="mt-7 grid gap-4 sm:grid-cols-2">
-                  <div className="flex gap-3">
-                    <MagnifyingGlassIcon aria-hidden="true" className="mt-0.5 h-5 w-5 flex-none text-primary-700" />
-                    <p className="text-sm leading-6 text-slate-600"><strong className="text-slate-950">Clear evaluation:</strong> imagery, variants, dimensions, materials, care, and delivery information.</p>
+                    <ul className="mt-6 space-y-2 border-t border-slate-200 pt-5">
+                      {caseStudy.delivered.map((item) => (
+                        <li key={item} className="flex gap-3 text-sm leading-6 text-slate-600">
+                          <span aria-hidden="true" className="mt-2.5 h-1 w-1 flex-none rounded-full bg-primary-700" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <a
+                      href={caseStudy.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary-800 transition hover:text-primary-700"
+                    >
+                      Visit the live store
+                      <ArrowTopRightOnSquareIcon aria-hidden="true" className="h-4 w-4" />
+                    </a>
                   </div>
-                  <div className="flex gap-3">
-                    <CreditCardIcon aria-hidden="true" className="mt-0.5 h-5 w-5 flex-none text-primary-700" />
-                    <p className="text-sm leading-6 text-slate-600"><strong className="text-slate-950">Flexible checkout:</strong> regional currencies, installment messaging, and familiar payment methods.</p>
-                  </div>
-                  <div className="flex gap-3">
-                    <GlobeAltIcon aria-hidden="true" className="mt-0.5 h-5 w-5 flex-none text-primary-700" />
-                    <p className="text-sm leading-6 text-slate-600"><strong className="text-slate-950">Global readiness:</strong> clear international coverage and destination-aware delivery.</p>
-                  </div>
-                  <div className="flex gap-3">
-                    <CodeBracketSquareIcon aria-hidden="true" className="mt-0.5 h-5 w-5 flex-none text-primary-700" />
-                    <p className="text-sm leading-6 text-slate-600"><strong className="text-slate-950">Manageable system:</strong> reusable theme sections keep content changes practical.</p>
-                  </div>
-                </div>
-              </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
