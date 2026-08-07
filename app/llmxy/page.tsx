@@ -1,12 +1,13 @@
 import { ArrowsRightLeftIcon, BoltIcon, ChartBarIcon, CpuChipIcon, ShieldCheckIcon } from '@heroicons/react/20/solid'
 import JsonLd from '@/components/JsonLd'
+import ProductEdition from '@/components/ProductEdition'
 import { createBreadcrumbJsonLd, createPageMetadata, createSoftwareApplicationJsonLd } from '../seo'
 
-const llmxyDescription = 'llmxy is an LLM token distribution and intelligent routing solution that helps teams manage, balance, and optimize traffic across multiple large language model providers.'
-const llmxyKeywords = ['llmxy', 'LLM gateway', 'LLM routing', 'token distribution', 'multi-provider LLM API', 'AI billing analytics']
+const llmxyDescription = 'The managed llmxy product helps teams operate a production LLM gateway with provider routing, access controls, usage billing, monitored deployment, and implementation support.'
+const llmxyKeywords = ['llmxy', 'managed LLM gateway', 'LLM routing', 'multi-provider LLM API', 'AI billing analytics', 'LLM gateway operations']
 
 export const metadata = createPageMetadata({
-  title: 'llmxy - LLM Token Distribution and Intelligent Routing',
+  title: 'llmxy - Managed LLM Gateway Operations',
   description: llmxyDescription,
   path: '/llmxy',
   keywords: llmxyKeywords,
@@ -62,6 +63,25 @@ const screenshots = [
   },
 ]
 
+const managedFeatures = [
+  {
+    name: 'Managed private deployment',
+    description: 'Provision llmxy in a dedicated Learnmark-managed or customer-controlled environment with repeatable releases, encrypted configuration, backups, and rollback procedures.',
+  },
+  {
+    name: 'Provider and routing onboarding',
+    description: 'Connect approved model providers, map model names, define route weights and policies, and validate failover behavior against your applications before rollout.',
+  },
+  {
+    name: 'Production observability',
+    description: 'Add environment-level metrics, alerting, capacity reviews, usage reconciliation, and operational runbooks around the gateway and its data services.',
+  },
+  {
+    name: 'Upgrade and incident support',
+    description: 'Receive coordinated upgrades, change reviews, troubleshooting, and a clear escalation path instead of operating the open-source stack alone.',
+  },
+]
+
 export default function Example() {
   return (
     <>
@@ -72,10 +92,10 @@ export default function Example() {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-primary-600">AI Infrastructure</p>
+              <p className="text-base font-semibold leading-7 text-primary-600">Managed AI Infrastructure</p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">llmxy</h1>
               <p className="mt-6 text-xl leading-8 text-gray-700">
-                LLM token distribution and intelligent routing solution. Unify access to multiple large language model providers, balance token usage, and route every request to the best-fit model automatically.
+                Operate one production gateway for multiple model providers with controlled routing, OpenAI-compatible APIs, usage visibility, and a managed path from deployment to day-two operations.
               </p>
             </div>
           </div>
@@ -91,25 +111,25 @@ export default function Example() {
           <div className="lg:pr-4">
             <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
               <p>
-                llmxy sits in front of your LLM providers as a unified gateway. It distributes tokens across accounts and keys, routes each request to the most suitable model based on cost, latency, and capability, and gives you full visibility into how your AI workloads consume resources.
+                llmxy sits between your applications and model providers as a unified control plane. Teams keep a stable client protocol while operators configure upstream channels, models, route policies, quotas, and billing from one place.
               </p>
               <ul role="list" className="mt-8 space-y-8 text-gray-600">
                 <li className="flex gap-x-3">
                   <ArrowsRightLeftIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
                   <span>
-                    <strong className="font-semibold text-gray-900">Intelligent Routing.</strong> Route requests to the optimal model and provider based on prompt characteristics, cost, latency, and availability.
+                    <strong className="font-semibold text-gray-900">Operator-controlled routing.</strong> Configure upstream channels, model mappings, route policies, and weights without changing application clients.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
                   <BoltIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
                   <span>
-                    <strong className="font-semibold text-gray-900">Token Distribution.</strong> Pool and distribute tokens across multiple keys and accounts with quota controls, rate limiting, and automatic failover.
+                    <strong className="font-semibold text-gray-900">Gateway enforcement.</strong> Apply authentication, balance and quota checks, rate limiting, usage recording, and billing consistently at the gateway.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
                   <CpuChipIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
                   <span>
-                    <strong className="font-semibold text-gray-900">Multi-Provider Support.</strong> One unified API in front of OpenAI, Anthropic, and other major LLM providers — switch or mix without changing your application code.
+                    <strong className="font-semibold text-gray-900">Multi-provider access.</strong> Use an OpenAI-compatible protocol in front of OpenAI, Anthropic, Gemini, and translated upstream responses.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
@@ -121,13 +141,21 @@ export default function Example() {
                 <li className="flex gap-x-3">
                   <ShieldCheckIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
                   <span>
-                    <strong className="font-semibold text-gray-900">Secure by Design.</strong> Centralized key management, request auditing, and policy enforcement keep your AI traffic compliant and safe.
+                    <strong className="font-semibold text-gray-900">Two relay paths.</strong> Start with the direct FastAPI relay or add the optional Envoy path for higher-throughput traffic and asynchronous usage reporting.
                   </span>
                 </li>
               </ul>
               <p className="mt-8">
-                Built for modern cloud-native environments, llmxy is lightweight, horizontally scalable, and easy to deploy. Stop managing keys, quotas, and provider quirks by hand — let llmxy handle the plumbing so your team can focus on building great AI products.
+                The Learnmark product turns that open-source foundation into an operated gateway environment, with deployment engineering, provider onboarding, production controls, and an accountable support path.
               </p>
+
+              <ProductEdition
+                projectName="llmxy"
+                description="The repository provides the gateway software. The Learnmark product adds the engineering and operational layer required to introduce it into a production platform and keep it healthy over time."
+                features={managedFeatures}
+                openSourceHref="/open-source/llmxy"
+              />
+
               <div className="mt-16">
                 <h2 className="text-2xl font-bold tracking-tight text-gray-900">Product Screenshots</h2>
                 <p className="mt-6">
@@ -150,17 +178,16 @@ export default function Example() {
                   ))}
                 </div>
               </div>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Open Source & Enterprise Ready</h2>
+              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">An open foundation with an operated product path</h2>
               <p className="mt-6">
-                llmxy is open source and community driven. Use the community edition to get started in minutes, or talk to us about enterprise deployments with advanced security, multi-tenant isolation, and dedicated support.
+                Inspect and self-host the llmxy source code, or use the Learnmark product when your team needs implementation, environment ownership, controlled upgrades, and production support.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <a
-                  href="https://github.com/wilsonwu/llmxy"
-                  target="_blank"
+                  href="/open-source/llmxy"
                   className="rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold text-white! shadow-sm hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900 transition-all duration-300"
                 >
-                  View on GitHub
+                  Explore Open Source
                 </a>
                 <a href="/contact" className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary-800">
                   Contact Sales <span aria-hidden="true">→</span>

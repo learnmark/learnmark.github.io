@@ -1,12 +1,13 @@
-import { ChartBarIcon, CpuChipIcon, ServerIcon, ShieldCheckIcon, UserGroupIcon } from '@heroicons/react/20/solid'
+import { ChartBarIcon, ChatBubbleLeftRightIcon, CpuChipIcon, ServerIcon, ShieldCheckIcon, UserGroupIcon } from '@heroicons/react/20/solid'
 import JsonLd from '@/components/JsonLd'
+import ProductEdition from '@/components/ProductEdition'
 import { createBreadcrumbJsonLd, createPageMetadata } from '../seo'
 
-const selloDescription = 'Sello is an open-source intelligent SaaS workspace designed to help e-commerce sellers connect stores, organize operations, and turn AI guidance into reviewed actions.'
-const selloKeywords = ['Sello', 'open source e-commerce SaaS', 'AI commerce assistant', 'multi-tenant commerce platform', 'product listing optimization']
+const selloDescription = 'The managed Sello product gives e-commerce teams an operated workspace for store connections, unified listings, AI-assisted content, customer replies, tenant controls, and production support.'
+const selloKeywords = ['Sello', 'managed e-commerce SaaS', 'AI commerce assistant', 'multi-store commerce platform', 'product listing optimization', 'e-commerce operations']
 
 export const metadata = createPageMetadata({
-  title: 'Sello - Open Source AI Commerce Assistant',
+  title: 'Sello - Managed AI Commerce Workspace',
   description: selloDescription,
   path: '/sello',
   keywords: selloKeywords,
@@ -20,27 +21,32 @@ const selloJsonLd = createBreadcrumbJsonLd([
 const capabilities = [
   {
     name: 'Connected store operations',
-    description: 'Bring store connections, authorization state, synchronization status, and operational context into one tenant-aware workspace.',
+    description: 'Manage store authorization, synchronization state, errors, and operational context from one tenant-aware workspace.',
     icon: ServerIcon,
   },
   {
     name: 'Unified product workspace',
-    description: 'Normalize listings from different commerce platforms so teams can review product content, inventory context, and store data consistently.',
+    description: 'Review listings from different commerce platforms through a consistent product model while retaining source-platform context.',
     icon: ChartBarIcon,
   },
   {
     name: 'AI-assisted optimization',
-    description: 'Generate reviewable suggestions for listing titles and descriptions using managed AI or a tenant-controlled model provider.',
+    description: 'Generate reviewable title and description suggestions using managed AI or an approved tenant-controlled provider.',
     icon: CpuChipIcon,
   },
   {
-    name: 'Team-ready SaaS foundation',
-    description: 'Separate tenant and platform administration with member roles, scoped permissions, account lifecycle controls, and audit-aware operations.',
+    name: 'Customer reply assistance',
+    description: 'Turn a customer question and selected product context into an editable reply draft that support staff review before sending.',
+    icon: ChatBubbleLeftRightIcon,
+  },
+  {
+    name: 'Team and tenant controls',
+    description: 'Separate customer workspaces from platform administration with member roles, scoped permissions, and account lifecycle controls.',
     icon: UserGroupIcon,
   },
   {
     name: 'Human-controlled workflows',
-    description: 'Keep AI-generated listing improvements, customer reply drafts, and future operational tasks visible and subject to user confirmation.',
+    description: 'Keep AI-generated listing improvements, reply drafts, and operational actions visible, editable, and subject to user confirmation.',
     icon: ShieldCheckIcon,
   },
 ]
@@ -52,7 +58,30 @@ const productSurfaces = [
   { name: 'API', detail: 'Shared FastAPI service for identity, tenancy, data, and integrations' },
 ]
 
-const technology = ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'FastAPI', 'Python', 'PostgreSQL', 'pnpm workspace']
+const managedFeatures = [
+  {
+    name: 'Marketplace connector delivery',
+    description: 'Implement and validate selected store connections, credential lifecycles, field mappings, synchronization schedules, retries, and platform-specific error handling.',
+  },
+  {
+    name: 'Tenant onboarding and controls',
+    description: 'Provision customer tenants, establish owner and team roles, configure environment boundaries, and apply operational policies for each organization.',
+  },
+  {
+    name: 'AI provider governance',
+    description: 'Configure managed or customer-owned model providers, approved models, feature access, usage visibility, and review requirements for generated content.',
+  },
+  {
+    name: 'Managed data and operations',
+    description: 'Operate releases, backups, monitored synchronization jobs, incident triage, data repair procedures, and ongoing platform support.',
+  },
+]
+
+const screenshotCoverage = [
+  { name: 'Seller workspace', detail: 'Dashboard, tenant context, team access, and operational priorities' },
+  { name: 'Stores and listings', detail: 'Connections, synchronization state, normalized products, and content review' },
+  { name: 'AI and administration', detail: 'Provider settings, generated drafts, usage controls, tenants, and platform operations' },
+]
 
 export default function Sello() {
   return (
@@ -62,30 +91,26 @@ export default function Sello() {
         <section className="px-6 pb-20 pt-24 sm:pb-28 sm:pt-32 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
             <div className="max-w-3xl">
-              <p className="text-base font-semibold leading-7 text-primary-700">Open Source Commerce Platform</p>
+              <p className="text-base font-semibold leading-7 text-primary-700">Managed Commerce Operations</p>
               <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl">Sello</h1>
               <p className="mt-6 text-xl leading-8 text-slate-700">
-                An intelligent SaaS workspace for e-commerce sellers who want to connect store operations, organize product information, and use AI without giving up human review.
+                An operated workspace for e-commerce teams that need connected stores, consistent product information, and useful AI assistance without giving up human control.
               </p>
               <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600">
-                Sello is under active development. Its roadmap starts with a secure multi-tenant foundation and grows toward unified listings, seller insights, customer support assistance, and confirm-before-execution AI workflows.
+                Learnmark turns the public Sello foundation into a customer-ready product through connector delivery, tenant onboarding, governed AI configuration, monitored data flows, and production support.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
-                  href="https://github.com/imoogoo/sellohub"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="/contact"
                   className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold text-white! shadow-lg shadow-primary-950/20 transition-all duration-300 hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900"
                 >
-                  View on GitHub
+                  Discuss Sello
                 </a>
                 <a
-                  href="https://github.com/imoogoo/sellohub/tree/main/docs"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="/open-source/sello"
                   className="text-sm font-semibold leading-6 text-slate-900 transition-colors hover:text-primary-800"
                 >
-                  Read project docs <span aria-hidden="true">-&gt;</span>
+                  Explore open source <span aria-hidden="true">-&gt;</span>
                 </a>
               </div>
             </div>
@@ -107,10 +132,10 @@ export default function Sello() {
         <section id="capabilities" className="border-y border-slate-200 bg-white/65 px-6 py-20 sm:py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase text-primary-700">Product direction</p>
+              <p className="text-sm font-semibold uppercase text-primary-700">Product capabilities</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">A practical operating layer for commerce teams</h2>
               <p className="mt-5 text-lg leading-8 text-slate-600">
-                The project is designed around the daily work of sellers, operators, support teams, and platform administrators rather than isolated AI features.
+                The product is organized around the daily work of sellers, operators, support teams, tenant owners, and platform administrators rather than isolated AI features.
               </p>
             </div>
 
@@ -123,41 +148,47 @@ export default function Sello() {
                 </article>
               ))}
             </div>
+
+            <ProductEdition
+              projectName="Sello"
+              description="The public repository establishes the multi-tenant application foundation. The Learnmark product adds the connector implementation, onboarding, governance, and operational ownership needed for real commerce workloads."
+              features={managedFeatures}
+              openSourceHref="/open-source/sello"
+            />
           </div>
         </section>
 
         <section className="px-6 py-20 sm:py-24 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.78fr_1.22fr]">
             <div>
-              <p className="text-sm font-semibold uppercase text-primary-700">Technology</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">Built as an open monorepo</h2>
+              <p className="text-sm font-semibold uppercase text-primary-700">Product screenshots</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">The workflows the first screenshot set will cover</h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Independent web applications share a unified API and a tenant-aware data model, keeping customer workspaces separate from platform administration.
+                Real product screenshots will be added after the current seller portal and administration interfaces are ready for publication.
               </p>
             </div>
-            <div className="flex flex-wrap content-start gap-3">
-              {technology.map((item) => (
-                <span key={item} className="rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm">
-                  {item}
-                </span>
+            <dl className="divide-y divide-slate-200 border-y border-slate-200">
+              {screenshotCoverage.map((item) => (
+                <div key={item.name} className="grid gap-2 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+                  <dt className="font-semibold text-slate-950">{item.name}</dt>
+                  <dd className="text-base leading-7 text-slate-600">{item.detail}</dd>
+                </div>
               ))}
-            </div>
+            </dl>
           </div>
         </section>
 
         <section className="border-t border-slate-200 px-6 py-20 lg:px-8">
           <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 sm:flex-row sm:items-center">
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase text-primary-700">Open and evolving</p>
-              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">Follow the project as the commerce workflows take shape.</h2>
+              <p className="text-sm font-semibold uppercase text-primary-700">Plan the product around your channels</p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">Start with the stores, workflows, and AI controls your team actually needs.</h2>
             </div>
             <a
-              href="https://github.com/imoogoo/sellohub"
-              target="_blank"
-              rel="noreferrer"
+              href="/contact"
               className="inline-flex shrink-0 justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white! transition-colors hover:bg-primary-800"
             >
-              Explore the repository
+              Plan a Sello deployment
             </a>
           </div>
         </section>

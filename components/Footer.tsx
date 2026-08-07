@@ -24,6 +24,15 @@ const footerSections = [
     links: [
       { name: 'llmxy', href: '/llmxy' },
       { name: 'LetScrum', href: '/letscrum' },
+      { name: 'Sello', href: '/sello' },
+    ],
+  },
+  {
+    title: 'Open Source',
+    links: [
+      { name: 'llmxy Open Source', href: '/open-source/llmxy' },
+      { name: 'LetScrum Open Source', href: '/open-source/letscrum' },
+      { name: 'Sello Open Source', href: '/open-source/sello' },
     ],
   },
 ]
@@ -35,7 +44,7 @@ export default function Footer() {
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-64 bg-[radial-gradient(ellipse_at_bottom,rgba(136,19,55,0.24),transparent_68%)]" />
 
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_1.65fr]">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_2.1fr]">
           <div>
             <a href="/" className="inline-flex rounded-full bg-white px-4 py-3 shadow-sm">
               <span className="sr-only">Learnmark</span>
@@ -60,7 +69,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {footerSections.map((section) => (
               <div key={section.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
                 <h2 className="text-sm font-semibold uppercase tracking-wide text-white">{section.title}</h2>

@@ -25,8 +25,9 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const products = [
-  { name: 'llmxy', description: 'Open-source LLM gateway for routing, usage, and billing operations.', href: '/llmxy', icon: SquaresPlusIcon },
-  { name: 'LetScrum', description: 'Lightweight Agile and Scrum project management for delivery teams.', href: '/letscrum', icon: CursorArrowRaysIcon },
+  { name: 'llmxy', description: 'Managed LLM gateway deployment, routing operations, and production support.', href: '/llmxy', icon: SquaresPlusIcon },
+  { name: 'LetScrum', description: 'Hosted Scrum workspace with onboarding, migration, and operational support.', href: '/letscrum', icon: CursorArrowRaysIcon },
+  { name: 'Sello', description: 'Managed AI commerce workspace for stores, listings, teams, and operations.', href: '/sello', icon: ShoppingBagIcon },
 ]
 
 const solutions = [
@@ -43,9 +44,9 @@ const callsToAction = [
 ]
 
 const openSource = [
-  { name: 'llmxy', description: 'LLM gateway for token routing, provider management, and usage visibility.', href: '/llmxy', icon: SquaresPlusIcon, external: false },
-  { name: 'LetScrum', description: 'Lightweight Agile and Scrum project management system.', href: '/letscrum', icon: CursorArrowRaysIcon, external: false },
-  { name: 'Sello', description: 'AI-assisted workspace for multi-store commerce teams.', href: '/sello', icon: ShoppingBagIcon, external: false },
+  { name: 'llmxy', description: 'Self-hosted LLM gateway, consoles, unified API, billing, and optional Envoy relay.', href: '/open-source/llmxy', icon: SquaresPlusIcon },
+  { name: 'LetScrum', description: 'Apache-2.0 Scrum service and interface with REST and gRPC APIs.', href: '/open-source/letscrum', icon: CursorArrowRaysIcon },
+  { name: 'Sello', description: 'Public multi-tenant commerce SaaS foundation under active development.', href: '/open-source/sello', icon: ShoppingBagIcon },
 ]
 
 export default function Example() {
@@ -169,8 +170,6 @@ export default function Example() {
                     <div className="flex-auto">
                       <a
                         href={item.href}
-                        target={item.external ? '_blank' : undefined}
-                        rel={item.external ? 'noreferrer' : undefined}
                         className="block font-semibold text-slate-900"
                       >
                         {item.name}
@@ -296,8 +295,6 @@ export default function Example() {
                     key={item.name}
                     as="a"
                     href={item.href}
-                    target={item.external ? '_blank' : undefined}
-                    rel={item.external ? 'noreferrer' : undefined}
                     onClick={() => setMobileMenuOpen(false)}
                     className="flex gap-x-3 rounded-xl px-3 py-3 text-left hover:bg-white/[0.06]"
                   >

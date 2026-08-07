@@ -1,12 +1,13 @@
 import { ChartBarIcon, ClipboardDocumentCheckIcon, LockClosedIcon, ServerIcon, UserGroupIcon } from '@heroicons/react/20/solid'
 import JsonLd from '@/components/JsonLd'
+import ProductEdition from '@/components/ProductEdition'
 import { createBreadcrumbJsonLd, createPageMetadata, createSoftwareApplicationJsonLd } from '../seo'
 
-const letscrumDescription = 'LetScrum is a lightweight, open-source Scrum project management system for sprint planning, backlog management, taskboards, and team delivery.'
-const letscrumKeywords = ['LetScrum', 'open source Scrum tool', 'sprint planning software', 'Scrum taskboard', 'agile project management']
+const letscrumDescription = 'The managed LetScrum product gives delivery teams a hosted Scrum workspace with onboarding, workflow configuration, migration, upgrades, backups, and operational support.'
+const letscrumKeywords = ['LetScrum', 'managed Scrum software', 'sprint planning software', 'Scrum taskboard', 'agile project management', 'hosted project management']
 
 export const metadata = createPageMetadata({
-  title: 'LetScrum - Open Source Scrum Project Management',
+  title: 'LetScrum - Managed Scrum Project Delivery',
   description: letscrumDescription,
   path: '/letscrum',
   keywords: letscrumKeywords,
@@ -90,6 +91,25 @@ const features = [
   },
 ]
 
+const managedFeatures = [
+  {
+    name: 'Hosted workspace operations',
+    description: 'Run LetScrum in an operated environment with release management, encrypted configuration, backups, recovery procedures, and service monitoring.',
+  },
+  {
+    name: 'Team and workflow onboarding',
+    description: 'Set up organizations, projects, roles, sprint conventions, work item structure, and practical delivery workflows with guided implementation.',
+  },
+  {
+    name: 'Migration and integration delivery',
+    description: 'Plan imports from existing project tools and connect the API-first platform to selected identity, engineering, reporting, or internal systems.',
+  },
+  {
+    name: 'Operational and delivery support',
+    description: 'Get upgrade coordination, issue triage, workflow reviews, and a support path for both platform operation and day-to-day delivery adoption.',
+  },
+]
+
 export default function LetScrum() {
   return (
     <>
@@ -100,10 +120,10 @@ export default function LetScrum() {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-primary-700">Open Source Delivery Tool</p>
+              <p className="text-base font-semibold leading-7 text-primary-700">Managed Delivery Workspace</p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">LetScrum</h1>
               <p className="mt-6 text-xl leading-8 text-slate-700">
-                A lightweight Scrum project management system for teams that need practical sprint planning, clear task execution, and simple administration.
+                A hosted Scrum workspace for teams that need practical sprint planning, clear task execution, guided setup, and dependable operations.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 {['Sprint planning', 'Backlogs', 'Taskboards', 'User management'].map((label) => (
@@ -143,8 +163,15 @@ export default function LetScrum() {
               </ul>
 
               <p className="mt-8">
-                It works well as a simple product delivery companion for teams adopting agile practices, managing internal software projects, or needing an open-source alternative to heavier planning tools.
+                The product is designed for teams that want the focus of LetScrum without taking on application hosting, upgrades, recovery planning, integration work, and operational support themselves.
               </p>
+
+              <ProductEdition
+                projectName="LetScrum"
+                description="The Apache-2.0 repositories provide the core service and interface. The Learnmark product adds a maintained workspace and the implementation work needed to fit LetScrum into a real delivery organization."
+                features={managedFeatures}
+                openSourceHref="/open-source/letscrum"
+              />
 
               <div className="mt-16">
                 <h2 className="text-2xl font-bold tracking-tight text-slate-950">Product Screenshots</h2>
@@ -169,17 +196,16 @@ export default function LetScrum() {
                 </div>
               </div>
 
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-slate-950">Open Source & Team Ready</h2>
+              <h2 className="mt-16 text-2xl font-bold tracking-tight text-slate-950">Open source at the core, operated as a product</h2>
               <p className="mt-6">
-                LetScrum is built as a lightweight open-source system for teams that want pragmatic Scrum support, clean workflows, and enough structure to keep delivery moving.
+                Review or self-host the LetScrum repositories, or choose the Learnmark product for a configured workspace, managed releases, migration help, and ongoing support.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-x-6">
                 <a
-                  href="https://github.com/letscrum"
-                  target="_blank"
+                  href="/open-source/letscrum"
                   className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold text-white! shadow-lg shadow-primary-950/20 transition-all duration-300 hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900"
                 >
-                  View on GitHub
+                  Explore Open Source
                 </a>
                 <a href="/contact" className="text-sm font-semibold leading-6 text-slate-900 hover:text-primary-800">
                   Discuss delivery tools <span aria-hidden="true">-&gt;</span>
