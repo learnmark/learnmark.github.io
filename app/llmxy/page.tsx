@@ -1,40 +1,31 @@
 import { ArrowsRightLeftIcon, BoltIcon, ChartBarIcon, CpuChipIcon, ShieldCheckIcon } from '@heroicons/react/20/solid'
 import JsonLd from '@/components/JsonLd'
 import ProductEdition from '@/components/ProductEdition'
+import { llmxyProductMessages } from '@/i18n/messages/products/llmxy'
+import { getLocale } from '@/i18n/server'
 import { createBreadcrumbJsonLd, createPageMetadata, createSoftwareApplicationJsonLd } from '../seo'
 
-const llmxyDescription = 'The managed llmxy product helps teams operate a production LLM gateway with provider routing, access controls, usage billing, monitored deployment, and implementation support.'
-const llmxyKeywords = ['llmxy', 'managed LLM gateway', 'LLM routing', 'multi-provider LLM API', 'AI billing analytics', 'LLM gateway operations']
+export async function generateMetadata() {
+  const locale = await getLocale()
+  const messages = llmxyProductMessages[locale]
 
-export const metadata = createPageMetadata({
-  title: 'llmxy - Managed LLM Gateway Operations',
-  description: llmxyDescription,
-  path: '/llmxy',
-  keywords: llmxyKeywords,
-  images: [
-    {
-      url: '/images/llmxy/admin-smart-routing.png',
-      width: 1200,
-      height: 750,
-      alt: 'llmxy smart routing dashboard screenshot',
-    },
-  ],
-})
-
-const llmxyJsonLd = [
-  createSoftwareApplicationJsonLd({
-    name: 'llmxy',
-    description: llmxyDescription,
+  return createPageMetadata({
+    title: messages.seoTitle,
+    description: messages.seoDescription,
     path: '/llmxy',
-    applicationCategory: 'DeveloperApplication',
-    image: '/images/llmxy/admin-smart-routing.png',
-    keywords: llmxyKeywords,
-  }),
-  createBreadcrumbJsonLd([
-    { name: 'Home', path: '/' },
-    { name: 'llmxy', path: '/llmxy' },
-  ]),
-]
+    keywords: messages.seoKeywords,
+    locale,
+    images: [
+      {
+        url: '/images/llmxy/admin-smart-routing.png',
+        width: 1200,
+        height: 750,
+        alt: messages.heroImageAlt,
+      },
+    ],
+  })
+}
+
 
 const screenshots = [
   {
@@ -63,46 +54,52 @@ const screenshots = [
   },
 ]
 
-const managedFeatures = [
-  {
-    name: 'Managed private deployment',
-    description: 'Provision llmxy in a dedicated Learnmark-managed or customer-controlled environment with repeatable releases, encrypted configuration, backups, and rollback procedures.',
-  },
-  {
-    name: 'Provider and routing onboarding',
-    description: 'Connect approved model providers, map model names, define route weights and policies, and validate failover behavior against your applications before rollout.',
-  },
-  {
-    name: 'Production observability',
-    description: 'Add environment-level metrics, alerting, capacity reviews, usage reconciliation, and operational runbooks around the gateway and its data services.',
-  },
-  {
-    name: 'Upgrade and incident support',
-    description: 'Receive coordinated upgrades, change reviews, troubleshooting, and a clear escalation path instead of operating the open-source stack alone.',
-  },
-]
 
-export default function Example() {
+const featureIcons = [ArrowsRightLeftIcon, BoltIcon, CpuChipIcon, ChartBarIcon, ShieldCheckIcon]
+
+export default async function Llmxy() {
+  const locale = await getLocale()
+  const messages = llmxyProductMessages[locale]
+  const localizedScreenshots = screenshots.map((screenshot, index) => ({
+    ...screenshot,
+    ...messages.screenshots[index],
+  }))
+  const localizedJsonLd = [
+    createSoftwareApplicationJsonLd({
+      name: 'llmxy',
+      description: messages.seoDescription,
+      path: '/llmxy',
+      applicationCategory: 'DeveloperApplication',
+      image: '/images/llmxy/admin-smart-routing.png',
+      keywords: messages.seoKeywords,
+      locale,
+    }),
+    createBreadcrumbJsonLd([
+      { name: messages.breadcrumbHome, path: '/' },
+      { name: 'llmxy', path: '/llmxy' },
+    ]),
+  ]
+
   return (
     <>
-      <JsonLd data={llmxyJsonLd} />
+      <JsonLd data={localizedJsonLd} />
       <div className="site-section site-page bg-transparent px-6 lg:overflow-visible lg:px-0">
 
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
         <div className="site-product-grid-row lg:row-start-1">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-primary-700">Managed AI Infrastructure</p>
+              <p className="text-base font-semibold leading-7 text-primary-700">{messages.eyebrow}</p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">llmxy</h1>
               <p className="mt-6 text-xl leading-8 text-slate-700">
-                Operate one production gateway for multiple model providers with controlled routing, OpenAI-compatible APIs, usage visibility, and a managed path from deployment to day-two operations.
+                {messages.heroDescription}
               </p>
             </div>
           </div>
         </div>
         <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-24 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <img
-            alt="llmxy smart routing dashboard"
+            alt={messages.heroImageAlt}
             src="/images/llmxy/admin-smart-routing.png"
             className="w-3xl max-w-none rounded-2xl bg-white object-cover object-top-left shadow-2xl shadow-slate-900/10 ring-1 ring-slate-900/10 sm:w-228"
           />
@@ -111,58 +108,42 @@ export default function Example() {
           <div className="lg:pr-4">
             <div className="max-w-xl text-base leading-7 text-slate-700 lg:max-w-lg">
               <p>
-                llmxy sits between your applications and model providers as a unified control plane. Teams keep a stable client protocol while operators configure upstream channels, models, route policies, quotas, and billing from one place.
+                {messages.introduction}
               </p>
               <ul role="list" className="mt-8 space-y-8 text-slate-600">
-                <li className="flex gap-x-3">
-                  <ArrowsRightLeftIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
-                  <span>
-                    <strong className="font-semibold text-slate-950">Operator-controlled routing.</strong> Configure upstream channels, model mappings, route policies, and weights without changing application clients.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <BoltIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
-                  <span>
-                    <strong className="font-semibold text-slate-950">Gateway enforcement.</strong> Apply authentication, balance and quota checks, rate limiting, usage recording, and billing consistently at the gateway.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <CpuChipIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
-                  <span>
-                    <strong className="font-semibold text-slate-950">Multi-provider access.</strong> Use an OpenAI-compatible protocol in front of OpenAI, Anthropic, Gemini, and translated upstream responses.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <ChartBarIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
-                  <span>
-                    <strong className="font-semibold text-slate-950">Usage Analytics.</strong> Track token consumption, cost, and latency per model, key, and tenant with real-time dashboards.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <ShieldCheckIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
-                  <span>
-                    <strong className="font-semibold text-slate-950">Two relay paths.</strong> Start with the direct FastAPI relay or add the optional Envoy path for higher-throughput traffic and asynchronous usage reporting.
-                  </span>
-                </li>
+                {messages.features.map((feature, index) => {
+                  const FeatureIcon = featureIcons[index]
+                  return (
+                    <li key={feature.name} className="flex gap-x-3">
+                      <FeatureIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
+                      <span>
+                        <strong className="font-semibold text-slate-950">{feature.name}.</strong> {feature.description}
+                      </span>
+                    </li>
+                  )
+                })}
               </ul>
               <p className="mt-8">
-                The Learnmark product turns that open-source foundation into an operated gateway environment, with deployment engineering, provider onboarding, production controls, and an accountable support path.
+                {messages.managedSummary}
               </p>
 
               <ProductEdition
                 projectName="llmxy"
-                description="The repository provides the gateway software. The Learnmark product adds the engineering and operational layer required to introduce it into a production platform and keep it healthy over time."
-                features={managedFeatures}
+                description={messages.edition.description}
+                features={messages.edition.features}
                 openSourceHref="/open-source/llmxy"
+                eyebrow={messages.edition.eyebrow}
+                title={messages.edition.title}
+                compareLabel={messages.edition.compareLabel}
               />
 
               <div className="mt-16">
-                <h2 className="text-2xl font-bold tracking-tight text-slate-950">Product Screenshots</h2>
+                <h2 className="text-2xl font-bold tracking-tight text-slate-950">{messages.screenshotsTitle}</h2>
                 <p className="mt-6">
-                  The llmxy interface combines a self-service user console with an admin workspace for routing, monitoring, and billing operations.
+                  {messages.screenshotsDescription}
                 </p>
                 <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-10">
-                  {screenshots.map((screenshot) => (
+                  {localizedScreenshots.map((screenshot) => (
                     <figure key={screenshot.src} className="overflow-hidden rounded-lg bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-900/10">
                       <img
                         src={screenshot.src}
@@ -178,19 +159,19 @@ export default function Example() {
                   ))}
                 </div>
               </div>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-slate-950">An open foundation with an operated product path</h2>
+              <h2 className="mt-16 text-2xl font-bold tracking-tight text-slate-950">{messages.closingTitle}</h2>
               <p className="mt-6">
-                Inspect and self-host the llmxy source code, or use the Learnmark product when your team needs implementation, environment ownership, controlled upgrades, and production support.
+                {messages.closingDescription}
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-x-6">
                 <a
                   href="/open-source/llmxy"
                   className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold text-white! shadow-lg shadow-primary-950/20 transition-all duration-300 hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900"
                 >
-                  Explore Open Source
+                  {messages.openSourceCta}
                 </a>
                 <a href="/contact" className="text-sm font-semibold leading-6 text-slate-900 hover:text-primary-800">
-                  Contact Sales <span aria-hidden="true">→</span>
+                  {messages.salesCta} <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>

@@ -12,31 +12,22 @@ import {
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/outline'
 import JsonLd from '@/components/JsonLd'
+import { shopifyMessages } from '@/i18n/messages/shopify'
+import { getLocale } from '@/i18n/server'
 import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from '../../seo'
 
-const shopifyDescription = 'Shopify store development for brands that need store configuration, custom theme development, catalog architecture, commerce integrations, and launch support.'
-const shopifyKeywords = ['Shopify development services', 'Shopify store setup', 'Shopify theme development', 'Shopify agency', 'ecommerce website development']
+export async function generateMetadata() {
+  const locale = await getLocale()
+  const messages = shopifyMessages[locale]
 
-export const metadata = createPageMetadata({
-  title: 'Shopify Store Development',
-  description: shopifyDescription,
-  path: '/services/shopify',
-  keywords: shopifyKeywords,
-})
-
-const shopifyJsonLd = [
-  createServiceJsonLd({
-    name: 'Shopify Store Development',
-    description: shopifyDescription,
+  return createPageMetadata({
+    title: messages.seoTitle,
+    description: messages.seoDescription,
     path: '/services/shopify',
-    serviceType: 'Shopify store development',
-    keywords: shopifyKeywords,
-  }),
-  createBreadcrumbJsonLd([
-    { name: 'Home', path: '/' },
-    { name: 'Shopify Store Development', path: '/services/shopify' },
-  ]),
-]
+    keywords: messages.seoKeywords,
+    locale,
+  })
+}
 
 const launchBarriers = [
   {
@@ -129,10 +120,31 @@ const caseStudies = [
   },
 ]
 
-export default function ShopifyStoreDevelopmentPage() {
+export default async function ShopifyStoreDevelopmentPage() {
+  const locale = await getLocale()
+  const messages = shopifyMessages[locale]
+  const localizedBarriers = launchBarriers.map((barrier, index) => ({ ...barrier, ...messages.barriers[index] }))
+  const localizedCapabilities = capabilities.map((capability, index) => ({ ...capability, ...messages.capabilities[index] }))
+  const localizedProcess = process.map((item, index) => ({ ...item, ...messages.process[index] }))
+  const localizedCaseStudies = caseStudies.map((caseStudy) => ({ ...caseStudy, ...messages.caseStudy }))
+  const localizedJsonLd = [
+    createServiceJsonLd({
+      name: messages.seoTitle,
+      description: messages.seoDescription,
+      path: '/services/shopify',
+      serviceType: messages.serviceType,
+      keywords: messages.seoKeywords,
+      locale,
+    }),
+    createBreadcrumbJsonLd([
+      { name: messages.breadcrumbHome, path: '/' },
+      { name: messages.seoTitle, path: '/services/shopify' },
+    ]),
+  ]
+
   return (
     <>
-      <JsonLd data={shopifyJsonLd} />
+      <JsonLd data={localizedJsonLd} />
       <main className="relative isolate overflow-hidden">
         <section className="relative flex min-h-[calc(100svh-8rem)] min-h-150 items-center overflow-hidden bg-transparent py-20">
           <div aria-hidden="true" className="absolute inset-y-0 right-[12%] w-px bg-primary-700/20 dark:bg-primary-500/35" />
@@ -140,37 +152,37 @@ export default function ShopifyStoreDevelopmentPage() {
 
           <div className="site-container relative pt-6">
             <div className="max-w-4xl">
-              <p className="text-sm font-semibold uppercase text-emerald-700 dark:text-emerald-300">Shopify Store Development</p>
+              <p className="text-sm font-semibold uppercase text-emerald-700 dark:text-emerald-300">{messages.eyebrow}</p>
               <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
-                Shopify store development, without the setup maze.
+                {messages.title}
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-200 sm:text-xl">
-                Shopify makes it easy to open an account. Making the store ready for customers, search engines, payments, fulfillment, and your internal team is the harder part. We take ownership from architecture to launch.
+                {messages.description}
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="/contact?interest=Shopify%20Store%20Development"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-700 px-6 py-3 text-sm font-semibold !text-white shadow-lg shadow-slate-950/30 transition hover:bg-primary-600"
                 >
-                  Discuss your Shopify store
+                  {messages.primaryCta}
                   <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
                 </a>
                 <a
                   href="#shopify-barriers"
                   className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-900 backdrop-blur-sm transition hover:bg-slate-50 dark:border-white/40 dark:bg-white/10 dark:!text-white dark:hover:bg-white/20"
                 >
-                  See what makes launch difficult
+                  {messages.secondaryCta}
                 </a>
               </div>
             </div>
 
             <div className="mt-12 border-t border-slate-200 pt-6 dark:border-white/15">
               <div className="flex items-center justify-between gap-4">
-                <p className="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400">Selected Shopify work</p>
-                <p className="text-xs text-slate-500 dark:text-slate-400">{caseStudies.length} {caseStudies.length === 1 ? 'case study' : 'case studies'}</p>
+                <p className="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400">{messages.selectedWork}</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">{localizedCaseStudies.length} {localizedCaseStudies.length === 1 ? messages.caseStudyCount.singular : messages.caseStudyCount.plural}</p>
               </div>
               <div className="mt-4 flex gap-3 overflow-x-auto pb-1">
-                {caseStudies.map((caseStudy, index) => (
+                {localizedCaseStudies.map((caseStudy, index) => (
                   <a
                     key={caseStudy.slug}
                     href={`#case-study-${caseStudy.slug}`}
@@ -197,11 +209,7 @@ export default function ShopifyStoreDevelopmentPage() {
             </div>
 
             <div className="mt-8 grid border-y border-slate-200 dark:border-white/15 sm:grid-cols-3">
-              {[
-                { name: 'Storefront', detail: 'Theme, content, search, conversion' },
-                { name: 'Commerce', detail: 'Catalog, markets, checkout, payments' },
-                { name: 'Operations', detail: 'Apps, analytics, fulfillment, support' },
-              ].map((area) => (
+              {messages.areas.map((area) => (
                 <div key={area.name} className="border-b border-slate-200 py-5 last:border-b-0 dark:border-white/15 sm:border-b-0 sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0">
                   <p className="text-xs font-semibold uppercase text-primary-700 dark:text-primary-200">{area.name}</p>
                   <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{area.detail}</p>
@@ -214,14 +222,14 @@ export default function ShopifyStoreDevelopmentPage() {
         <section id="shopify-barriers" className="site-section scroll-mt-24 border-b border-slate-200 bg-white/85 backdrop-blur-xl">
           <div className="site-container grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
             <div>
-              <p className="text-sm font-semibold uppercase text-primary-700">The real Shopify learning curve</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">A store can look open long before it is ready to trade.</h2>
+              <p className="text-sm font-semibold uppercase text-primary-700">{messages.barriersEyebrow}</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{messages.barriersTitle}</h2>
               <p className="mt-5 text-lg leading-8 text-slate-600">
-                The platform removes infrastructure work, but it does not make the decisions across merchandising, customer experience, integrations, compliance, and operations. Those decisions are where launches slow down and avoidable rework begins.
+                {messages.barriersDescription}
               </p>
             </div>
             <div className="grid border-t border-slate-200 sm:grid-cols-2">
-              {launchBarriers.map((barrier, index) => (
+              {localizedBarriers.map((barrier, index) => (
                 <article key={barrier.name} className={`border-b border-slate-200 py-6 sm:px-6 ${index % 2 === 0 ? 'sm:border-r sm:pl-0' : 'sm:pr-0'}`}>
                   <barrier.icon aria-hidden="true" className="h-6 w-6 text-primary-700" />
                   <h3 className="mt-4 font-semibold text-slate-950">{barrier.name}</h3>
@@ -235,15 +243,15 @@ export default function ShopifyStoreDevelopmentPage() {
         <section className="site-section">
           <div className="site-container">
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase text-primary-700">What Learnmark takes ownership of</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">The specialist work between signup and a dependable store.</h2>
+              <p className="text-sm font-semibold uppercase text-primary-700">{messages.capabilitiesEyebrow}</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{messages.capabilitiesTitle}</h2>
               <p className="mt-5 text-lg leading-8 text-slate-600">
-                We connect the visible storefront to the configuration, data, integrations, quality controls, and operating model that make it useful after launch.
+                {messages.capabilitiesDescription}
               </p>
             </div>
 
             <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-3">
-              {capabilities.map((capability) => (
+              {localizedCapabilities.map((capability) => (
                 <article key={capability.name} className="bg-white p-6 sm:p-7">
                   <capability.icon aria-hidden="true" className="h-7 w-7 text-primary-700" />
                   <h3 className="mt-6 text-lg font-semibold text-slate-950">{capability.name}</h3>
@@ -258,14 +266,14 @@ export default function ShopifyStoreDevelopmentPage() {
           <div className="site-container">
             <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
               <div>
-                <p className="text-sm font-semibold uppercase text-primary-200">How we work</p>
-                <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">From commerce idea to launch-ready store.</h2>
+                <p className="text-sm font-semibold uppercase text-primary-200">{messages.processEyebrow}</p>
+                <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{messages.processTitle}</h2>
                 <p className="mt-5 text-base leading-7 text-slate-400">
-                  One delivery path keeps customer experience, Shopify configuration, theme code, and operational readiness aligned.
+                  {messages.processDescription}
                 </p>
               </div>
               <ol className="border-t border-white/15">
-                {process.map((item) => (
+                {localizedProcess.map((item) => (
                   <li key={item.step} className="grid gap-3 border-b border-white/15 py-6 sm:grid-cols-[4rem_10rem_1fr] sm:items-start">
                     <span className="text-sm font-semibold text-primary-200">{item.step}</span>
                     <h3 className="font-semibold text-white">{item.name}</h3>
@@ -280,15 +288,15 @@ export default function ShopifyStoreDevelopmentPage() {
         <section id="shopify-work" className="site-section scroll-mt-24 border-b border-slate-200">
           <div className="site-container grid gap-12 lg:grid-cols-[0.6fr_1.4fr] lg:gap-16">
             <div>
-              <p className="text-sm font-semibold uppercase text-emerald-700">Selected Shopify work</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">How the capability shows up in real stores.</h2>
+              <p className="text-sm font-semibold uppercase text-emerald-700">{messages.selectedWork}</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{messages.workTitle}</h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Each engagement applies the same delivery disciplines to a different brand, catalog, market, and operating model. This collection will grow as more stores launch.
+                {messages.workDescription}
               </p>
             </div>
 
             <div className="grid gap-6">
-              {caseStudies.map((caseStudy) => (
+              {localizedCaseStudies.map((caseStudy) => (
                 <article id={`case-study-${caseStudy.slug}`} key={caseStudy.slug} className="scroll-mt-28 grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm sm:grid-cols-[0.85fr_1.15fr]">
                   <div className="relative min-h-64 bg-slate-100 sm:min-h-full">
                     <Image fill src={caseStudy.image} alt={caseStudy.imageAlt} className="object-cover" sizes="(min-width: 1024px) 33vw, 100vw" />
@@ -319,7 +327,7 @@ export default function ShopifyStoreDevelopmentPage() {
                       rel="noreferrer"
                       className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary-800 transition hover:text-primary-700"
                     >
-                      Visit the live store
+                      {caseStudy.visitStore}
                       <ArrowTopRightOnSquareIcon aria-hidden="true" className="h-4 w-4" />
                     </a>
                   </div>
@@ -332,15 +340,15 @@ export default function ShopifyStoreDevelopmentPage() {
         <section className="site-section border-t border-slate-200 bg-white/75 dark:bg-slate-950">
           <div className="site-container flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase text-primary-700">Start your store</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Build a Shopify store your customers and team can rely on.</h2>
-              <p className="mt-4 text-lg leading-8 text-slate-600">Tell us about your brand, catalog, launch goals, and the Shopify capabilities you need.</p>
+              <p className="text-sm font-semibold uppercase text-primary-700">{messages.closingEyebrow}</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{messages.closingTitle}</h2>
+              <p className="mt-4 text-lg leading-8 text-slate-600">{messages.closingDescription}</p>
             </div>
             <a
               href="/contact?interest=Shopify%20Store%20Development"
               className="inline-flex flex-none items-center gap-2 rounded-full bg-primary-800 px-6 py-3 text-sm font-semibold !text-white shadow-lg shadow-primary-950/20 transition hover:bg-primary-700"
             >
-              Start a Shopify conversation
+              {messages.closingCta}
               <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
             </a>
           </div>

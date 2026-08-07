@@ -6,70 +6,88 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
-import { defaultDescription, defaultKeywords, defaultOpenGraphImage, defaultTitle, siteJsonLd, siteName, siteUrl } from "./seo";
+import { commonMessages } from "@/i18n/messages/common";
+import { homeMessages } from "@/i18n/messages/home";
+import { getLocale } from "@/i18n/server";
+import { createSiteJsonLd, defaultKeywords, defaultOpenGraphImage, openGraphLocales, siteName, siteUrl } from "./seo";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  applicationName: siteName,
-  keywords: defaultKeywords,
-  authors: [{ name: siteName, url: siteUrl }],
-  creator: siteName,
-  publisher: siteName,
-  category: 'technology consulting',
-  title: {
-    template: '%s | Learnmark',
-    default: defaultTitle,
-  },
-  description: defaultDescription,
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    title: defaultTitle,
-    description: defaultDescription,
-    url: '/',
-    siteName,
-    locale: 'en_US',
-    type: 'website',
-    images: [defaultOpenGraphImage],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: defaultTitle,
-    description: defaultDescription,
-    images: [defaultOpenGraphImage.url],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const messages = homeMessages[locale];
+  const title = `Learnmark - ${messages.seoTitle}`;
+
+  return {
+    metadataBase: new URL(siteUrl),
+    applicationName: siteName,
+    keywords: locale === 'en' ? defaultKeywords : messages.intro.capabilities,
+    authors: [{ name: siteName, url: siteUrl }],
+    creator: siteName,
+    publisher: siteName,
+    category: 'technology consulting',
+    title: {
+      template: '%s | Learnmark',
+      default: title,
+    },
+    description: messages.seoDescription,
+    alternates: {
+      canonical: '/',
+    },
+    openGraph: {
+      title,
+      description: messages.seoDescription,
+      url: '/',
+      siteName,
+      locale: openGraphLocales[locale],
+      type: 'website',
+      images: [defaultOpenGraphImage],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: messages.seoDescription,
+      images: [defaultOpenGraphImage.url],
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
     },
-  },
-};
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = commonMessages[locale];
+  const pageMessages = homeMessages[locale];
+  const siteJsonLd = createSiteJsonLd({
+    description: pageMessages.seoDescription,
+    locale,
+    knowsAbout: pageMessages.intro.capabilities,
+  });
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${manrope.className} site-shell text-slate-900 antialiased`}>
         <ThemeProvider>
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
           />
-          <Header />
+          <Header locale={locale} messages={messages.header} themeToggleLabel={messages.themeToggleLabel} languageSwitcherLabel={messages.languageSwitcherLabel} />
           {children}
-          <Footer />
+          <Footer messages={messages.footer} />
         </ThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-R5GXYQ84NP" />

@@ -1,49 +1,49 @@
-const footerSections = [
-  {
-    title: 'Company',
-    links: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Contact Us', href: '/contact' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Privacy Policy', href: '/privacy-policy' },
-    ],
-  },
-  {
-    title: 'Services',
-    links: [
-      { name: 'Shopify Development', href: '/services/shopify' },
-    ],
-  },
-  {
-    title: 'Solutions',
-    links: [
-      { name: 'AI Consulting', href: '/solutions/ai' },
-      { name: 'Cloud Consulting', href: '/solutions/cloud' },
-      { name: 'Platform Engineering', href: '/solutions/devops' },
-      { name: 'API & AI Gateway', href: '/solutions/gateway' },
-      { name: 'Microservices', href: '/solutions/microservices' },
-      { name: 'Delivery Coaching', href: '/solutions/agile-scrum' },
-    ],
-  },
-  {
-    title: 'Products',
-    links: [
-      { name: 'llmxy', href: '/llmxy' },
-      { name: 'LetScrum', href: '/letscrum' },
-      { name: 'Sello', href: '/sello' },
-    ],
-  },
-  {
-    title: 'Open Source',
-    links: [
-      { name: 'llmxy', href: '/open-source/llmxy' },
-      { name: 'LetScrum', href: '/open-source/letscrum' },
-      { name: 'Sello', href: '/open-source/sello' },
-    ],
-  },
-]
+import type { CommonMessages } from '@/i18n/messages/common'
 
-export default function Footer() {
+export default function Footer({ messages }: { messages: CommonMessages['footer'] }) {
+  const footerSections = [
+    {
+      title: messages.companyLabel,
+      links: [
+        { name: messages.aboutUs, href: '/about' },
+        { name: messages.contactUs, href: '/contact' },
+        { name: messages.careers, href: '/careers' },
+        { name: messages.privacyPolicy, href: '/privacy-policy' },
+      ],
+    },
+    {
+      title: messages.servicesLabel,
+      links: [{ name: messages.shopifyDevelopmentLink, href: '/services/shopify' }],
+    },
+    {
+      title: messages.solutionsLabel,
+      links: [
+        { name: messages.aiConsulting, href: '/solutions/ai' },
+        { name: messages.cloudConsulting, href: '/solutions/cloud' },
+        { name: messages.platformEngineering, href: '/solutions/devops' },
+        { name: messages.gateway, href: '/solutions/gateway' },
+        { name: messages.microservices, href: '/solutions/microservices' },
+        { name: messages.deliveryCoaching, href: '/solutions/agile-scrum' },
+      ],
+    },
+    {
+      title: messages.productsLabel,
+      links: [
+        { name: 'llmxy', href: '/llmxy' },
+        { name: 'LetScrum', href: '/letscrum' },
+        { name: 'Sello', href: '/sello' },
+      ],
+    },
+    {
+      title: messages.openSourceLabel,
+      links: [
+        { name: 'llmxy', href: '/open-source/llmxy' },
+        { name: 'LetScrum', href: '/open-source/letscrum' },
+        { name: 'Sello', href: '/open-source/sello' },
+      ],
+    },
+  ]
+
   return (
     <footer className="relative isolate scroll-mt-28 overflow-hidden bg-slate-950 py-16 text-slate-300 sm:py-20">
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(148,163,184,0.10)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.10)_1px,transparent_1px)] bg-size-[56px_56px] mask-[linear-gradient(to_top,black,transparent_84%)]" />
@@ -54,23 +54,23 @@ export default function Footer() {
           <div>
             <a href="/" className="theme-light-surface inline-flex rounded-full bg-white px-4 py-3 shadow-sm">
               <span className="sr-only">Learnmark</span>
-              <img src="/logo.svg" className="h-9 w-auto" alt="Learnmark Logo" />
+              <img src="/logo.svg" className="h-9 w-auto" alt={messages.logoAlt} />
             </a>
             <p className="mt-6 max-w-md text-base leading-7 text-slate-400">
-              AI, Cloud, and Shopify services for teams building intelligent products, modern platforms, and trusted commerce experiences.
+              {messages.description}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-nowrap">
               <a
                 href="/contact"
                 className="inline-flex shrink-0 justify-center whitespace-nowrap rounded-full bg-primary-700 px-5 py-3 text-sm font-semibold text-white! shadow-lg shadow-primary-950/30 transition hover:bg-primary-600"
               >
-                Start a project
+                {messages.startProject}
               </a>
               <a
                 href="/services/shopify"
                 className="inline-flex shrink-0 justify-center whitespace-nowrap rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white! transition hover:bg-white/10"
               >
-                Shopify development
+                {messages.shopifyDevelopment}
               </a>
             </div>
           </div>
@@ -99,10 +99,10 @@ export default function Footer() {
             <a href="https://learnmark.com" className="transition hover:text-primary-200">
               Learnmark
             </a>
-            . All Rights Reserved.
+            . {messages.rightsReserved}
           </p>
           <p className="mt-4 text-sm text-slate-500 sm:mt-0">
-            AI strategy. Cloud architecture. Commerce delivery.
+            {messages.closing}
           </p>
         </div>
       </div>

@@ -1,7 +1,3 @@
-'use client'
-
-import { useState } from 'react'
-
 import Intro from "@/components/Intro";
 import Feature from "@/components/Feature";
 import CTA from '@/components/CTA';
@@ -12,22 +8,38 @@ import LatestUpdate from '@/components/LatestUpdate';
 import Team from '@/components/Team';
 import Customer from '@/components/Customer';
 import Subscribe from '@/components/Subscribe';
+import { homeMessages } from '@/i18n/messages/home';
+import { getLocale } from '@/i18n/server';
+import { createPageMetadata } from './seo';
 
-export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+export async function generateMetadata() {
+  const locale = await getLocale();
+  const messages = homeMessages[locale];
+
+  return createPageMetadata({
+    title: messages.seoTitle,
+    description: messages.seoDescription,
+    path: '/',
+    locale,
+  });
+}
+
+export default async function Home() {
+  const locale = await getLocale();
+  const messages = homeMessages[locale];
 
   return (
     <>
-      <Intro></Intro>
+      <Intro messages={messages.intro} />
       {/* <Feature></Feature>
       <CTA></CTA> */}
-      <WorkWith></WorkWith>
-      <Stats></Stats>
-      <Feedback></Feedback>
+      <WorkWith messages={messages.workWith} />
+      <Stats messages={messages.stats} />
+      <Feedback messages={messages.feedback} />
       {/* <LatestUpdate></LatestUpdate> */}
       {/* <Team></Team>
       <Customer></Customer> */}
-      <Subscribe></Subscribe>
+      <Subscribe messages={messages.subscribe} />
     </>
   )
 }

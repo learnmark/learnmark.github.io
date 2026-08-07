@@ -1,4 +1,5 @@
 import type { Metadata, MetadataRoute } from 'next'
+import type { Locale } from '@/i18n/config'
 
 export const siteUrl = 'https://learnmark.com'
 export const siteName = 'Learnmark'
@@ -21,7 +22,7 @@ export const defaultOpenGraphImage = {
   url: '/opengraph-image',
   width: 1200,
   height: 630,
-  alt: 'Learnmark AI, Cloud, and Shopify Services',
+  alt: 'Learnmark',
 }
 
 type OpenGraphImage = typeof defaultOpenGraphImage
@@ -38,6 +39,25 @@ type PageMetadataOptions = {
   keywords?: string[]
   images?: OpenGraphImage[]
   noIndex?: boolean
+  locale?: Locale
+}
+
+export const openGraphLocales: Record<Locale, string> = {
+  en: 'en_US',
+  'zh-CN': 'zh_CN',
+  'zh-TW': 'zh_TW',
+  ja: 'ja_JP',
+  fr: 'fr_FR',
+  de: 'de_DE',
+}
+
+export const languageTags: Record<Locale, string> = {
+  en: 'en-US',
+  'zh-CN': 'zh-CN',
+  'zh-TW': 'zh-TW',
+  ja: 'ja-JP',
+  fr: 'fr-FR',
+  de: 'de-DE',
 }
 
 type ServiceJsonLdOptions = {
@@ -46,6 +66,7 @@ type ServiceJsonLdOptions = {
   path: `/${string}`
   serviceType: string
   keywords?: string[]
+  locale?: Locale
 }
 
 type SoftwareApplicationJsonLdOptions = {
@@ -55,14 +76,19 @@ type SoftwareApplicationJsonLdOptions = {
   applicationCategory: string
   image: string
   keywords?: string[]
+  locale?: Locale
 }
 
 export function absoluteUrl(path = '/') {
   return new URL(path, siteUrl).toString()
 }
 
-function keywordsText(keywords: string[] = []) {
-  return [...new Set([...defaultKeywords, ...keywords])].join(', ')
+function localizedKeywords(keywords: string[], locale: Locale) {
+  return [...new Set([...(locale === 'en' ? defaultKeywords : []), ...keywords])]
+}
+
+function keywordsText(keywords: string[] = [], locale: Locale = 'en') {
+  return localizedKeywords(keywords, locale).join(', ')
 }
 
 export function createPageMetadata({
@@ -72,13 +98,14 @@ export function createPageMetadata({
   keywords = [],
   images = [defaultOpenGraphImage],
   noIndex = false,
+  locale = 'en',
 }: PageMetadataOptions): Metadata {
   const fullTitle = `${title} | ${siteName}`
 
   return {
     title,
     description,
-    keywords: [...defaultKeywords, ...keywords],
+    keywords: localizedKeywords(keywords, locale),
     alternates: {
       canonical: path,
     },
@@ -87,7 +114,7 @@ export function createPageMetadata({
       description,
       url: path,
       siteName,
-      locale: 'en_US',
+      locale: openGraphLocales[locale],
       type: 'website',
       images,
     },
@@ -144,7 +171,7 @@ export function createBreadcrumbJsonLd(items: BreadcrumbItem[]) {
   }
 }
 
-export function createServiceJsonLd({ name, description, path, serviceType, keywords = [] }: ServiceJsonLdOptions) {
+export function createServiceJsonLd({ name, description, path, serviceType, keywords = [], locale = 'en' }: ServiceJsonLdOptions) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -157,7 +184,7 @@ export function createServiceJsonLd({ name, description, path, serviceType, keyw
       '@id': `${siteUrl}/#organization`,
     },
     areaServed: 'Global',
-    keywords: keywordsText(keywords),
+    keywords: keywordsText(keywords, locale),
   }
 }
 
@@ -168,6 +195,7 @@ export function createSoftwareApplicationJsonLd({
   applicationCategory,
   image,
   keywords = [],
+  locale = 'en',
 }: SoftwareApplicationJsonLdOptions) {
   return {
     '@context': 'https://schema.org',
@@ -185,32 +213,34 @@ export function createSoftwareApplicationJsonLd({
     publisher: {
       '@id': `${siteUrl}/#organization`,
     },
-    keywords: keywordsText(keywords),
+    keywords: keywordsText(keywords, locale),
   }
 }
 
-export const siteJsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': `${siteUrl}/#organization`,
-      name: siteName,
-      url: siteUrl,
-      logo: absoluteUrl('/logo.svg'),
-      description: defaultDescription,
-      sameAs: ['https://github.com/wilsonwu/llmxy', 'https://github.com/letscrum', 'https://github.com/imoogoo/sellohub'],
-      knowsAbout: defaultKeywords,
-    },
-    {
-      '@type': 'WebSite',
-      '@id': `${siteUrl}/#website`,
-      name: siteName,
-      url: siteUrl,
-      inLanguage: 'en-US',
-      publisher: {
+export function createSiteJsonLd({ description, locale, knowsAbout }: { description: string; locale: Locale; knowsAbout: string[] }) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
         '@id': `${siteUrl}/#organization`,
+        name: siteName,
+        url: siteUrl,
+        logo: absoluteUrl('/logo.svg'),
+        description,
+        sameAs: ['https://github.com/wilsonwu/llmxy', 'https://github.com/letscrum', 'https://github.com/imoogoo/sellohub'],
+        knowsAbout,
       },
-    },
-  ],
+      {
+        '@type': 'WebSite',
+        '@id': `${siteUrl}/#website`,
+        name: siteName,
+        url: siteUrl,
+        inLanguage: languageTags[locale],
+        publisher: {
+          '@id': `${siteUrl}/#organization`,
+        },
+      },
+    ],
+  }
 }

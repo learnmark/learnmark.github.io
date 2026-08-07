@@ -9,6 +9,7 @@ import {
   LightBulbIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
+import type { ContactMessages } from "@/i18n/messages/contact";
 
 const initialFormData = {
   firstName: "",
@@ -22,27 +23,22 @@ const initialFormData = {
 
 const contactHighlights = [
   {
-    name: "Focused discovery",
-    description: "We start with commerce or product goals, customer journeys, constraints, risks, and the delivery context behind the request.",
+    id: "focused-discovery",
     icon: LightBulbIcon,
   },
   {
-    name: "Practical response",
-    description: "Expect a concise reply with next steps, fit, and the right path for a product or platform discussion.",
+    id: "practical-response",
     icon: ClockIcon,
   },
   {
-    name: "Production mindset",
-    description: "Shopify, AI, cloud, and delivery work is shaped around usability, reliability, security, performance, and maintainability.",
+    id: "production-mindset",
     icon: ShieldCheckIcon,
   },
 ];
-
-const focusAreas = ["Shopify stores", "Custom themes", "AI strategy", "LLM integration", "Cloud modernization", "Platform engineering"];
 const interestOptions = ["Shopify Store Development", "AI Consulting", "Cloud Consulting", "Platform Engineering", "API and AI Gateway", "llmxy", "LetScrum", "Other"];
 const timelineOptions = ["This quarter", "Next quarter", "Exploring options", "Urgent support"];
 
-export default function ContactForm() {
+export default function ContactForm({ messages }: { messages: ContactMessages }) {
   const [agreed, setAgreed] = useState(false);
   const [formData, setFormData] = useState(initialFormData);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -98,16 +94,16 @@ export default function ContactForm() {
       <div className="site-container grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
         <section className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:p-8 lg:min-h-160">
           <div>
-            <p className="text-sm font-semibold uppercase text-primary-700">Contact Learnmark</p>
+            <p className="text-sm font-semibold uppercase text-primary-700">{messages.eyebrow}</p>
             <h1 className="mt-5 max-w-xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-              Shape your next Shopify, AI, or cloud initiative.
+              {messages.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Tell us about the store, product, or platform you are building. We will help clarify the customer experience, technical path, and right next conversation.
+              {messages.description}
             </p>
 
             <div className="mt-7 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-2.5">
-              {focusAreas.map((area) => (
+              {messages.focusAreas.map((area) => (
                 <span key={area} className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-center text-xs font-medium text-slate-700 shadow-sm sm:px-3.5 sm:text-sm">
                   {area}
                 </span>
@@ -116,27 +112,30 @@ export default function ContactForm() {
           </div>
 
           <div className="mt-12 hidden gap-4 lg:grid">
-            {contactHighlights.map((item) => (
-              <div key={item.name} className="rounded-lg border border-slate-200 bg-white/80 p-5 shadow-sm">
+            {contactHighlights.map((item, index) => {
+              const localizedItem = messages.highlights[index];
+              return (
+              <div key={item.id} className="rounded-lg border border-slate-200 bg-white/80 p-5 shadow-sm">
                 <div className="flex gap-4">
                   <div className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-primary-50 text-primary-800 ring-1 ring-primary-100">
                     <item.icon aria-hidden="true" className="h-5 w-5" />
                   </div>
                   <div>
-                    <h2 className="text-sm font-semibold text-slate-950">{item.name}</h2>
-                    <p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p>
+                    <h2 className="text-sm font-semibold text-slate-950">{localizedItem.name}</h2>
+                    <p className="mt-1 text-sm leading-6 text-slate-600">{localizedItem.description}</p>
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
         <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl shadow-slate-900/10 sm:p-8 lg:p-10">
           <div className="flex flex-col gap-6 border-b border-slate-200 pb-8 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase text-primary-700">Start a conversation</p>
-              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">Tell us about the work.</h2>
+              <p className="text-sm font-semibold uppercase text-primary-700">{messages.formEyebrow}</p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">{messages.formTitle}</h2>
             </div>
             <a href="mailto:hello@learnmark.com" className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-primary-200 hover:bg-primary-50 hover:text-primary-800">
               <EnvelopeIcon aria-hidden="true" className="h-4 w-4" />
@@ -148,7 +147,7 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 gap-x-5 gap-y-6 sm:grid-cols-2">
               <div>
                 <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-slate-900">
-                  First name
+                  {messages.firstName}
                 </label>
                 <input
                   id="first-name"
@@ -163,7 +162,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <label htmlFor="last-name" className="block text-sm font-semibold leading-6 text-slate-900">
-                  Last name
+                  {messages.lastName}
                 </label>
                 <input
                   id="last-name"
@@ -179,7 +178,7 @@ export default function ContactForm() {
 
               <div>
                 <label htmlFor="company" className="block text-sm font-semibold leading-6 text-slate-900">
-                  Company
+                  {messages.company}
                 </label>
                 <input
                   id="company"
@@ -193,7 +192,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold leading-6 text-slate-900">
-                  Work email
+                  {messages.email}
                 </label>
                 <input
                   id="email"
@@ -209,7 +208,7 @@ export default function ContactForm() {
 
               <div>
                 <label htmlFor="interest" className="block text-sm font-semibold leading-6 text-slate-900">
-                  Project focus
+                  {messages.interest}
                 </label>
                 <select
                   id="interest"
@@ -218,14 +217,14 @@ export default function ContactForm() {
                   onChange={handleInputChange}
                   className="mt-2 block w-full rounded-xl border-0 bg-slate-50 px-4 py-3 text-slate-900 ring-1 ring-inset ring-slate-200 transition focus:bg-white focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm"
                 >
-                  {interestOptions.map((option) => (
-                    <option key={option}>{option}</option>
+                  {interestOptions.map((option, index) => (
+                    <option key={option} value={option}>{messages.interestOptions[index]}</option>
                   ))}
                 </select>
               </div>
               <div>
                 <label htmlFor="timeline" className="block text-sm font-semibold leading-6 text-slate-900">
-                  Timeline
+                  {messages.timeline}
                 </label>
                 <select
                   id="timeline"
@@ -234,15 +233,15 @@ export default function ContactForm() {
                   onChange={handleInputChange}
                   className="mt-2 block w-full rounded-xl border-0 bg-slate-50 px-4 py-3 text-slate-900 ring-1 ring-inset ring-slate-200 transition focus:bg-white focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm"
                 >
-                  {timelineOptions.map((option) => (
-                    <option key={option}>{option}</option>
+                  {timelineOptions.map((option, index) => (
+                    <option key={option} value={option}>{messages.timelineOptions[index]}</option>
                   ))}
                 </select>
               </div>
 
               <div className="sm:col-span-2">
                 <label htmlFor="message" className="block text-sm font-semibold leading-6 text-slate-900">
-                  What should we know?
+                  {messages.messageLabel}
                 </label>
                 <textarea
                   id="message"
@@ -250,7 +249,7 @@ export default function ContactForm() {
                   rows={5}
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Briefly describe the storefront, product, platform, team, or architecture challenge."
+                  placeholder={messages.messagePlaceholder}
                   className="mt-2 block w-full resize-y rounded-xl border-0 bg-slate-50 px-4 py-3 text-slate-900 ring-1 ring-inset ring-slate-200 transition placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm"
                 />
               </div>
@@ -266,11 +265,11 @@ export default function ContactForm() {
                     className="mt-1 h-4 w-4 rounded border-slate-300 text-primary-700 focus:ring-primary-700"
                   />
                   <span>
-                    I agree to receive communications from Learnmark. You can unsubscribe at any time. Review our{" "}
+                    {messages.consentPrefix}{" "}
                     <a href="/privacy-policy" target="_blank" className="font-semibold text-primary-700 hover:text-primary-800">
-                      Privacy Policy
+                      {messages.privacyPolicy}
                     </a>
-                    .
+                    {messages.consentSuffix}
                   </span>
                 </label>
               </div>
@@ -282,21 +281,21 @@ export default function ContactForm() {
                 disabled={!agreed || status === "submitting"}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary-800 px-6 py-3 text-sm font-semibold text-white! shadow-lg shadow-primary-950/20 transition hover:bg-primary-700 disabled:cursor-not-allowed disabled:bg-slate-400 disabled:shadow-none sm:w-auto"
               >
-                {status === "submitting" ? "Submitting..." : "Send request"}
+                {status === "submitting" ? messages.submitting : messages.submit}
                 <ArrowRightIcon aria-hidden="true" className="h-4 w-4" />
               </button>
-              <p className="text-sm leading-6 text-slate-500">We usually reply within 1 business day.</p>
+              <p className="text-sm leading-6 text-slate-500">{messages.replyTime}</p>
             </div>
 
             {status === "success" && (
               <div role="status" className="mt-6 flex gap-3 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm leading-6 text-emerald-800">
                 <CheckCircleIcon aria-hidden="true" className="mt-0.5 h-5 w-5 flex-none" />
-                Thank you. Your message has been sent successfully.
+                {messages.success}
               </div>
             )}
             {status === "error" && (
               <div role="alert" className="mt-6 rounded-lg border border-red-200 bg-red-50 p-4 text-sm leading-6 text-red-700">
-                Something went wrong. Please try again later or email hello@learnmark.com.
+                {messages.error}
               </div>
             )}
           </form>

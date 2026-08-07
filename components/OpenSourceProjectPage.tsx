@@ -1,3 +1,5 @@
+import type { OpenSourceTemplateMessages } from '@/i18n/messages/open-source/types'
+
 type ProjectFact = {
   label: string
   value: string
@@ -14,7 +16,7 @@ type RepositoryLink = {
 }
 
 type OpenSourceProjectPageProps = {
-  name: string
+  title: string
   category: string
   summary: string
   description: string
@@ -27,10 +29,11 @@ type OpenSourceProjectPageProps = {
   quickStart: string
   repositories: RepositoryLink[]
   productHref: string
+  labels: OpenSourceTemplateMessages
 }
 
 export default function OpenSourceProjectPage({
-  name,
+  title,
   category,
   summary,
   description,
@@ -43,6 +46,7 @@ export default function OpenSourceProjectPage({
   quickStart,
   repositories,
   productHref,
+  labels,
 }: OpenSourceProjectPageProps) {
   return (
     <main className="relative isolate overflow-hidden bg-transparent">
@@ -55,7 +59,7 @@ export default function OpenSourceProjectPage({
                 {status}
               </span>
             </div>
-            <h1 className="mt-5 text-4xl font-bold text-slate-950 sm:text-6xl">{name} Open Source</h1>
+            <h1 className="mt-5 text-4xl font-bold text-slate-950 sm:text-6xl">{title}</h1>
             <p className="mt-6 text-xl leading-8 text-slate-700">{summary}</p>
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600">{description}</p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -65,10 +69,10 @@ export default function OpenSourceProjectPage({
                 rel="noreferrer"
                 className="inline-flex justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white! transition-colors hover:bg-primary-800"
               >
-                View source on GitHub
+                {labels.viewSource}
               </a>
               <a href={productHref} className="text-sm font-semibold leading-6 text-slate-900 transition-colors hover:text-primary-800">
-                Explore the Learnmark product <span aria-hidden="true">-&gt;</span>
+                {labels.exploreProduct} <span aria-hidden="true">-&gt;</span>
               </a>
             </div>
           </div>
@@ -87,8 +91,8 @@ export default function OpenSourceProjectPage({
       <section className="site-section border-y border-slate-200 bg-white/65">
         <div className="site-container">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase text-primary-700">Included in the repository</p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl">Open-source capabilities</h2>
+            <p className="text-sm font-semibold uppercase text-primary-700">{labels.includedEyebrow}</p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl">{labels.capabilitiesTitle}</h2>
           </div>
           <div className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((capability, index) => (
@@ -105,8 +109,8 @@ export default function OpenSourceProjectPage({
       <section className="site-section">
         <div className="site-container grid gap-14 lg:grid-cols-[0.78fr_1.22fr]">
           <div className="max-w-xl">
-            <p className="text-sm font-semibold uppercase text-primary-700">Architecture</p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-950">How the project is organized</h2>
+            <p className="text-sm font-semibold uppercase text-primary-700">{labels.architectureEyebrow}</p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-950">{labels.architectureTitle}</h2>
           </div>
           <dl className="divide-y divide-slate-200 border-y border-slate-200">
             {architecture.map((item) => (
@@ -122,8 +126,8 @@ export default function OpenSourceProjectPage({
       <section className="site-section border-y border-slate-200 bg-slate-950 text-white">
         <div className="site-container grid gap-16 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase text-primary-200">Technology stack</p>
-            <h2 className="mt-3 text-3xl font-bold">Built for self-hosting and extension</h2>
+            <p className="text-sm font-semibold uppercase text-primary-200">{labels.technologyEyebrow}</p>
+            <h2 className="mt-3 text-3xl font-bold">{labels.technologyTitle}</h2>
             <div className="mt-8 flex flex-wrap gap-3">
               {technology.map((item) => (
                 <span key={item} className="rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm font-medium text-slate-200">
@@ -131,7 +135,7 @@ export default function OpenSourceProjectPage({
                 </span>
               ))}
             </div>
-            <h3 className="mt-10 text-sm font-semibold uppercase text-slate-300">Prerequisites</h3>
+            <h3 className="mt-10 text-sm font-semibold uppercase text-slate-300">{labels.prerequisites}</h3>
             <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-300">
               {prerequisites.map((item) => (
                 <li key={item}>{item}</li>
@@ -139,7 +143,7 @@ export default function OpenSourceProjectPage({
             </ul>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase text-primary-200">Quick start</p>
+            <p className="text-sm font-semibold uppercase text-primary-200">{labels.quickStart}</p>
             <pre className="mt-5 overflow-x-auto rounded-lg border border-white/10 bg-black/30 p-5 text-sm leading-7 text-slate-200">
               <code>{quickStart}</code>
             </pre>
@@ -150,8 +154,8 @@ export default function OpenSourceProjectPage({
       <section className="site-section">
         <div className="site-container flex flex-col justify-between gap-10 sm:flex-row sm:items-center">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase text-primary-700">Project repositories</p>
-            <h2 className="mt-3 text-2xl font-bold text-slate-950 sm:text-3xl">Read the code, documentation, and project history.</h2>
+            <p className="text-sm font-semibold uppercase text-primary-700">{labels.repositoriesEyebrow}</p>
+            <h2 className="mt-3 text-2xl font-bold text-slate-950 sm:text-3xl">{labels.repositoriesTitle}</h2>
           </div>
           <div className="flex flex-col gap-3 sm:items-end">
             {repositories.map((repository) => (

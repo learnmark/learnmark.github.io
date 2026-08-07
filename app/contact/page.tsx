@@ -1,13 +1,22 @@
 import { createPageMetadata } from '../seo'
 import ContactForm from './ContactForm'
+import { contactMessages } from '@/i18n/messages/contact'
+import { getLocale } from '@/i18n/server'
 
-export const metadata = createPageMetadata({
-  title: 'Contact Us',
-  description: 'Contact Learnmark to discuss Shopify store development, custom themes, AI consulting, cloud modernization, platform engineering, and software delivery needs.',
-  path: '/contact',
-  keywords: ['contact Learnmark', 'Shopify development contact', 'AI consulting contact', 'cloud consulting contact', 'software consulting inquiry'],
-})
+export async function generateMetadata() {
+  const locale = await getLocale()
+  const messages = contactMessages[locale]
 
-export default function ContactPage() {
-  return <ContactForm />
+  return createPageMetadata({
+    title: messages.seoTitle,
+    description: messages.seoDescription,
+    path: '/contact',
+    keywords: messages.seoKeywords,
+    locale,
+  })
+}
+
+export default async function ContactPage() {
+  const locale = await getLocale()
+  return <ContactForm messages={contactMessages[locale]} />
 }

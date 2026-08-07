@@ -2,8 +2,9 @@
 
 import { useState } from 'react'
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
+import type { HomeMessages } from '@/i18n/messages/home'
 
-export default function Subscribe() {
+export default function Subscribe({ messages }: { messages: HomeMessages['subscribe'] }) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [message, setMessage] = useState('')
@@ -27,15 +28,15 @@ export default function Subscribe() {
 
       if (response.ok) {
         setStatus('success')
-        setMessage('Thanks for subscribing!')
+        setMessage(messages.success)
         setEmail('')
       } else {
         setStatus('error')
-        setMessage(data.error || 'Something went wrong. Please try again.')
+        setMessage(messages.error)
       }
     } catch (error) {
       setStatus('error')
-      setMessage('Something went wrong. Please try again.')
+      setMessage(messages.error)
     }
   }
 
@@ -45,13 +46,13 @@ export default function Subscribe() {
       <div className="site-container">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our AI and Cloud notes</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{messages.title}</h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
-              Get practical architecture notes, AI delivery lessons, and cloud modernization ideas from Learnmark.
+              {messages.description}
             </p>
             <form onSubmit={handleSubmit} className="mt-6 flex max-w-md gap-x-4">
               <label htmlFor="email-address" className="sr-only">
-                Your email address
+                {messages.emailLabel}
               </label>
               <input
                 id="email-address"
@@ -60,7 +61,7 @@ export default function Subscribe() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
+                placeholder={messages.emailPlaceholder}
                 autoComplete="email"
                 className="min-w-0 flex-auto rounded-full border-0 bg-white/5 px-4 py-3 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-primary-400 sm:text-sm sm:leading-6"
               />
@@ -69,7 +70,7 @@ export default function Subscribe() {
                 disabled={status === 'submitting'}
                 className="flex-none rounded-full bg-primary-600 px-4 py-3 text-sm font-semibold !text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {status === 'submitting' ? 'Subscribing...' : 'Subscribe'}
+                {status === 'submitting' ? messages.submitting : messages.submit}
               </button>
             </form>
             {message && (
@@ -83,18 +84,18 @@ export default function Subscribe() {
               <div className="rounded-xl bg-white/5 p-2 ring-1 ring-white/10">
                 <CalendarDaysIcon aria-hidden="true" className="h-6 w-6 text-white" />
               </div>
-              <dt className="mt-4 font-semibold text-white">Practical field notes</dt>
+              <dt className="mt-4 font-semibold text-white">{messages.notesTitle}</dt>
               <dd className="mt-2 leading-7 text-gray-400">
-                Receive concise resources for AI product delivery, cloud platforms, and engineering leadership.
+                {messages.notesDescription}
               </dd>
             </div>
             <div className="flex flex-col items-start">
               <div className="rounded-xl bg-white/5 p-2 ring-1 ring-white/10">
                 <HandRaisedIcon aria-hidden="true" className="h-6 w-6 text-white" />
               </div>
-              <dt className="mt-4 font-semibold text-white">No spam</dt>
+              <dt className="mt-4 font-semibold text-white">{messages.privacyTitle}</dt>
               <dd className="mt-2 leading-7 text-gray-400">
-                No spam, only useful consulting notes with the option to unsubscribe at any time.
+                {messages.privacyDescription}
               </dd>
             </div>
           </dl>

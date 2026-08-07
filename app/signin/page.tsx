@@ -1,11 +1,19 @@
 import { createPageMetadata } from '../seo'
+import { systemMessages } from '@/i18n/messages/system'
+import { getLocale } from '@/i18n/server'
 
-export const metadata = createPageMetadata({
-  title: 'Sign In',
-  description: 'Sign in to Learnmark.',
-  path: '/signin',
-  noIndex: true,
-})
+export async function generateMetadata() {
+  const locale = await getLocale()
+  const messages = systemMessages[locale].signIn
+
+  return createPageMetadata({
+    title: messages.seoTitle,
+    description: messages.seoDescription,
+    path: '/signin',
+    noIndex: true,
+    locale,
+  })
+}
 
 /*
   This example requires some changes to your config:
@@ -21,7 +29,10 @@ export const metadata = createPageMetadata({
   }
   ```
 */
-export default function Example() {
+export default async function SignIn() {
+  const locale = await getLocale()
+  const messages = systemMessages[locale].signIn
+
     return (
       <>
         {/*
@@ -41,7 +52,7 @@ export default function Example() {
               className="mx-auto h-10 w-auto"
             />
             <h1 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-              Sign in to your account
+              {messages.title}
             </h1>
           </div>
   
@@ -49,7 +60,7 @@ export default function Example() {
             <form action="#" method="POST" className="space-y-6">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                  Email address
+                  {messages.email}
                 </label>
                 <div className="mt-2">
                   <input
@@ -66,11 +77,11 @@ export default function Example() {
               <div>
                 <div className="flex items-center justify-between">
                   <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                    Password
+                    {messages.password}
                   </label>
                   <div className="text-sm">
                     <a href="#" className="font-semibold text-primary-700 hover:text-primary-600">
-                      Forgot password?
+                      {messages.forgotPassword}
                     </a>
                   </div>
                 </div>
@@ -91,15 +102,15 @@ export default function Example() {
                   type="submit"
                   className="flex w-full justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800"
                 >
-                  Sign in
+                  {messages.submit}
                 </button>
               </div>
             </form>
   
             <p className="mt-10 text-center text-sm text-gray-500">
-              Not a member?{' '}
+              {messages.notMember}{' '}
               <a href="#" className="font-semibold leading-6 text-primary-700 hover:text-primary-600">
-                Start a 14 day free trial
+                {messages.trial}
               </a>
             </p>
           </div>

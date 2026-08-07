@@ -1,9 +1,9 @@
 import { ImageResponse } from 'next/og'
 
-import { defaultDescription, siteName } from './seo'
+import { siteName } from './seo'
 
 export const dynamic = 'force-static'
-export const alt = 'Learnmark AI and Cloud Consulting'
+export const alt = 'Learnmark'
 export const size = {
   width: 1200,
   height: 630,
@@ -43,16 +43,16 @@ export default function Image() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             <h1 style={{ fontSize: 76, fontWeight: 800, lineHeight: 0.96, margin: 0, maxWidth: 920 }}>
-              AI and Cloud Consulting for Production Teams
+              {siteName}
             </h1>
             <p style={{ color: '#475569', fontSize: 30, lineHeight: 1.35, margin: 0, maxWidth: 920 }}>
-              {defaultDescription}
+              AI · Cloud · Shopify
             </p>
           </div>
           <div style={{ color: '#334155', display: 'flex', fontSize: 26, gap: 20 }}>
-            <span>AI Strategy</span>
-            <span>Cloud Modernization</span>
-            <span>Reliable Delivery</span>
+            <span>llmxy</span>
+            <span>LetScrum</span>
+            <span>Sello</span>
           </div>
         </div>
       </div>

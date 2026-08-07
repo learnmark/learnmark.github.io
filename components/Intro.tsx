@@ -1,42 +1,30 @@
-const capabilities = ['AI product delivery', 'Cloud platforms', 'LLM gateways', 'Reliability engineering']
+import type { HomeMessages } from '@/i18n/messages/home'
 
-const architectureLayers = [
-  { name: 'AI Strategy', detail: 'Use cases, prompts, evaluation' },
-  { name: 'Cloud Platform', detail: 'Landing zones, IaC, CI/CD' },
-  { name: 'Operations', detail: 'Observability, cost, governance' },
-]
-
-const signals = [
-  { label: 'Production readiness', value: 'High' },
-  { label: 'Delivery model', value: 'Advisory + build' },
-  { label: 'Focus', value: 'AI / Cloud' },
-]
-
-export default function Intro() {
+export default function Intro({ messages }: { messages: HomeMessages['intro'] }) {
   return (
     <section className="relative isolate overflow-hidden bg-transparent pb-20 pt-20 sm:pb-28 sm:pt-28">
       <div className="site-container grid grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_0.92fr]">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase text-primary-700">AI + Cloud Consulting</p>
+            <p className="text-sm font-semibold uppercase text-primary-700">{messages.eyebrow}</p>
             <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-              Build intelligent products on cloud platforms that can scale.
+              {messages.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Learnmark helps organizations turn AI opportunities into production systems and modernize cloud platforms for secure, reliable, continuously delivered software.
+              {messages.description}
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
                 href="/contact"
                 className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold !text-white shadow-lg shadow-primary-900/20 transition-all duration-300 hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800"
               >
-                Plan an AI or Cloud project
+                {messages.primaryCta}
               </a>
               <a href="/solutions/cloud" className="text-sm font-semibold leading-6 text-slate-900 transition-colors hover:text-primary-800">
-                Explore cloud consulting <span aria-hidden="true">→</span>
+                {messages.secondaryCta} <span aria-hidden="true">→</span>
               </a>
             </div>
             <div className="mt-10 flex flex-wrap gap-3">
-              {capabilities.map((capability) => (
+              {messages.capabilities.map((capability) => (
                 <span key={capability} className="rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm">
                   {capability}
                 </span>
@@ -49,14 +37,14 @@ export default function Intro() {
             <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-2xl shadow-slate-900/10 backdrop-blur-xl">
               <div className="flex items-center justify-between border-b border-slate-200 pb-4">
                 <div>
-                  <p className="text-sm font-semibold text-slate-950">AI Cloud Operating Model</p>
-                  <p className="text-xs text-slate-500">Strategy to production loop</p>
+                  <p className="text-sm font-semibold text-slate-950">{messages.modelTitle}</p>
+                  <p className="text-xs text-slate-500">{messages.modelSubtitle}</p>
                 </div>
-                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-600/20 dark:bg-emerald-950/60 dark:text-emerald-300 dark:ring-emerald-400/30">Live</span>
+                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-600/20 dark:bg-emerald-950/60 dark:text-emerald-300 dark:ring-emerald-400/30">{messages.live}</span>
               </div>
 
               <div className="mt-5 grid gap-3">
-                {architectureLayers.map((layer, index) => (
+                {messages.layers.map((layer, index) => (
                   <div key={layer.name} className="rounded-lg border border-slate-200 bg-slate-50/80 p-4">
                     <div className="flex items-center gap-3">
                       <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-800">{index + 1}</span>
@@ -70,7 +58,7 @@ export default function Intro() {
               </div>
 
               <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
-                {signals.map((signal) => (
+                {messages.signals.map((signal) => (
                   <div key={signal.label} className="rounded-lg bg-slate-950 p-4 text-white">
                     <p className="text-xs text-slate-400">{signal.label}</p>
                     <p className="mt-2 text-sm font-semibold">{signal.value}</p>
