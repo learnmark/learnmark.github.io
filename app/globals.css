@@ -13,6 +13,7 @@
   --site-text: #0f172a;
   --site-text-soft: #334155;
   --site-text-muted: #475569;
+  --site-content-width: 80rem;
 }
 
 :root.dark {
@@ -99,6 +100,10 @@ body.site-shell {
   background-color: #242832;
 }
 
+:root.dark :where(.bg-slate-200, .bg-gray-200) {
+  background-color: var(--site-border);
+}
+
 :root.dark :where(.bg-primary-50, .bg-primary-100) {
   background-color: rgb(136 19 55 / 0.2);
 }
@@ -166,6 +171,54 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@layer components {
+  .site-page {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .site-container {
+    width: 100%;
+    max-width: var(--site-content-width);
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  .site-frame {
+    width: 100%;
+    max-width: var(--site-content-width);
+    margin-inline: auto;
+  }
+
+  .site-section {
+    padding-block: 5rem;
+  }
+
+  @media (min-width: 40rem) {
+    .site-section {
+      padding-block: 6rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .site-container {
+      padding-inline: 2rem;
+    }
+
+    .site-product-grid-row {
+      grid-column: 1 / span 2;
+      margin-inline: auto;
+      display: grid;
+      width: 100%;
+      max-width: var(--site-content-width);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 2rem;
+      padding-inline: 2rem;
+    }
+  }
 }
 
 @font-face {

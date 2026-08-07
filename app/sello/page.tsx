@@ -88,8 +88,8 @@ export default function Sello() {
     <>
       <JsonLd data={selloJsonLd} />
       <main className="relative isolate overflow-hidden bg-transparent">
-        <section className="px-6 pb-20 pt-24 sm:pb-28 sm:pt-32 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+        <section className="pb-20 pt-24 sm:pb-28 sm:pt-32">
+          <div className="site-container grid gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
             <div className="max-w-3xl">
               <p className="text-base font-semibold leading-7 text-primary-700">Managed Commerce Operations</p>
               <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl">Sello</h1>
@@ -129,8 +129,8 @@ export default function Sello() {
           </div>
         </section>
 
-        <section id="capabilities" className="border-y border-slate-200 bg-white/65 px-6 py-20 sm:py-24 lg:px-8">
-          <div className="mx-auto max-w-7xl">
+        <section id="capabilities" className="site-section border-y border-slate-200 bg-white/65">
+          <div className="site-container">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase text-primary-700">Product capabilities</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">A practical operating layer for commerce teams</h2>
@@ -158,8 +158,8 @@ export default function Sello() {
           </div>
         </section>
 
-        <section className="px-6 py-20 sm:py-24 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.78fr_1.22fr]">
+        <section className="site-section">
+          <div className="site-container grid gap-14 lg:grid-cols-[0.78fr_1.22fr]">
             <div>
               <p className="text-sm font-semibold uppercase text-primary-700">Product screenshots</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950">The workflows the first screenshot set will cover</h2>
@@ -178,8 +178,8 @@ export default function Sello() {
           </div>
         </section>
 
-        <section className="border-t border-slate-200 px-6 py-20 lg:px-8">
-          <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 sm:flex-row sm:items-center">
+        <section className="site-section border-t border-slate-200">
+          <div className="site-container flex flex-col justify-between gap-8 sm:flex-row sm:items-center">
             <div className="max-w-2xl">
               <p className="text-sm font-semibold uppercase text-primary-700">Plan the product around your channels</p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">Start with the stores, workflows, and AI controls your team actually needs.</h2>

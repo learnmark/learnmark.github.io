@@ -92,11 +92,11 @@ export default function ContactForm() {
   };
 
   return (
-    <main className="relative isolate overflow-hidden px-6 pb-20 pt-10 sm:pb-24 sm:pt-14 lg:px-8">
+    <main className="site-section relative isolate overflow-hidden">
       <div aria-hidden="true" className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(ellipse_at_top,rgba(136,19,55,0.18),transparent_66%)]" />
 
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
-        <section className="flex flex-col justify-between rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:p-8 lg:min-h-160">
+      <div className="site-container grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+        <section className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:p-8 lg:min-h-160">
           <div>
             <p className="text-sm font-semibold uppercase text-primary-700">Contact Learnmark</p>
             <h1 className="mt-5 max-w-xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
@@ -117,7 +117,7 @@ export default function ContactForm() {
 
           <div className="mt-12 hidden gap-4 lg:grid">
             {contactHighlights.map((item) => (
-              <div key={item.name} className="rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm">
+              <div key={item.name} className="rounded-lg border border-slate-200 bg-white/80 p-5 shadow-sm">
                 <div className="flex gap-4">
                   <div className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-primary-50 text-primary-800 ring-1 ring-primary-100">
                     <item.icon aria-hidden="true" className="h-5 w-5" />
@@ -132,7 +132,7 @@ export default function ContactForm() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl shadow-slate-900/10 sm:p-8 lg:p-10">
+        <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl shadow-slate-900/10 sm:p-8 lg:p-10">
           <div className="flex flex-col gap-6 border-b border-slate-200 pb-8 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase text-primary-700">Start a conversation</p>
@@ -256,7 +256,7 @@ export default function ContactForm() {
               </div>
 
               <div className="sm:col-span-2">
-                <label htmlFor="offers" className="flex gap-3 rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm leading-6 text-slate-600">
+                <label htmlFor="offers" className="flex gap-3 rounded-lg border border-slate-200 bg-slate-50/80 p-4 text-sm leading-6 text-slate-600">
                   <input
                     id="offers"
                     name="offers"
@@ -289,13 +289,13 @@ export default function ContactForm() {
             </div>
 
             {status === "success" && (
-              <div role="status" className="mt-6 flex gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm leading-6 text-emerald-800">
+              <div role="status" className="mt-6 flex gap-3 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm leading-6 text-emerald-800">
                 <CheckCircleIcon aria-hidden="true" className="mt-0.5 h-5 w-5 flex-none" />
                 Thank you. Your message has been sent successfully.
               </div>
             )}
             {status === "error" && (
-              <div role="alert" className="mt-6 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm leading-6 text-red-700">
+              <div role="alert" className="mt-6 rounded-lg border border-red-200 bg-red-50 p-4 text-sm leading-6 text-red-700">
                 Something went wrong. Please try again later or email hello@learnmark.com.
               </div>
             )}

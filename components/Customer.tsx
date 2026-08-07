@@ -1,7 +1,7 @@
 export default function Customer() {
     return (
-      <div className="bg-white py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="site-section bg-white">
+        <div className="site-container">
           <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
             Trusted by the world’s most innovative teams
           </h2>

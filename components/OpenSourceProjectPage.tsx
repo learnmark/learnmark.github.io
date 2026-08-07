@@ -46,8 +46,8 @@ export default function OpenSourceProjectPage({
 }: OpenSourceProjectPageProps) {
   return (
     <main className="relative isolate overflow-hidden bg-transparent">
-      <section className="px-6 pb-20 pt-24 sm:pb-28 sm:pt-32 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+      <section className="pb-20 pt-24 sm:pb-28 sm:pt-32">
+        <div className="site-container grid gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
           <div className="max-w-3xl">
             <div className="flex flex-wrap items-center gap-3">
               <p className="text-sm font-semibold uppercase text-primary-700">{category}</p>
@@ -84,8 +84,8 @@ export default function OpenSourceProjectPage({
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white/65 px-6 py-20 sm:py-24 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="site-section border-y border-slate-200 bg-white/65">
+        <div className="site-container">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase text-primary-700">Included in the repository</p>
             <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl">Open-source capabilities</h2>
@@ -102,8 +102,8 @@ export default function OpenSourceProjectPage({
         </div>
       </section>
 
-      <section className="px-6 py-20 sm:py-24 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.78fr_1.22fr]">
+      <section className="site-section">
+        <div className="site-container grid gap-14 lg:grid-cols-[0.78fr_1.22fr]">
           <div className="max-w-xl">
             <p className="text-sm font-semibold uppercase text-primary-700">Architecture</p>
             <h2 className="mt-3 text-3xl font-bold text-slate-950">How the project is organized</h2>
@@ -119,8 +119,8 @@ export default function OpenSourceProjectPage({
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-950 px-6 py-20 text-white sm:py-24 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
+      <section className="site-section border-y border-slate-200 bg-slate-950 text-white">
+        <div className="site-container grid gap-16 lg:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase text-primary-200">Technology stack</p>
             <h2 className="mt-3 text-3xl font-bold">Built for self-hosting and extension</h2>
@@ -147,8 +147,8 @@ export default function OpenSourceProjectPage({
         </div>
       </section>
 
-      <section className="px-6 py-20 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-10 sm:flex-row sm:items-center">
+      <section className="site-section">
+        <div className="site-container flex flex-col justify-between gap-10 sm:flex-row sm:items-center">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase text-primary-700">Project repositories</p>
             <h2 className="mt-3 text-2xl font-bold text-slate-950 sm:text-3xl">Read the code, documentation, and project history.</h2>

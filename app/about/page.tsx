@@ -47,8 +47,8 @@ const operatingModel = [
 export default function Example() {
   return (
     <main className="relative isolate overflow-hidden bg-transparent">
-      <section className="relative isolate px-6 py-20 sm:py-28 lg:px-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <section className="relative isolate py-20 sm:py-28">
+        <div className="site-container grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <p className="text-sm font-semibold uppercase text-primary-700">About Learnmark</p>
             <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
@@ -68,8 +68,8 @@ export default function Example() {
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl bg-primary-900/10 blur-2xl" />
-            <div className="relative rounded-3xl border border-slate-200 bg-white/85 p-5 shadow-2xl shadow-slate-900/10 backdrop-blur-xl">
+            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl bg-primary-900/10 blur-2xl" />
+            <div className="relative rounded-2xl border border-slate-200 bg-white/85 p-5 shadow-2xl shadow-slate-900/10 backdrop-blur-xl">
               <div className="flex items-center justify-between border-b border-slate-200 pb-4">
                 <div>
                   <p className="text-sm font-semibold text-slate-950">Operating model</p>
@@ -79,7 +79,7 @@ export default function Example() {
               </div>
               <div className="mt-5 grid gap-3">
                 {operatingModel.map((item) => (
-                  <div key={item.step} className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                  <div key={item.step} className="rounded-lg border border-slate-200 bg-slate-50/80 p-4">
                     <div className="flex gap-4">
                       <span className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-800">{item.step}</span>
                       <div>
@@ -95,8 +95,9 @@ export default function Example() {
         </div>
       </section>
 
-      <section className="px-6 pb-20 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-3xl bg-slate-950 p-8 shadow-2xl shadow-slate-900/10 sm:p-10 lg:p-12">
+      <section className="pb-20">
+        <div className="site-container">
+        <div className="rounded-2xl bg-slate-950 p-8 shadow-2xl shadow-slate-900/10 sm:p-10 lg:p-12">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <div>
               <p className="text-sm font-semibold uppercase text-primary-200">Our mission</p>
@@ -109,7 +110,7 @@ export default function Example() {
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {capabilities.map((capability) => (
-                <div key={capability.name} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <div key={capability.name} className="rounded-lg border border-white/10 bg-white/[0.04] p-5">
                   <h3 className="font-semibold text-white">{capability.name}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-400">{capability.description}</p>
                 </div>
@@ -117,10 +118,11 @@ export default function Example() {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
-      <section className="px-6 pb-20 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="pb-20">
+        <div className="site-container">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase text-primary-700">Working principles</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">What guides our consulting work</h2>
@@ -130,7 +132,7 @@ export default function Example() {
           </div>
           <dl className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {principles.map((principle) => (
-              <div key={principle.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div key={principle.name} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
                 <dt className="font-semibold text-slate-950">{principle.name}</dt>
                 <dd className="mt-3 text-sm leading-6 text-slate-600">{principle.description}</dd>
               </div>
@@ -139,8 +141,8 @@ export default function Example() {
         </div>
       </section>
 
-      <section className="px-6 pb-24 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="pb-24">
+        <div className="site-container">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <p className="text-sm font-semibold uppercase text-primary-700">Leadership</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Experienced across AI, Cloud, and product engineering</h2>
@@ -150,9 +152,9 @@ export default function Example() {
           </div>
           <ul role="list" className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {people.map((person) => (
-              <li key={person.name} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <li key={person.name} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="flex items-center gap-x-4">
-                  <div className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-primary-100 text-lg font-bold text-primary-800">
+                  <div className="flex h-14 w-14 flex-none items-center justify-center rounded-lg bg-primary-100 text-lg font-bold text-primary-800">
                     {person.name}
                   </div>
                   <div>

@@ -11,7 +11,7 @@ const footerSections = [
   {
     title: 'Services',
     links: [
-      { name: 'Shopify Store Development', href: '/services/shopify' },
+      { name: 'Shopify Development', href: '/services/shopify' },
     ],
   },
   {
@@ -21,7 +21,7 @@ const footerSections = [
       { name: 'Cloud Consulting', href: '/solutions/cloud' },
       { name: 'Platform Engineering', href: '/solutions/devops' },
       { name: 'API & AI Gateway', href: '/solutions/gateway' },
-      { name: 'Microservices Modernization', href: '/solutions/microservices' },
+      { name: 'Microservices', href: '/solutions/microservices' },
       { name: 'Delivery Coaching', href: '/solutions/agile-scrum' },
     ],
   },
@@ -36,21 +36,21 @@ const footerSections = [
   {
     title: 'Open Source',
     links: [
-      { name: 'llmxy Open Source', href: '/open-source/llmxy' },
-      { name: 'LetScrum Open Source', href: '/open-source/letscrum' },
-      { name: 'Sello Open Source', href: '/open-source/sello' },
+      { name: 'llmxy', href: '/open-source/llmxy' },
+      { name: 'LetScrum', href: '/open-source/letscrum' },
+      { name: 'Sello', href: '/open-source/sello' },
     ],
   },
 ]
 
 export default function Footer() {
   return (
-    <footer className="relative isolate scroll-mt-28 overflow-hidden bg-slate-950 px-6 py-16 text-slate-300 sm:py-20 lg:px-8">
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(148,163,184,0.10)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.10)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:linear-gradient(to_top,black,transparent_84%)]" />
+    <footer className="relative isolate scroll-mt-28 overflow-hidden bg-slate-950 py-16 text-slate-300 sm:py-20">
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(148,163,184,0.10)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.10)_1px,transparent_1px)] bg-size-[56px_56px] mask-[linear-gradient(to_top,black,transparent_84%)]" />
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 -z-10 h-64 bg-[radial-gradient(ellipse_at_bottom,rgba(136,19,55,0.24),transparent_68%)]" />
 
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_2.1fr]">
+      <div className="site-container">
+        <div className="grid gap-12 lg:grid-cols-[minmax(22rem,0.9fr)_minmax(0,2.1fr)] lg:gap-10 xl:grid-cols-[minmax(23rem,0.9fr)_minmax(0,2.1fr)] xl:gap-12">
           <div>
             <a href="/" className="theme-light-surface inline-flex rounded-full bg-white px-4 py-3 shadow-sm">
               <span className="sr-only">Learnmark</span>
@@ -59,30 +59,30 @@ export default function Footer() {
             <p className="mt-6 max-w-md text-base leading-7 text-slate-400">
               AI, Cloud, and Shopify services for teams building intelligent products, modern platforms, and trusted commerce experiences.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-nowrap">
               <a
                 href="/contact"
-                className="inline-flex justify-center rounded-full bg-primary-700 px-5 py-3 text-sm font-semibold !text-white shadow-lg shadow-primary-950/30 transition hover:bg-primary-600"
+                className="inline-flex shrink-0 justify-center whitespace-nowrap rounded-full bg-primary-700 px-5 py-3 text-sm font-semibold text-white! shadow-lg shadow-primary-950/30 transition hover:bg-primary-600"
               >
                 Start a project
               </a>
               <a
                 href="/services/shopify"
-                className="inline-flex justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-semibold !text-white transition hover:bg-white/10"
+                className="inline-flex shrink-0 justify-center whitespace-nowrap rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white! transition hover:bg-white/10"
               >
-                Explore Shopify development
+                Shopify development
               </a>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-5">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 xl:grid-cols-[0.8fr_1.1fr_1.45fr_0.8fr_1.15fr] xl:gap-x-6">
             {footerSections.map((section) => (
-              <div key={section.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <h2 className="text-sm font-semibold uppercase tracking-wide text-white">{section.title}</h2>
+              <div key={section.title} className="border-t border-white/10 pt-5 sm:border-t-0 sm:pt-0 xl:border-l xl:pl-5">
+                <h2 className="whitespace-nowrap text-sm font-semibold uppercase tracking-wide text-white">{section.title}</h2>
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-400">
                   {section.links.map((link) => (
                     <li key={link.href}>
-                      <a href={link.href} className="transition hover:text-primary-200">
+                      <a href={link.href} className="whitespace-nowrap transition hover:text-primary-200">
                         {link.name}
                       </a>
                     </li>

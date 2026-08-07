@@ -1,8 +1,8 @@
 export default function CTA() {
     return (
-      <div className="bg-white">
-        <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+      <div className="site-section bg-white">
+        <div className="site-container">
+          <div className="relative isolate overflow-hidden rounded-2xl bg-gray-900 px-6 pt-16 shadow-2xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
             <svg
               viewBox="0 0 1024 1024"
               aria-hidden="true"
@@ -28,7 +28,7 @@ export default function CTA() {
               <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
                 <a
                   href="#"
-                  className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Get started
                 </a>
@@ -43,7 +43,7 @@ export default function CTA() {
                 src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
                 width={1824}
                 height={1080}
-                className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
+                className="absolute left-0 top-0 w-[57rem] max-w-none rounded-lg bg-white/5 ring-1 ring-white/10"
               />
             </div>
           </div>

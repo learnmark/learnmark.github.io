@@ -127,10 +127,10 @@ export const metadata = createPageMetadata({
   
   export default function Careers() {
     return (
-      <div className="relative isolate overflow-hidden bg-transparent py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <main className="site-section site-page bg-transparent">
+        <div className="site-container">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Join our team</h2>
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Join our team</h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               We invite you to embark on an exciting professional journey by working with us. Collaborate with a talented and diverse team, contribute to innovative projects, and develop your skills in a dynamic and supportive environment.
             </p>
@@ -169,7 +169,7 @@ export const metadata = createPageMetadata({
 
           <div className="mt-16 space-y-20">
             {jobDescriptions.map((job) => (
-              <div key={job.title} id={job.href} className="scroll-mt-24 rounded-2xl bg-gray-50 p-8 sm:p-10 ring-1 ring-gray-900/5">
+              <div key={job.title} id={job.href} className="scroll-mt-24 rounded-lg bg-gray-50 p-8 sm:p-10 ring-1 ring-gray-900/5">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <h3 className="text-2xl font-bold tracking-tight text-gray-900">
                     {job.title}
@@ -227,7 +227,7 @@ export const metadata = createPageMetadata({
             ))}
           </div>
 
-          <div className="mt-24 rounded-2xl bg-primary-900 py-16 px-6 sm:p-16 lg:flex lg:items-center lg:justify-between">
+          <div className="mt-24 rounded-2xl bg-primary-900 px-6 py-16 sm:p-16 lg:flex lg:items-center lg:justify-between">
             <div className="max-w-xl">
               <h2 className="text-3xl font-bold tracking-tight text-white">
                 Don't see a role that fits?
@@ -239,7 +239,7 @@ export const metadata = createPageMetadata({
             <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
               <a
                 href="mailto:hr@learnmark.com"
-                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-primary-900 shadow-sm hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-primary-900 shadow-sm hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Email HR
               </a>
@@ -247,7 +247,7 @@ export const metadata = createPageMetadata({
           </div>
             
         </div>
-      </div>
+      </main>
     )
   }
   

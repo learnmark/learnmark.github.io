@@ -86,15 +86,15 @@ export default function Example() {
   return (
     <>
       <JsonLd data={llmxyJsonLd} />
-      <div className="relative isolate overflow-hidden bg-transparent px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+      <div className="site-section site-page bg-transparent px-6 lg:overflow-visible lg:px-0">
 
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
-        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+        <div className="site-product-grid-row lg:row-start-1">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-primary-600">Managed AI Infrastructure</p>
-              <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">llmxy</h1>
-              <p className="mt-6 text-xl leading-8 text-gray-700">
+              <p className="text-base font-semibold leading-7 text-primary-700">Managed AI Infrastructure</p>
+              <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">llmxy</h1>
+              <p className="mt-6 text-xl leading-8 text-slate-700">
                 Operate one production gateway for multiple model providers with controlled routing, OpenAI-compatible APIs, usage visibility, and a managed path from deployment to day-two operations.
               </p>
             </div>
@@ -104,44 +104,44 @@ export default function Example() {
           <img
             alt="llmxy smart routing dashboard"
             src="/images/llmxy/admin-smart-routing.png"
-            className="w-3xl max-w-none rounded-xl bg-white object-cover object-top-left shadow-xl ring-1 ring-gray-400/10 sm:w-228"
+            className="w-3xl max-w-none rounded-2xl bg-white object-cover object-top-left shadow-2xl shadow-slate-900/10 ring-1 ring-slate-900/10 sm:w-228"
           />
         </div>
-        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+        <div className="site-product-grid-row lg:row-start-2">
           <div className="lg:pr-4">
-            <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+            <div className="max-w-xl text-base leading-7 text-slate-700 lg:max-w-lg">
               <p>
                 llmxy sits between your applications and model providers as a unified control plane. Teams keep a stable client protocol while operators configure upstream channels, models, route policies, quotas, and billing from one place.
               </p>
-              <ul role="list" className="mt-8 space-y-8 text-gray-600">
+              <ul role="list" className="mt-8 space-y-8 text-slate-600">
                 <li className="flex gap-x-3">
                   <ArrowsRightLeftIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
                   <span>
-                    <strong className="font-semibold text-gray-900">Operator-controlled routing.</strong> Configure upstream channels, model mappings, route policies, and weights without changing application clients.
+                    <strong className="font-semibold text-slate-950">Operator-controlled routing.</strong> Configure upstream channels, model mappings, route policies, and weights without changing application clients.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
                   <BoltIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
                   <span>
-                    <strong className="font-semibold text-gray-900">Gateway enforcement.</strong> Apply authentication, balance and quota checks, rate limiting, usage recording, and billing consistently at the gateway.
+                    <strong className="font-semibold text-slate-950">Gateway enforcement.</strong> Apply authentication, balance and quota checks, rate limiting, usage recording, and billing consistently at the gateway.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
                   <CpuChipIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
                   <span>
-                    <strong className="font-semibold text-gray-900">Multi-provider access.</strong> Use an OpenAI-compatible protocol in front of OpenAI, Anthropic, Gemini, and translated upstream responses.
+                    <strong className="font-semibold text-slate-950">Multi-provider access.</strong> Use an OpenAI-compatible protocol in front of OpenAI, Anthropic, Gemini, and translated upstream responses.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
                   <ChartBarIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
                   <span>
-                    <strong className="font-semibold text-gray-900">Usage Analytics.</strong> Track token consumption, cost, and latency per model, key, and tenant with real-time dashboards.
+                    <strong className="font-semibold text-slate-950">Usage Analytics.</strong> Track token consumption, cost, and latency per model, key, and tenant with real-time dashboards.
                   </span>
                 </li>
                 <li className="flex gap-x-3">
                   <ShieldCheckIcon aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-primary-600" />
                   <span>
-                    <strong className="font-semibold text-gray-900">Two relay paths.</strong> Start with the direct FastAPI relay or add the optional Envoy path for higher-throughput traffic and asynchronous usage reporting.
+                    <strong className="font-semibold text-slate-950">Two relay paths.</strong> Start with the direct FastAPI relay or add the optional Envoy path for higher-throughput traffic and asynchronous usage reporting.
                   </span>
                 </li>
               </ul>
@@ -157,39 +157,39 @@ export default function Example() {
               />
 
               <div className="mt-16">
-                <h2 className="text-2xl font-bold tracking-tight text-gray-900">Product Screenshots</h2>
+                <h2 className="text-2xl font-bold tracking-tight text-slate-950">Product Screenshots</h2>
                 <p className="mt-6">
                   The llmxy interface combines a self-service user console with an admin workspace for routing, monitoring, and billing operations.
                 </p>
                 <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-x-6 lg:gap-y-10">
                   {screenshots.map((screenshot) => (
-                    <figure key={screenshot.src} className="overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-900/10">
+                    <figure key={screenshot.src} className="overflow-hidden rounded-lg bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-900/10">
                       <img
                         src={screenshot.src}
                         alt={screenshot.alt}
-                        className="aspect-16/10 w-full bg-gray-50 object-cover object-top-left"
+                        className="aspect-16/10 w-full bg-slate-50 object-cover object-top-left"
                         loading="lazy"
                       />
-                      <figcaption className="border-t border-gray-200 p-5">
-                        <h3 className="font-semibold text-gray-900">{screenshot.title}</h3>
-                        <p className="mt-2 text-sm leading-6 text-gray-600">{screenshot.description}</p>
+                      <figcaption className="border-t border-slate-200 p-5">
+                        <h3 className="font-semibold text-slate-950">{screenshot.title}</h3>
+                        <p className="mt-2 text-sm leading-6 text-slate-600">{screenshot.description}</p>
                       </figcaption>
                     </figure>
                   ))}
                 </div>
               </div>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">An open foundation with an operated product path</h2>
+              <h2 className="mt-16 text-2xl font-bold tracking-tight text-slate-950">An open foundation with an operated product path</h2>
               <p className="mt-6">
                 Inspect and self-host the llmxy source code, or use the Learnmark product when your team needs implementation, environment ownership, controlled upgrades, and production support.
               </p>
-              <div className="mt-10 flex items-center gap-x-6">
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-x-6">
                 <a
                   href="/open-source/llmxy"
-                  className="rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold text-white! shadow-sm hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900 transition-all duration-300"
+                  className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold text-white! shadow-lg shadow-primary-950/20 transition-all duration-300 hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900"
                 >
                   Explore Open Source
                 </a>
-                <a href="/contact" className="text-sm font-semibold leading-6 text-gray-900 hover:text-primary-800">
+                <a href="/contact" className="text-sm font-semibold leading-6 text-slate-900 hover:text-primary-800">
                   Contact Sales <span aria-hidden="true">→</span>
                 </a>
               </div>

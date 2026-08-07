@@ -12,10 +12,10 @@ const services = [
 
 export default function WorkWith() {
   return (
-    <section className="relative isolate overflow-hidden bg-slate-950 py-24 sm:py-32">
+    <section className="site-section relative isolate overflow-hidden bg-slate-950">
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_88%)]" />
       <div className="absolute inset-x-0 top-0 -z-10 h-80 bg-[radial-gradient(ellipse_at_top,rgba(136,19,55,0.28),transparent_65%)]" />
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="site-container">
         <div className="mx-auto max-w-4xl lg:mx-0">
           <p className="text-sm font-semibold uppercase text-primary-300">Engagement model</p>
           <h2 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with AI and Cloud specialists</h2>
@@ -33,7 +33,7 @@ export default function WorkWith() {
           </div>
           <dl className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
-              <div key={service.name} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-lg shadow-black/10 transition-colors duration-300 hover:border-primary-300/50">
+              <div key={service.name} className="rounded-lg border border-white/10 bg-white/[0.04] p-6 shadow-lg shadow-black/10 transition-colors duration-300 hover:border-primary-300/50">
                 <dd className="text-2xl font-bold tracking-tight text-white">{service.value}</dd>
                 <dt className="mt-3 text-base font-semibold leading-7 text-slate-100">{service.name}</dt>
                 <p className="mt-3 text-sm leading-6 text-slate-400">{service.description}</p>

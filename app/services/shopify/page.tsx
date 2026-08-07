@@ -134,11 +134,11 @@ export default function ShopifyStoreDevelopmentPage() {
     <>
       <JsonLd data={shopifyJsonLd} />
       <main className="relative isolate overflow-hidden">
-        <section className="relative flex min-h-[calc(100svh-8rem)] min-h-150 items-center overflow-hidden bg-transparent px-6 py-20 lg:px-8">
+        <section className="relative flex min-h-[calc(100svh-8rem)] min-h-150 items-center overflow-hidden bg-transparent py-20">
           <div aria-hidden="true" className="absolute inset-y-0 right-[12%] w-px bg-primary-700/20 dark:bg-primary-500/35" />
           <div aria-hidden="true" className="absolute inset-y-0 right-[28%] w-px bg-slate-200 dark:bg-white/10" />
 
-          <div className="relative mx-auto w-full max-w-7xl pt-6">
+          <div className="site-container relative pt-6">
             <div className="max-w-4xl">
               <p className="text-sm font-semibold uppercase text-emerald-700 dark:text-emerald-300">Shopify Store Development</p>
               <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
@@ -211,8 +211,8 @@ export default function ShopifyStoreDevelopmentPage() {
           </div>
         </section>
 
-        <section id="shopify-barriers" className="scroll-mt-24 border-b border-slate-200 bg-white/85 px-6 py-20 backdrop-blur-xl sm:py-24 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <section id="shopify-barriers" className="site-section scroll-mt-24 border-b border-slate-200 bg-white/85 backdrop-blur-xl">
+          <div className="site-container grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
             <div>
               <p className="text-sm font-semibold uppercase text-primary-700">The real Shopify learning curve</p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">A store can look open long before it is ready to trade.</h2>
@@ -232,8 +232,8 @@ export default function ShopifyStoreDevelopmentPage() {
           </div>
         </section>
 
-        <section className="px-6 py-20 sm:py-24 lg:px-8">
-          <div className="mx-auto max-w-7xl">
+        <section className="site-section">
+          <div className="site-container">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase text-primary-700">What Learnmark takes ownership of</p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">The specialist work between signup and a dependable store.</h2>
@@ -254,8 +254,8 @@ export default function ShopifyStoreDevelopmentPage() {
           </div>
         </section>
 
-        <section className="bg-slate-950 px-6 py-20 text-white sm:py-24 lg:px-8">
-          <div className="mx-auto max-w-7xl">
+        <section className="site-section bg-slate-950 text-white">
+          <div className="site-container">
             <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
               <div>
                 <p className="text-sm font-semibold uppercase text-primary-200">How we work</p>
@@ -277,8 +277,8 @@ export default function ShopifyStoreDevelopmentPage() {
           </div>
         </section>
 
-        <section id="shopify-work" className="scroll-mt-24 border-b border-slate-200 px-6 py-20 sm:py-24 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.6fr_1.4fr] lg:gap-16">
+        <section id="shopify-work" className="site-section scroll-mt-24 border-b border-slate-200">
+          <div className="site-container grid gap-12 lg:grid-cols-[0.6fr_1.4fr] lg:gap-16">
             <div>
               <p className="text-sm font-semibold uppercase text-emerald-700">Selected Shopify work</p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">How the capability shows up in real stores.</h2>
@@ -329,8 +329,8 @@ export default function ShopifyStoreDevelopmentPage() {
           </div>
         </section>
 
-        <section className="border-t border-slate-200 bg-white/75 px-6 py-20 dark:bg-slate-950 lg:px-8">
-          <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+        <section className="site-section border-t border-slate-200 bg-white/75 dark:bg-slate-950">
+          <div className="site-container flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase text-primary-700">Start your store</p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Build a Shopify store your customers and team can rely on.</h2>

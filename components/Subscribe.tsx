@@ -40,9 +40,9 @@ export default function Subscribe() {
   }
 
   return (
-    <div className="relative isolate overflow-hidden bg-slate-950 py-16 sm:py-24 lg:py-32">
+    <div className="site-section relative isolate overflow-hidden bg-slate-950">
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:linear-gradient(to_top,black,transparent_86%)]" />
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="site-container">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Subscribe to our AI and Cloud notes</h2>

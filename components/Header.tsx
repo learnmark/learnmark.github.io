@@ -65,7 +65,7 @@ export default function Example() {
 
   return (
     <header className="sticky top-0 z-50 px-3 pt-4">
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-slate-200/80 bg-white/85 px-5 py-3 shadow-sm shadow-slate-900/5 backdrop-blur-xl lg:px-6">
+      <nav aria-label="Global" className="site-frame flex items-center justify-between rounded-full border border-slate-200/80 bg-white/85 px-5 py-3 shadow-sm shadow-slate-900/5 backdrop-blur-xl lg:px-6">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Learnmark</span>

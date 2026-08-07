@@ -1,8 +1,9 @@
 export default function Feedback() {
     return (
-      <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+      <section className="site-section relative isolate overflow-hidden bg-white">
         <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent" />
-        <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200 bg-slate-50/80 p-8 shadow-xl shadow-slate-900/5 sm:p-12">
+        <div className="site-container">
+        <div className="mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-slate-50/80 p-8 shadow-xl shadow-slate-900/5 sm:p-12">
           <figure>
             <blockquote className="text-center text-xl font-semibold leading-8 text-slate-950 sm:text-2xl sm:leading-9">
               <p>
@@ -17,6 +18,7 @@ export default function Feedback() {
               </div>
             </figcaption>
           </figure>
+        </div>
         </div>
       </section>
     )

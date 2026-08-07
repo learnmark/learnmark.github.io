@@ -9,8 +9,9 @@ export const metadata = createPageMetadata({
 
 export default function Example() {
   return (
-    <div className="relative isolate bg-transparent px-6 py-24 sm:py-32 lg:px-8">
-      <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
+    <main className="site-section relative isolate bg-transparent">
+      <div className="site-container">
+      <article className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
         <p className="text-base font-semibold leading-7 text-primary-600">Legal</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Privacy Policy</h1>
         <p className="mt-6 text-xl leading-8">
@@ -22,7 +23,7 @@ export default function Example() {
             Learnmark is committed to protecting your privacy. This Privacy Statement describes Learnmark‘s privacy practices and how we treat the personal information that we collect from you when you use our products and services, including our website. This Privacy Statement applies to all of the services offered by Learnmark, including our website, but excludes services that have separate privacy statements that do not incorporate this Privacy Statement.
           </p>
           
-          <div className="mt-10 rounded-2xl bg-gray-50 p-8">
+          <div className="mt-10 rounded-lg bg-gray-50 p-8">
             <h2 className="text-lg font-semibold text-gray-900">Table of Contents</h2>
             <ul role="list" className="mt-4 space-y-2 text-sm leading-6 text-gray-600">
               <li><a href="#information-we-collect" className="hover:text-primary-600 hover:underline">Information We Collect</a></li>
@@ -81,7 +82,8 @@ export default function Example() {
             If you have any questions about this Privacy Statement, please contact us at <a href="mailto:privacy@learnmark.com" className="font-semibold text-primary-600 hover:text-primary-500">privacy@learnmark.com</a>.
           </p>
         </div>
+      </article>
       </div>
-    </div>
+    </main>
   )
 }

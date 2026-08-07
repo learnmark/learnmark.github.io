@@ -14,8 +14,8 @@ const signals = [
 
 export default function Intro() {
   return (
-    <section className="relative isolate overflow-hidden bg-transparent px-6 pb-20 pt-20 sm:pb-28 sm:pt-28 lg:px-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_0.92fr]">
+    <section className="relative isolate overflow-hidden bg-transparent pb-20 pt-20 sm:pb-28 sm:pt-28">
+      <div className="site-container grid grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_0.92fr]">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase text-primary-700">AI + Cloud Consulting</p>
             <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
@@ -45,8 +45,8 @@ export default function Intro() {
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl bg-primary-300/20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/85 p-4 shadow-2xl shadow-slate-900/10 backdrop-blur-xl">
+            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl bg-primary-300/20 blur-2xl" />
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-2xl shadow-slate-900/10 backdrop-blur-xl">
               <div className="flex items-center justify-between border-b border-slate-200 pb-4">
                 <div>
                   <p className="text-sm font-semibold text-slate-950">AI Cloud Operating Model</p>
@@ -57,7 +57,7 @@ export default function Intro() {
 
               <div className="mt-5 grid gap-3">
                 {architectureLayers.map((layer, index) => (
-                  <div key={layer.name} className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                  <div key={layer.name} className="rounded-lg border border-slate-200 bg-slate-50/80 p-4">
                     <div className="flex items-center gap-3">
                       <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-800">{index + 1}</span>
                       <div>
@@ -71,7 +71,7 @@ export default function Intro() {
 
               <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
                 {signals.map((signal) => (
-                  <div key={signal.label} className="rounded-2xl bg-slate-950 p-4 text-white">
+                  <div key={signal.label} className="rounded-lg bg-slate-950 p-4 text-white">
                     <p className="text-xs text-slate-400">{signal.label}</p>
                     <p className="mt-2 text-sm font-semibold">{signal.value}</p>
                   </div>
