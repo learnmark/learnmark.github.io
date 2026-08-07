@@ -43,8 +43,8 @@ const callsToAction = [
 ]
 
 const openSource = [
-  { name: 'llmxy', description: 'LLM gateway for token routing, provider management, and usage visibility.', href: 'https://github.com/wilsonwu/llmxy', icon: SquaresPlusIcon, external: true },
-  { name: 'LetScrum', description: 'Lightweight Agile and Scrum project management system.', href: 'https://github.com/letscrum', icon: CursorArrowRaysIcon, external: true },
+  { name: 'llmxy', description: 'LLM gateway for token routing, provider management, and usage visibility.', href: '/llmxy', icon: SquaresPlusIcon, external: false },
+  { name: 'LetScrum', description: 'Lightweight Agile and Scrum project management system.', href: '/letscrum', icon: CursorArrowRaysIcon, external: false },
   { name: 'Sello', description: 'AI-assisted workspace for multi-store commerce teams.', href: '/sello', icon: ShoppingBagIcon, external: false },
 ]
 
