@@ -1,4 +1,5 @@
 import type { OpenSourceTemplateMessages } from '@/i18n/messages/open-source/types'
+import LiveDemo, { type LiveDemoProps } from './LiveDemo'
 
 type ProjectFact = {
   label: string
@@ -30,6 +31,7 @@ type OpenSourceProjectPageProps = {
   repositories: RepositoryLink[]
   productHref: string
   labels: OpenSourceTemplateMessages
+  liveDemo?: Omit<LiveDemoProps, 'className'>
 }
 
 export default function OpenSourceProjectPage({
@@ -47,6 +49,7 @@ export default function OpenSourceProjectPage({
   repositories,
   productHref,
   labels,
+  liveDemo,
 }: OpenSourceProjectPageProps) {
   return (
     <main className="relative isolate overflow-hidden bg-transparent">
@@ -75,6 +78,7 @@ export default function OpenSourceProjectPage({
                 {labels.exploreProduct} <span aria-hidden="true">-&gt;</span>
               </a>
             </div>
+            {liveDemo && <LiveDemo {...liveDemo} className="mt-10" />}
           </div>
 
           <dl className="divide-y divide-slate-200 border-y border-slate-200">

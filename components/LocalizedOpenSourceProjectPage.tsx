@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { createBreadcrumbJsonLd, createPageMetadata } from '@/app/seo'
 import { getLocale } from '@/i18n/server'
+import { letscrumLiveDemo, letscrumLiveDemoMessages } from '@/i18n/messages/letscrum-live-demo'
 import { letscrumOpenSourceMessages } from '@/i18n/messages/open-source/letscrum'
 import { llmxyOpenSourceMessages } from '@/i18n/messages/open-source/llmxy'
 import { selloOpenSourceMessages } from '@/i18n/messages/open-source/sello'
@@ -83,6 +84,9 @@ export default async function LocalizedOpenSourceProjectPage({ project }: { proj
     href,
     label: messages.repositoryLabels[index] ?? href,
   }))
+  const liveDemo = project === 'letscrum'
+    ? { ...letscrumLiveDemo, labels: letscrumLiveDemoMessages[locale] }
+    : undefined
   const jsonLd = createBreadcrumbJsonLd([
     { name: openSourceTemplateMessages[locale].home, path: '/' },
     { name: messages.title, path: config.path },
@@ -106,6 +110,7 @@ export default async function LocalizedOpenSourceProjectPage({ project }: { proj
         repositories={repositories}
         productHref={config.productHref}
         labels={openSourceTemplateMessages[locale]}
+        liveDemo={liveDemo}
       />
     </>
   )

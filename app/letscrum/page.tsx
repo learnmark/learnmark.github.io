@@ -1,6 +1,8 @@
 import { ChartBarIcon, ClipboardDocumentCheckIcon, LockClosedIcon, ServerIcon, UserGroupIcon } from '@heroicons/react/20/solid'
 import JsonLd from '@/components/JsonLd'
+import LiveDemo from '@/components/LiveDemo'
 import ProductEdition from '@/components/ProductEdition'
+import { letscrumLiveDemo, letscrumLiveDemoMessages } from '@/i18n/messages/letscrum-live-demo'
 import { letscrumProductMessages } from '@/i18n/messages/products/letscrum'
 import { getLocale } from '@/i18n/server'
 import { createBreadcrumbJsonLd, createPageMetadata, createSoftwareApplicationJsonLd } from '../seo'
@@ -17,9 +19,9 @@ export async function generateMetadata() {
     locale,
     images: [
       {
-        url: '/images/letscrum/sprint-taskboard.png',
-        width: 1200,
-        height: 750,
+        url: '/images/letscrum/04-taskboard.png',
+        width: 1440,
+        height: 770,
         alt: messages.heroImageAlt,
       },
     ],
@@ -29,28 +31,22 @@ export async function generateMetadata() {
 
 const screenshots = [
   {
-    src: '/images/letscrum/project-sprints-overview.png',
-    alt: 'LetScrum project sprint overview',
-    title: 'Project sprint overview',
-    description: 'Show current and upcoming sprints with quick entry points, project ownership, and a clean workspace sidebar.',
+    src: '/images/letscrum/01-organizations.png',
   },
   {
-    src: '/images/letscrum/sprint-taskboard.png',
-    alt: 'LetScrum sprint taskboard',
-    title: 'Sprint taskboard',
-    description: 'Track work items across To Do, In Progress, and Done columns with status, owners, estimates, bugs, and checklist items.',
+    src: '/images/letscrum/02-projects.png',
   },
   {
-    src: '/images/letscrum/sprint-backlog.png',
-    alt: 'LetScrum sprint backlog',
-    title: 'Structured sprint backlog',
-    description: 'Manage epics, stories, tasks, remaining effort, ownership, and workflow state in a focused backlog table.',
+    src: '/images/letscrum/03-project-overview.png',
   },
   {
-    src: '/images/letscrum/user-management.png',
-    alt: 'LetScrum user management',
-    title: 'User management',
-    description: 'Administer users, roles, profiles, and permissions from a simple user center built for small delivery teams.',
+    src: '/images/letscrum/04-taskboard.png',
+  },
+  {
+    src: '/images/letscrum/05-sprint-backlog.png',
+  },
+  {
+    src: '/images/letscrum/06-burndown.png',
   },
 ]
 
@@ -94,7 +90,7 @@ export default async function LetScrum() {
       description: messages.seoDescription,
       path: '/letscrum',
       applicationCategory: 'ProjectManagementApplication',
-      image: '/images/letscrum/sprint-taskboard.png',
+      image: '/images/letscrum/04-taskboard.png',
       keywords: messages.seoKeywords,
       locale,
     }),
@@ -125,6 +121,11 @@ export default async function LetScrum() {
                   </span>
                 ))}
               </div>
+              <LiveDemo
+                {...letscrumLiveDemo}
+                labels={letscrumLiveDemoMessages[locale]}
+                className="mt-8"
+              />
             </div>
           </div>
         </div>
@@ -132,7 +133,9 @@ export default async function LetScrum() {
         <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-24 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <img
             alt={messages.heroImageAlt}
-            src="/images/letscrum/sprint-taskboard.png"
+            src="/images/letscrum/04-taskboard.png"
+            width={1440}
+            height={770}
             className="w-3xl max-w-none rounded-2xl bg-white object-cover object-top-left shadow-2xl shadow-slate-900/10 ring-1 ring-slate-900/10 sm:w-228"
           />
         </div>
@@ -180,7 +183,9 @@ export default async function LetScrum() {
                       <img
                         src={screenshot.src}
                         alt={screenshot.alt}
-                        className="aspect-16/10 w-full bg-slate-50 object-cover object-top-left"
+                        width={1440}
+                        height={770}
+                        className="h-auto w-full bg-slate-50"
                         loading="lazy"
                       />
                       <figcaption className="border-t border-slate-200 p-5">
