@@ -1,9 +1,5 @@
-import LocalizedOpenSourceProjectPage, { createOpenSourceMetadata } from '@/components/LocalizedOpenSourceProjectPage'
-
-export function generateMetadata() {
-  return createOpenSourceMetadata('letscrum')
-}
+import { permanentRedirect } from 'next/navigation'
 
 export default function LetScrumOpenSource() {
-  return <LocalizedOpenSourceProjectPage project="letscrum" />
+  permanentRedirect('/letscrum#open-source')
 }

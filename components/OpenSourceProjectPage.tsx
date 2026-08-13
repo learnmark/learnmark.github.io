@@ -1,5 +1,4 @@
 import type { OpenSourceTemplateMessages } from '@/i18n/messages/open-source/types'
-import LiveDemo, { type LiveDemoProps } from './LiveDemo'
 
 type ProjectFact = {
   label: string
@@ -29,12 +28,10 @@ type OpenSourceProjectPageProps = {
   prerequisites: string[]
   quickStart: string
   repositories: RepositoryLink[]
-  productHref: string
   labels: OpenSourceTemplateMessages
-  liveDemo?: Omit<LiveDemoProps, 'className'>
 }
 
-export default function OpenSourceProjectPage({
+export default function OpenSourceDetails({
   title,
   category,
   summary,
@@ -47,13 +44,11 @@ export default function OpenSourceProjectPage({
   prerequisites,
   quickStart,
   repositories,
-  productHref,
   labels,
-  liveDemo,
 }: OpenSourceProjectPageProps) {
   return (
-    <main className="relative isolate overflow-hidden bg-transparent">
-      <section className="pb-20 pt-24 sm:pb-28 sm:pt-32">
+    <div className="relative isolate overflow-hidden bg-transparent">
+      <section id="open-source" className="scroll-mt-28 border-t border-slate-200 pb-20 pt-20 sm:pb-28 sm:pt-24">
         <div className="site-container grid gap-16 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
           <div className="max-w-3xl">
             <div className="flex flex-wrap items-center gap-3">
@@ -62,7 +57,7 @@ export default function OpenSourceProjectPage({
                 {status}
               </span>
             </div>
-            <h1 className="mt-5 text-4xl font-bold text-slate-950 sm:text-6xl">{title}</h1>
+            <h2 className="mt-5 text-3xl font-bold text-slate-950 sm:text-5xl">{title}</h2>
             <p className="mt-6 text-xl leading-8 text-slate-700">{summary}</p>
             <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600">{description}</p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -74,11 +69,7 @@ export default function OpenSourceProjectPage({
               >
                 {labels.viewSource}
               </a>
-              <a href={productHref} className="text-sm font-semibold leading-6 text-slate-900 transition-colors hover:text-primary-800">
-                {labels.exploreProduct} <span aria-hidden="true">-&gt;</span>
-              </a>
             </div>
-            {liveDemo && <LiveDemo {...liveDemo} className="mt-10" />}
           </div>
 
           <dl className="divide-y divide-slate-200 border-y border-slate-200">
@@ -134,7 +125,7 @@ export default function OpenSourceProjectPage({
             <h2 className="mt-3 text-3xl font-bold">{labels.technologyTitle}</h2>
             <div className="mt-8 flex flex-wrap gap-3">
               {technology.map((item) => (
-                <span key={item} className="rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm font-medium text-slate-200">
+                <span key={item} className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200">
                   {item}
                 </span>
               ))}
@@ -146,9 +137,9 @@ export default function OpenSourceProjectPage({
               ))}
             </ul>
           </div>
-          <div>
+          <div className="min-w-0">
             <p className="text-sm font-semibold uppercase text-primary-200">{labels.quickStart}</p>
-            <pre className="mt-5 overflow-x-auto rounded-lg border border-white/10 bg-black/30 p-5 text-sm leading-7 text-slate-200">
+            <pre className="mt-5 max-w-full overflow-x-auto rounded-lg border border-white/10 bg-black/30 p-5 text-sm leading-7 text-slate-200">
               <code>{quickStart}</code>
             </pre>
           </div>
@@ -176,6 +167,6 @@ export default function OpenSourceProjectPage({
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

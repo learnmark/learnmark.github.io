@@ -3,9 +3,7 @@ import type { OpenSourceTemplateMessages } from './types'
 
 export const openSourceTemplateMessages: Record<Locale, OpenSourceTemplateMessages> = {
   en: {
-    home: 'Home',
     viewSource: 'View source on GitHub',
-    exploreProduct: 'Explore the Learnmark product',
     includedEyebrow: 'Included in the repository',
     capabilitiesTitle: 'Open-source capabilities',
     architectureEyebrow: 'Architecture',
@@ -18,9 +16,7 @@ export const openSourceTemplateMessages: Record<Locale, OpenSourceTemplateMessag
     repositoriesTitle: 'Read the code, documentation, and project history.',
   },
   'zh-CN': {
-    home: '首页',
     viewSource: '在 GitHub 查看源码',
-    exploreProduct: '了解 Learnmark 产品',
     includedEyebrow: '仓库包含内容',
     capabilitiesTitle: '开源能力',
     architectureEyebrow: '架构',
@@ -33,9 +29,7 @@ export const openSourceTemplateMessages: Record<Locale, OpenSourceTemplateMessag
     repositoriesTitle: '查看代码、文档与项目历史。',
   },
   'zh-TW': {
-    home: '首頁',
     viewSource: '在 GitHub 檢視原始碼',
-    exploreProduct: '瞭解 Learnmark 產品',
     includedEyebrow: '儲存庫包含內容',
     capabilitiesTitle: '開源功能',
     architectureEyebrow: '架構',
@@ -48,9 +42,7 @@ export const openSourceTemplateMessages: Record<Locale, OpenSourceTemplateMessag
     repositoriesTitle: '檢視程式碼、文件與專案歷史。',
   },
   ja: {
-    home: 'ホーム',
     viewSource: 'GitHub でソースを見る',
-    exploreProduct: 'Learnmark 製品を見る',
     includedEyebrow: 'リポジトリに含まれるもの',
     capabilitiesTitle: 'オープンソースの機能',
     architectureEyebrow: 'アーキテクチャ',
@@ -63,9 +55,7 @@ export const openSourceTemplateMessages: Record<Locale, OpenSourceTemplateMessag
     repositoriesTitle: 'コード、ドキュメント、プロジェクト履歴をご覧ください。',
   },
   fr: {
-    home: 'Accueil',
     viewSource: 'Voir le code source sur GitHub',
-    exploreProduct: 'Découvrir le produit Learnmark',
     includedEyebrow: 'Inclus dans le dépôt',
     capabilitiesTitle: 'Fonctionnalités open source',
     architectureEyebrow: 'Architecture',
@@ -78,9 +68,7 @@ export const openSourceTemplateMessages: Record<Locale, OpenSourceTemplateMessag
     repositoriesTitle: 'Consultez le code, la documentation et l’historique du projet.',
   },
   de: {
-    home: 'Startseite',
     viewSource: 'Quellcode auf GitHub ansehen',
-    exploreProduct: 'Learnmark-Produkt entdecken',
     includedEyebrow: 'Im Repository enthalten',
     capabilitiesTitle: 'Open-Source-Funktionen',
     architectureEyebrow: 'Architektur',

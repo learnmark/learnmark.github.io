@@ -1,5 +1,6 @@
 import { ChartBarIcon, ChatBubbleLeftRightIcon, CpuChipIcon, ServerIcon, ShieldCheckIcon, UserGroupIcon } from '@heroicons/react/20/solid'
 import JsonLd from '@/components/JsonLd'
+import LocalizedOpenSourceDetails from '@/components/LocalizedOpenSourceProjectPage'
 import ProductEdition from '@/components/ProductEdition'
 import { selloProductMessages } from '@/i18n/messages/products/sello'
 import { getLocale } from '@/i18n/server'
@@ -83,7 +84,7 @@ export default async function Sello() {
                   {messages.discussCta}
                 </a>
                 <a
-                  href="/open-source/sello"
+                  href="#open-source"
                   className="text-sm font-semibold leading-6 text-slate-900 transition-colors hover:text-primary-800"
                 >
                   {messages.openSourceCta} <span aria-hidden="true">-&gt;</span>
@@ -129,7 +130,7 @@ export default async function Sello() {
               projectName="Sello"
               description={messages.edition.description}
               features={messages.edition.features}
-              openSourceHref="/open-source/sello"
+              openSourceHref="#open-source"
               eyebrow={messages.edition.eyebrow}
               title={messages.edition.title}
               compareLabel={messages.edition.compareLabel}
@@ -171,6 +172,8 @@ export default async function Sello() {
             </a>
           </div>
         </section>
+
+        <LocalizedOpenSourceDetails project="sello" />
       </main>
     </>
   )

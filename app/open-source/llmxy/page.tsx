@@ -1,9 +1,5 @@
-import LocalizedOpenSourceProjectPage, { createOpenSourceMetadata } from '@/components/LocalizedOpenSourceProjectPage'
-
-export function generateMetadata() {
-  return createOpenSourceMetadata('llmxy')
-}
+import { permanentRedirect } from 'next/navigation'
 
 export default function LlmxyOpenSource() {
-  return <LocalizedOpenSourceProjectPage project="llmxy" />
+  permanentRedirect('/llmxy#open-source')
 }

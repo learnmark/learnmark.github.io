@@ -1,9 +1,5 @@
-import LocalizedOpenSourceProjectPage, { createOpenSourceMetadata } from '@/components/LocalizedOpenSourceProjectPage'
-
-export function generateMetadata() {
-  return createOpenSourceMetadata('sello')
-}
+import { permanentRedirect } from 'next/navigation'
 
 export default function SelloOpenSource() {
-  return <LocalizedOpenSourceProjectPage project="sello" />
+  permanentRedirect('/sello#open-source')
 }

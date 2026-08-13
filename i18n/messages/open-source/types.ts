@@ -3,9 +3,7 @@ import type { Locale } from '../../config'
 export type OpenSourceProjectKey = 'llmxy' | 'letscrum' | 'sello'
 
 export type OpenSourceTemplateMessages = {
-  home: string
   viewSource: string
-  exploreProduct: string
   includedEyebrow: string
   capabilitiesTitle: string
   architectureEyebrow: string

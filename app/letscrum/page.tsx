@@ -1,6 +1,7 @@
 import { ChartBarIcon, ClipboardDocumentCheckIcon, LockClosedIcon, ServerIcon, UserGroupIcon } from '@heroicons/react/20/solid'
 import JsonLd from '@/components/JsonLd'
 import LiveDemo from '@/components/LiveDemo'
+import LocalizedOpenSourceDetails from '@/components/LocalizedOpenSourceProjectPage'
 import ProductEdition from '@/components/ProductEdition'
 import { letscrumLiveDemo, letscrumLiveDemoMessages } from '@/i18n/messages/letscrum-live-demo'
 import { letscrumProductMessages } from '@/i18n/messages/products/letscrum'
@@ -103,7 +104,8 @@ export default async function LetScrum() {
   return (
     <>
       <JsonLd data={localizedJsonLd} />
-      <div className="site-section site-page bg-transparent px-6 lg:overflow-visible lg:px-0">
+      <main>
+        <div className="site-section site-page bg-transparent px-6 lg:overflow-visible lg:px-0">
 
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
         <div className="site-product-grid-row lg:row-start-1">
@@ -166,7 +168,7 @@ export default async function LetScrum() {
                 projectName="LetScrum"
                 description={messages.edition.description}
                 features={messages.edition.features}
-                openSourceHref="/open-source/letscrum"
+                openSourceHref="#open-source"
                 eyebrow={messages.edition.eyebrow}
                 title={messages.edition.title}
                 compareLabel={messages.edition.compareLabel}
@@ -203,7 +205,7 @@ export default async function LetScrum() {
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-x-6">
                 <a
-                  href="/open-source/letscrum"
+                  href="#open-source"
                   className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold text-white! shadow-lg shadow-primary-950/20 transition-all duration-300 hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-900"
                 >
                   {messages.openSourceCta}
@@ -216,7 +218,9 @@ export default async function LetScrum() {
           </div>
         </div>
       </div>
-      </div>
+        </div>
+        <LocalizedOpenSourceDetails project="letscrum" />
+      </main>
     </>
   )
 }

@@ -6,7 +6,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
-import { commonMessages } from "@/i18n/messages/common";
+import { commonMessages, headerDirectoryMessages } from "@/i18n/messages/common";
 import { homeMessages } from "@/i18n/messages/home";
 import { disableInternationalization } from "@/i18n/config";
 import { getLocale } from "@/i18n/server";
@@ -87,7 +87,7 @@ export default async function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
           />
-          <Header locale={locale} messages={messages.header} themeToggleLabel={messages.themeToggleLabel} languageSwitcherLabel={messages.languageSwitcherLabel} showLanguageSwitcher={showLanguageSwitcher} />
+          <Header locale={locale} messages={messages.header} directoryMessages={headerDirectoryMessages} themeToggleLabel={messages.themeToggleLabel} languageSwitcherLabel={messages.languageSwitcherLabel} showLanguageSwitcher={showLanguageSwitcher} />
           {children}
           <Footer messages={messages.footer} />
         </ThemeProvider>

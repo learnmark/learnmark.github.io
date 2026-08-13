@@ -38,6 +38,89 @@ export type CommonMessages = {
   }
 }
 
+export type HeaderDirectoryMessages = {
+  menuLabel: string
+  panelLabel: string
+  groups: {
+    products: { label: string; description: string }
+    consulting: { label: string; description: string }
+    solutions: { label: string; description: string }
+  }
+  links: {
+    letscrum: { label: string; description: string }
+    llmxy: { label: string; description: string }
+    sello: { label: string; description: string }
+    ai: { label: string; description: string }
+    cloud: { label: string; description: string }
+    platform: { label: string; description: string }
+    microservices: { label: string; description: string }
+    gateway: { label: string; description: string }
+    agileScrum: { label: string; description: string }
+    shopify: { label: string; description: string }
+  }
+}
+
+export const headerDirectoryMessages: HeaderDirectoryMessages = {
+  menuLabel: 'Services',
+  panelLabel: 'Products, consulting, and solutions',
+  groups: {
+    products: {
+      label: 'Products',
+      description: 'Managed products with open-source foundations.',
+    },
+    consulting: {
+      label: 'Consulting',
+      description: 'Specialist guidance from strategy through delivery.',
+    },
+    solutions: {
+      label: 'Solutions',
+      description: 'Focused systems for recurring technology needs.',
+    },
+  },
+  links: {
+    letscrum: {
+      label: 'LetScrum',
+      description: 'Scrum planning, taskboards, and delivery workflows for focused teams.',
+    },
+    llmxy: {
+      label: 'llmxy',
+      description: 'An LLM gateway for routing, access control, usage, and billing.',
+    },
+    sello: {
+      label: 'Sello',
+      description: 'A multi-store commerce workspace with governed AI assistance.',
+    },
+    ai: {
+      label: 'AI',
+      description: 'AI strategy, LLM integration, evaluation, and governance.',
+    },
+    cloud: {
+      label: 'Cloud',
+      description: 'Cloud architecture, modernization, reliability, and cost control.',
+    },
+    platform: {
+      label: 'Platform engineering',
+      description: 'CI/CD, infrastructure as code, observability, and developer platforms.',
+    },
+    microservices: {
+      label: 'Microservices',
+      description: 'Incremental modernization for resilient distributed systems.',
+    },
+    gateway: {
+      label: 'API & AI gateway',
+      description: 'Secure routing and governance for API and LLM traffic.',
+    },
+    agileScrum: {
+      label: 'Agile & Scrum',
+      description: 'Delivery coaching, planning rhythms, and engineering leadership.',
+    },
+    shopify: {
+      label: 'Shopify custom development',
+      description: 'Store architecture, themes, integrations, and launch support.',
+    },
+  },
+}
+
 const en: CommonMessages = {
   header: {
     globalNavLabel: 'Global navigation',
