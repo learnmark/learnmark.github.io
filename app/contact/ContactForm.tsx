@@ -16,8 +16,8 @@ const initialFormData = {
   lastName: "",
   company: "",
   email: "",
-  interest: "AI Consulting",
-  timeline: "This quarter",
+  interest: "Expert Consultation",
+  timeline: "Within 2 weeks",
   message: "",
 };
 
@@ -35,8 +35,9 @@ const contactHighlights = [
     icon: ShieldCheckIcon,
   },
 ];
-const interestOptions = ["Shopify Store Development", "AI Consulting", "Cloud Consulting", "Platform Engineering", "API and AI Gateway", "llmxy", "LetScrum", "Other"];
-const timelineOptions = ["This quarter", "Next quarter", "Exploring options", "Urgent support"];
+const interestOptions = ["Expert Consultation", "Market Research", "Commercial Due Diligence", "Technical Due Diligence", "Customer or Channel Research", "Strategic Research", "Other"];
+const legacyInterestOptions = new Set(["Shopify Store Development", "AI Consulting", "Cloud Consulting", "Platform Engineering", "API and AI Gateway", "llmxy", "LetScrum"]);
+const timelineOptions = ["As soon as possible", "Within 2 weeks", "This month", "Exploring options"];
 
 export default function ContactForm({ messages }: { messages: ContactMessages }) {
   const [agreed, setAgreed] = useState(false);
@@ -48,6 +49,8 @@ export default function ContactForm({ messages }: { messages: ContactMessages })
 
     if (requestedInterest && interestOptions.includes(requestedInterest)) {
       setFormData((prev) => ({ ...prev, interest: requestedInterest }));
+    } else if (requestedInterest && legacyInterestOptions.has(requestedInterest)) {
+      setFormData((prev) => ({ ...prev, interest: "Other" }));
     }
   }, []);
 
@@ -95,7 +98,7 @@ export default function ContactForm({ messages }: { messages: ContactMessages })
         <section className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-xl sm:p-8 lg:min-h-160">
           <div>
             <p className="text-sm font-semibold uppercase text-primary-700">{messages.eyebrow}</p>
-            <h1 className="mt-5 max-w-xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+            <h1 className="mt-5 max-w-xl text-4xl font-bold text-slate-950 sm:text-5xl">
               {messages.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
@@ -135,7 +138,7 @@ export default function ContactForm({ messages }: { messages: ContactMessages })
           <div className="flex flex-col gap-6 border-b border-slate-200 pb-8 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase text-primary-700">{messages.formEyebrow}</p>
-              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">{messages.formTitle}</h2>
+              <h2 className="mt-3 text-2xl font-bold text-slate-950 sm:text-3xl">{messages.formTitle}</h2>
             </div>
             <a href="mailto:hello@learnmark.com" className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-primary-200 hover:bg-primary-50 hover:text-primary-800">
               <EnvelopeIcon aria-hidden="true" className="h-4 w-4" />
@@ -247,6 +250,7 @@ export default function ContactForm({ messages }: { messages: ContactMessages })
                   id="message"
                   name="message"
                   rows={5}
+                  required
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder={messages.messagePlaceholder}

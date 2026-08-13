@@ -3,19 +3,18 @@ import type { Locale } from '@/i18n/config'
 
 export const siteUrl = 'https://learnmark.com'
 export const siteName = 'Learnmark'
-export const defaultTitle = 'Learnmark - AI, Cloud, and Shopify Services'
-export const defaultDescription = 'Learnmark helps teams design intelligent products, modernize cloud platforms, build Shopify stores, and ship reliable software systems.'
+export const defaultTitle = 'Learnmark - Expert Network and Consultation Services'
+export const defaultDescription = 'Learnmark helps business and investment teams define research needs, identify relevant experts, and manage expert consultations end to end.'
 
 export const defaultKeywords = [
-  'AI consulting',
-  'cloud consulting',
-  'LLM integration',
-  'AI gateway',
-  'cloud modernization',
-  'platform engineering',
-  'microservices modernization',
-  'software delivery consulting',
-  'Shopify store development',
+  'expert network',
+  'expert consultation',
+  'primary research',
+  'industry experts',
+  'expert interviews',
+  'market research',
+  'commercial due diligence',
+  'technical due diligence',
 ]
 
 export const defaultOpenGraphImage = {
@@ -41,6 +40,23 @@ type PageMetadataOptions = {
   noIndex?: boolean
   locale?: Locale
 }
+
+const archivedRoutes = new Set<string>([
+  '/careers',
+  '/letscrum',
+  '/llmxy',
+  '/sello',
+  '/services/shopify',
+  '/solutions/agile-scrum',
+  '/solutions/ai',
+  '/solutions/cloud',
+  '/solutions/devops',
+  '/solutions/gateway',
+  '/solutions/microservices',
+  '/open-source/letscrum',
+  '/open-source/llmxy',
+  '/open-source/sello',
+])
 
 export const openGraphLocales: Record<Locale, string> = {
   en: 'en_US',
@@ -101,6 +117,7 @@ export function createPageMetadata({
   locale = 'en',
 }: PageMetadataOptions): Metadata {
   const fullTitle = `${title} | ${siteName}`
+  const shouldNoIndex = noIndex || archivedRoutes.has(path)
 
   return {
     title,
@@ -124,7 +141,7 @@ export function createPageMetadata({
       description,
       images: images.map((image) => image.url),
     },
-    robots: noIndex
+    robots: shouldNoIndex
       ? {
           index: false,
           follow: false,
@@ -138,24 +155,14 @@ export function createPageMetadata({
 }
 
 export const publicRoutes: MetadataRoute.Sitemap = [
-  { url: absoluteUrl('/'), lastModified: '2026-07-01', changeFrequency: 'weekly', priority: 1 },
-  { url: absoluteUrl('/about'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.8 },
-  { url: absoluteUrl('/contact'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.7 },
-  { url: absoluteUrl('/careers'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.5 },
-  { url: absoluteUrl('/privacy-policy'), lastModified: '2026-07-01', changeFrequency: 'yearly', priority: 0.3 },
-  { url: absoluteUrl('/llmxy'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.9 },
-  { url: absoluteUrl('/letscrum'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.9 },
-  { url: absoluteUrl('/sello'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.9 },
-  { url: absoluteUrl('/services/shopify'), lastModified: '2026-08-07', changeFrequency: 'monthly', priority: 0.9 },
-  { url: absoluteUrl('/open-source/llmxy'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.8 },
-  { url: absoluteUrl('/open-source/letscrum'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.8 },
-  { url: absoluteUrl('/open-source/sello'), lastModified: '2026-08-07', changeFrequency: 'weekly', priority: 0.8 },
-  { url: absoluteUrl('/solutions/ai'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.8 },
-  { url: absoluteUrl('/solutions/cloud'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.8 },
-  { url: absoluteUrl('/solutions/microservices'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.8 },
-  { url: absoluteUrl('/solutions/gateway'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.8 },
-  { url: absoluteUrl('/solutions/agile-scrum'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.8 },
-  { url: absoluteUrl('/solutions/devops'), lastModified: '2026-07-01', changeFrequency: 'monthly', priority: 0.8 },
+  { url: absoluteUrl('/'), lastModified: '2026-08-13', changeFrequency: 'weekly', priority: 1 },
+  { url: absoluteUrl('/for-clients'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.9 },
+  { url: absoluteUrl('/how-it-works'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.9 },
+  { url: absoluteUrl('/experts'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.8 },
+  { url: absoluteUrl('/compliance'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.8 },
+  { url: absoluteUrl('/about'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.7 },
+  { url: absoluteUrl('/contact'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.8 },
+  { url: absoluteUrl('/privacy-policy'), lastModified: '2026-08-13', changeFrequency: 'yearly', priority: 0.3 },
 ]
 
 export function createBreadcrumbJsonLd(items: BreadcrumbItem[]) {
@@ -228,7 +235,6 @@ export function createSiteJsonLd({ description, locale, knowsAbout }: { descript
         url: siteUrl,
         logo: absoluteUrl('/logo.svg'),
         description,
-        sameAs: ['https://github.com/wilsonwu/llmxy', 'https://github.com/letscrum', 'https://github.com/imoogoo/sellohub'],
         knowsAbout,
       },
       {

@@ -7,39 +7,23 @@ export default function Footer({ messages }: { messages: CommonMessages['footer'
       links: [
         { name: messages.aboutUs, href: '/about' },
         { name: messages.contactUs, href: '/contact' },
-        { name: messages.careers, href: '/careers' },
         { name: messages.privacyPolicy, href: '/privacy-policy' },
       ],
     },
     {
-      title: messages.servicesLabel,
-      links: [{ name: messages.shopifyDevelopmentLink, href: '/services/shopify' }],
-    },
-    {
-      title: messages.solutionsLabel,
+      title: messages.clientServicesLabel,
       links: [
-        { name: messages.aiConsulting, href: '/solutions/ai' },
-        { name: messages.cloudConsulting, href: '/solutions/cloud' },
-        { name: messages.platformEngineering, href: '/solutions/devops' },
-        { name: messages.gateway, href: '/solutions/gateway' },
-        { name: messages.microservices, href: '/solutions/microservices' },
-        { name: messages.deliveryCoaching, href: '/solutions/agile-scrum' },
+        { name: messages.forClients, href: '/for-clients' },
+        { name: messages.howItWorks, href: '/how-it-works' },
+        { name: messages.compliance, href: '/compliance' },
       ],
     },
     {
-      title: messages.productsLabel,
+      title: messages.expertNetworkLabel,
       links: [
-        { name: 'llmxy', href: '/llmxy' },
-        { name: 'LetScrum', href: '/letscrum' },
-        { name: 'Sello', href: '/sello' },
-      ],
-    },
-    {
-      title: messages.openSourceLabel,
-      links: [
-        { name: 'llmxy', href: '/open-source/llmxy' },
-        { name: 'LetScrum', href: '/open-source/letscrum' },
-        { name: 'Sello', href: '/open-source/sello' },
+        { name: messages.experts, href: '/experts' },
+        { name: messages.expertApplication, href: '/experts#join' },
+        { name: messages.compliance, href: '/compliance' },
       ],
     },
   ]
@@ -67,18 +51,18 @@ export default function Footer({ messages }: { messages: CommonMessages['footer'
                 {messages.startProject}
               </a>
               <a
-                href="/services/shopify"
+                href="/experts#join"
                 className="inline-flex shrink-0 justify-center whitespace-nowrap rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white! transition hover:bg-white/10"
               >
-                {messages.shopifyDevelopment}
+                {messages.joinExperts}
               </a>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 xl:grid-cols-[0.8fr_1.1fr_1.45fr_0.8fr_1.15fr] xl:gap-x-6">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 xl:gap-x-10">
             {footerSections.map((section) => (
               <div key={section.title} className="border-t border-white/10 pt-5 sm:border-t-0 sm:pt-0 xl:border-l xl:pl-5">
-                <h2 className="whitespace-nowrap text-sm font-semibold uppercase tracking-wide text-white">{section.title}</h2>
+                <h2 className="whitespace-nowrap text-sm font-semibold uppercase text-white">{section.title}</h2>
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-400">
                   {section.links.map((link) => (
                     <li key={link.href}>

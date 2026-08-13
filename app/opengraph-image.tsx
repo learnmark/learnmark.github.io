@@ -46,13 +46,13 @@ export default function Image() {
               {siteName}
             </h1>
             <p style={{ color: '#475569', fontSize: 30, lineHeight: 1.35, margin: 0, maxWidth: 920 }}>
-              AI · Cloud · Shopify
+              Expert research and consultation
             </p>
           </div>
           <div style={{ color: '#334155', display: 'flex', fontSize: 26, gap: 20 }}>
-            <span>llmxy</span>
-            <span>LetScrum</span>
-            <span>Sello</span>
+            <span>Scope</span>
+            <span>Match</span>
+            <span>Consult</span>
           </div>
         </div>
       </div>

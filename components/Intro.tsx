@@ -6,7 +6,7 @@ export default function Intro({ messages }: { messages: HomeMessages['intro'] })
       <div className="site-container grid grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_0.92fr]">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase text-primary-700">{messages.eyebrow}</p>
-            <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 text-4xl font-bold text-slate-950 sm:text-5xl lg:text-6xl">
               {messages.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
@@ -15,11 +15,11 @@ export default function Intro({ messages }: { messages: HomeMessages['intro'] })
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
                 href="/contact"
-                className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold !text-white shadow-lg shadow-primary-900/20 transition-all duration-300 hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800"
+                className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold text-white! shadow-lg shadow-primary-900/20 transition-all duration-300 hover:bg-primary-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800"
               >
                 {messages.primaryCta}
               </a>
-              <a href="/solutions/cloud" className="text-sm font-semibold leading-6 text-slate-900 transition-colors hover:text-primary-800">
+              <a href="/how-it-works" className="text-sm font-semibold leading-6 text-slate-900 transition-colors hover:text-primary-800">
                 {messages.secondaryCta} <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -33,7 +33,6 @@ export default function Intro({ messages }: { messages: HomeMessages['intro'] })
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl bg-primary-300/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-2xl shadow-slate-900/10 backdrop-blur-xl">
               <div className="flex items-center justify-between border-b border-slate-200 pb-4">
                 <div>

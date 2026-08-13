@@ -15,22 +15,9 @@ export async function generateMetadata() {
   })
 }
 
-const people = [
-  {
-    name: 'WW',
-  },
-  {
-    name: 'YY',
-  },
-  {
-    name: 'LL',
-  },
-]
-
 export default async function About() {
   const locale = await getLocale()
   const messages = aboutMessages[locale]
-  const localizedPeople = people.map((person, index) => ({ ...person, ...messages.people[index] }))
 
   return (
     <main className="relative isolate overflow-hidden bg-transparent">
@@ -45,10 +32,10 @@ export default async function About() {
               {messages.description}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="/contact" className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold !text-white shadow-lg shadow-primary-950/20 transition hover:bg-primary-700">
+              <a href="/contact" className="inline-flex justify-center rounded-full bg-primary-800 px-5 py-3 text-sm font-semibold text-white! shadow-lg shadow-primary-950/20 transition hover:bg-primary-700">
                 {messages.workCta}
               </a>
-              <a href="/solutions/ai" className="inline-flex justify-center rounded-full border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-800">
+              <a href="/how-it-works" className="inline-flex justify-center rounded-full border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:border-primary-300 hover:bg-primary-50 hover:text-primary-800">
                 {messages.aiCta}
               </a>
             </div>
@@ -62,7 +49,7 @@ export default async function About() {
                   <p className="text-sm font-semibold text-slate-950">{messages.operatingTitle}</p>
                   <p className="text-xs text-slate-500">{messages.operatingSubtitle}</p>
                 </div>
-                <span className="rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-800 ring-1 ring-primary-700/20">AI / Cloud</span>
+                <span className="rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-800 ring-1 ring-primary-700/20">Expert research</span>
               </div>
               <div className="mt-5 grid gap-3">
                 {messages.operatingModel.map((item, index) => (
@@ -97,7 +84,7 @@ export default async function About() {
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {messages.capabilities.map((capability) => (
-                <div key={capability.name} className="rounded-lg border border-white/10 bg-white/[0.04] p-5">
+                <div key={capability.name} className="rounded-lg border border-white/10 bg-white/4 p-5">
                   <h3 className="font-semibold text-white">{capability.name}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-400">{capability.description}</p>
                 </div>
@@ -128,33 +115,6 @@ export default async function About() {
         </div>
       </section>
 
-      <section className="pb-24">
-        <div className="site-container">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <p className="text-sm font-semibold uppercase text-primary-700">{messages.leadershipEyebrow}</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">{messages.leadershipTitle}</h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">
-              {messages.leadershipDescription}
-            </p>
-          </div>
-          <ul role="list" className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {localizedPeople.map((person) => (
-              <li key={person.name} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="flex items-center gap-x-4">
-                  <div className="flex h-14 w-14 flex-none items-center justify-center rounded-lg bg-primary-100 text-lg font-bold text-primary-800">
-                    {person.name}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold tracking-tight text-slate-950">{person.name}</h3>
-                    <p className="text-sm font-semibold leading-6 text-primary-700">{person.role}</p>
-                  </div>
-                </div>
-                <p className="mt-5 text-sm leading-6 text-slate-600">{person.bio}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
     </main>
   )
 }

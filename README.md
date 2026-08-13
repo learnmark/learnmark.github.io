@@ -1,12 +1,13 @@
 # Learnmark Website
 
-This is the official website for Learnmark, built with [Next.js 16](https://nextjs.org/) and [Tailwind CSS v4](https://tailwindcss.com/).
+This is the official website for Learnmark's expert research and consultation services, built with [Next.js 16](https://nextjs.org/) and [Tailwind CSS v4](https://tailwindcss.com/).
 
 ## Features
 
 - **Modern Tech Stack**: Built on Next.js 16 (App Router) and React 19.
 - **Responsive Design**: Fully responsive UI using Tailwind CSS v4 and Headless UI.
-- **Dynamic Components**: Reusable components for Header, Footer, Features, CTA, etc.
+- **Managed Consultation Journey**: Client services, project workflow, expert network, compliance, and project intake pages.
+- **Reusable Service Components**: Shared page, navigation, metadata, and JSON-LD patterns for the core service routes.
 - **API Routes**:
   - `/api/contact`: Handles contact form submissions.
   - `/api/subscribe`: Handles newsletter subscriptions.
@@ -15,12 +16,14 @@ This is the official website for Learnmark, built with [Next.js 16](https://next
 
 ## Project Structure
 
-```
+```text
 ├── app/                # App Router pages and API routes
 │   ├── api/            # Backend API endpoints
 │   ├── about/          # About page
-│   ├── letscrum/       # Product page
-│   ├── solutions/      # Solution pages
+│   ├── for-clients/    # Client service overview
+│   ├── how-it-works/   # Managed consultation workflow
+│   ├── experts/        # Expert network participation
+│   ├── compliance/     # Consultation compliance
 │   └── ...
 ├── components/         # Reusable React components
 ├── data/               # Local storage for form submissions (JSON)
@@ -28,11 +31,15 @@ This is the official website for Learnmark, built with [Next.js 16](https://next
 └── ...
 ```
 
+## Internationalization
+
+Internationalization is currently disabled by `disableInternationalization` in `i18n/config.ts`. Keep the flag set to `true` and maintain only the default locale until there is an explicit product decision to restore all supported locales. See `.github/copilot-instructions.md` for the full development rule.
+
 ## Getting Started
 
 ### Local Development
 
-1.  Install dependencies:
+1. Install dependencies:
 
     ```bash
     npm install
@@ -40,7 +47,7 @@ This is the official website for Learnmark, built with [Next.js 16](https://next
     yarn install
     ```
 
-2.  Run the development server:
+2. Run the development server:
 
     ```bash
     npm run dev
@@ -48,19 +55,19 @@ This is the official website for Learnmark, built with [Next.js 16](https://next
     yarn dev
     ```
 
-3.  Open [http://localhost:3000](http://localhost:3000) with your browser.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser.
 
 ### Docker Build
 
 To build and run the application using Docker:
 
-1.  Build the image:
+1. Build the image:
 
     ```bash
     docker build -t learnmark-website .
     ```
 
-2.  Run the container (with data persistence):
+2. Run the container (with data persistence):
 
     ```bash
     docker run -p 3000:3000 -v $(pwd)/data:/app/data learnmark-website

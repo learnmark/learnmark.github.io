@@ -37,14 +37,14 @@ type PrivacyMessages = {
 export const privacyMessages: Record<Locale, PrivacyMessages> = {
   en: {
     seoTitle: 'Privacy Policy',
-    seoDescription: 'Read our privacy policy to understand how we collect, use, and protect your data.',
-    seoKeywords: ['Learnmark privacy policy', 'privacy statement', 'data protection'],
+    seoDescription: 'Read how Learnmark collects, uses, shares, and protects information related to our website and expert consultation services.',
+    seoKeywords: ['Learnmark privacy policy', 'expert network privacy', 'consultation data protection'],
     legalLabel: 'Legal',
     title: 'Privacy Policy',
     effectiveDateLabel: 'Effective Date',
-    effectiveDateValue: 'August 7th, 2024',
+    effectiveDateValue: 'August 13, 2026',
     introduction:
-      'Learnmark is committed to protecting your privacy. This Privacy Statement describes Learnmark\'s privacy practices and how we treat the personal information that we collect from you when you use our products and services, including our website. This Privacy Statement applies to all of the services offered by Learnmark, including our website, but excludes services that have separate privacy statements that do not incorporate this Privacy Statement.',
+      'Learnmark is committed to protecting your privacy. This Privacy Statement describes how we treat personal information collected through our website, client project requests, expert network activities, screening, consultation coordination, and related support. It applies to Learnmark services that do not provide a separate privacy notice.',
     tableOfContentsTitle: 'Table of Contents',
     tableOfContents: {
       informationWeCollect: 'Information We Collect',
@@ -56,11 +56,19 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     },
     informationWeCollectTitle: 'Information We Collect',
     informationWeCollectIntro:
-      'Learnmark collects information from you when you use our products and services, including our website. This information may include:',
+      'Learnmark collects information when you visit our website, submit a project, express interest in joining our expert network, respond to screening, or participate in a consultation. This information may include:',
     collectedInformationItems: [
       {
         name: 'Contact Information.',
-        description: 'Your name, email address, and other contact details provided when you register or contact us.',
+        description: 'Your name, work email, company, professional contact details, and communication preferences.',
+      },
+      {
+        name: 'Project and Consultation Information.',
+        description: 'Client project briefs, research topics, target profiles, screening responses, availability, agreed terms, scheduling details, and engagement records.',
+      },
+      {
+        name: 'Professional Profile Information.',
+        description: 'For experts, information such as employment history, roles, industries, markets, languages, expertise, qualifications, and disclosed restrictions or conflicts.',
       },
       {
         name: 'Usage Data.',
@@ -73,15 +81,16 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     howWeUseYourInformationTitle: 'How We Use Your Information',
     howWeUseYourInformationBody:
-      'Learnmark uses the information we collect to provide, maintain, protect, and improve our products and services, and to protect Learnmark and our users. We may also use this information to provide you with information about our products and services, and to communicate with you regarding updates, security alerts, and support messages.',
+      'Learnmark uses the information we collect to evaluate and scope client projects; identify, screen, and present relevant experts; assess potential conflicts and restrictions; coordinate consultation terms, scheduling, support, and payment; maintain and improve our services; communicate with participants; prevent misuse; and comply with legal obligations. We do not use project or expert information to request disclosure of confidential, proprietary, or material non-public information.',
     informationSharingTitle: 'Information Sharing',
     informationSharingBody:
       'Learnmark does not sell, rent, or share your personal information with third parties, except as described in this Privacy Statement. We may share your personal information with third parties in the following circumstances:',
     informationSharingItems: [
       'With your consent.',
+      'Between clients and prospective experts when needed to evaluate fit, coordinate an approved engagement, or provide the requested service.',
       'To comply with legal obligations or respond to lawful requests.',
       'To protect the rights and safety of Learnmark, our users, and others.',
-      'With service providers who perform services on our behalf (e.g., hosting, analytics).',
+      'With service providers who perform services on our behalf, such as form processing, hosting, analytics, communications, scheduling, and payment support.',
     ],
     securityTitle: 'Security',
     securityBody:

@@ -9,24 +9,28 @@ These rules apply to every new page, component, feature, and user-facing change 
 - Reuse the owning shared surface before creating another abstraction. In particular, preserve `SolutionPage`, `LocalizedSolutionPage`, `OpenSourceProjectPage`, `LocalizedOpenSourceProjectPage`, and `ProductEdition` patterns.
 - Do not add a new internationalization or theme library unless the existing implementation cannot support the requirement.
 
-## Internationalization Is Required
+## Internationalization Feature Flag
 
-- Every new user-facing string must support all locales in `i18n/config.ts`: `en`, `zh-CN`, `zh-TW`, `ja`, `fr`, and `de`.
-- Do not hardcode visible text in pages or shared components. This includes headings, body copy, buttons, menus, form labels, placeholders, option labels, status/error/success messages, tooltips, `title`, `aria-label`, and meaningful image `alt` text.
-- Put domain copy in a strongly typed `Record<Locale, ...>` under `i18n/messages/`. Put truly shared navigation/footer/system copy in the existing common or system message files.
+- `disableInternationalization` in `i18n/config.ts` is the single product-level internationalization flag.
+- Keep `disableInternationalization` set to `true` until there is an explicit product decision to enable internationalization. Do not change it implicitly as part of another feature.
+- While the flag is `true`, build and maintain user-facing copy only for `defaultLocale`. New pages and features do not need translations, locale-specific metadata, or multi-locale QA.
+- While the flag is `true`, `getLocale()` must always return `defaultLocale` and `LanguageSwitcher` must remain hidden.
+- Keep new default-locale copy in typed message modules under `i18n/messages/` when practical, so internationalization can be restored without rewriting component structure. Hardcoded copy is acceptable for isolated content that has no reusable message surface.
+- When the flag is explicitly changed to `false`, restore full support for every locale in `supportedLocales` before considering the change complete. At that point, all visible text, metadata, accessibility labels, form feedback, and JSON-LD must be localized.
 - Keep product names, source code, shell commands, repository URLs, API values, and other technical identifiers unchanged unless localization is semantically required.
-- Use `getLocale()` from `i18n/server.ts` in Server Components. It preserves the required precedence: the `learnmark-locale` cookie first, browser `Accept-Language` second, and English fallback last.
+- Use `getLocale()` from `i18n/server.ts` in Server Components. When internationalization is enabled, it preserves the required precedence: the `learnmark-locale` cookie first, browser `Accept-Language` second, and English fallback last.
 - Preserve the current URL strategy. Do not add locale prefixes such as `/en` or `/zh-CN` without an explicit product decision.
 - Pass only the active locale's message slice into Client Components. Never send all six dictionaries to the browser or import `i18n/server.ts` into a Client Component.
 - Keep stable form/API values separate from translated labels. Query parameters and submitted values must remain backward compatible.
-- New pages must localize metadata with `generateMetadata()`, `getLocale()`, and `createPageMetadata({ locale })`. Localize JSON-LD and Open Graph locale signals as well.
-- Preserve a correct `<html lang>` value and localized accessibility metadata. Do not replace localized copy with client-only rendering that causes an English flash or hydration mismatch.
+- New pages must use `generateMetadata()` and `createPageMetadata()`. When internationalization is enabled, also use `getLocale()` and localize JSON-LD and Open Graph locale signals.
+- Preserve a correct `<html lang>` value and accessibility metadata. Do not replace server-rendered copy with client-only rendering that causes a flash or hydration mismatch.
 - When translated arrays are paired with icons, images, routes, or other config, keep their lengths and order aligned. Prefer stable keys for new structures.
-- Check long German/French labels and CJK text at mobile and desktop widths; text must wrap without clipping, overlap, or horizontal scrolling.
+- When internationalization is enabled, check long German/French labels and CJK text at mobile and desktop widths; text must wrap without clipping, overlap, or horizontal scrolling.
 
 ## Language Switcher
 
-- Keep `LanguageSwitcher` immediately beside `ThemeToggle` in both desktop and mobile Header controls.
+- Keep `LanguageSwitcher` hidden while `disableInternationalization` is `true`.
+- When internationalization is enabled, keep `LanguageSwitcher` immediately beside `ThemeToggle` in both desktop and mobile Header controls.
 - The selector must remain a keyboard-accessible dropdown showing all six native language names and the current selection.
 - A language change must update `learnmark-locale`, update the document language, and refresh the current route without changing the URL.
 - Do not duplicate locale detection, cookie names, or language options outside `i18n/config.ts`.
@@ -62,8 +66,9 @@ These rules apply to every new page, component, feature, and user-facing change 
 
 ## Completion Checklist
 
-- Verify all six locales, browser-language defaulting, cookie persistence, and English fallback.
+- Verify the default locale and confirm the language switcher is hidden while `disableInternationalization` is `true`.
+- When internationalization is enabled, verify all six locales, browser-language defaulting, cookie persistence, and English fallback.
 - Verify light, dark, and system themes, including focus, hover, form, menu, footer, and image/logo states.
 - Check 390px mobile and at least 1280px desktop layouts for overlap, clipping, menu placement, and horizontal overflow.
-- Check localized page title, description, Open Graph locale, JSON-LD language, accessibility labels, and form feedback.
+- Check page title, description, Open Graph data, JSON-LD language, accessibility labels, and form feedback. When internationalization is enabled, verify each localized variant.
 - Run `npx tsc --noEmit` and `npm run build` before finishing. Do not consider a user-facing change complete while either command fails.

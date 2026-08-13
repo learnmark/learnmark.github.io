@@ -2,6 +2,7 @@ export const supportedLocales = ['en', 'zh-CN', 'zh-TW', 'ja', 'fr', 'de'] as co
 
 export type Locale = (typeof supportedLocales)[number]
 
+export const disableInternationalization = true
 export const defaultLocale: Locale = 'en'
 export const localeCookieName = 'learnmark-locale'
 
