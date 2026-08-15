@@ -139,7 +139,7 @@ export default async function ShopifyStoreDevelopmentPage() {
     createBreadcrumbJsonLd([
       { name: messages.breadcrumbHome, path: '/' },
       { name: messages.seoTitle, path: '/services/shopify' },
-    ]),
+    ], locale),
   ]
 
   return (

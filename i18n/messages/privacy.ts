@@ -103,14 +103,14 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
   },
   'zh-CN': {
     seoTitle: '隐私政策',
-    seoDescription: '阅读我们的隐私政策，了解我们如何收集、使用并保护您的数据。',
-    seoKeywords: ['Learnmark 隐私政策', '隐私声明', '数据保护'],
+    seoDescription: '了解 Learnmark 如何收集、使用、共享并保护与网站和专家咨询服务相关的信息。',
+    seoKeywords: ['Learnmark 隐私政策', '专家网络隐私', '咨询数据保护'],
     legalLabel: '法律声明',
     title: '隐私政策',
     effectiveDateLabel: '生效日期',
-    effectiveDateValue: '2024年8月7日',
+    effectiveDateValue: '2026年8月13日',
     introduction:
-      'Learnmark 致力于保护您的隐私。本隐私声明说明了 Learnmark 的隐私实践，以及当您使用我们的产品和服务（包括我们的网站）时，我们如何处理向您收集的个人信息。本隐私声明适用于 Learnmark 提供的所有服务（包括我们的网站），但不适用于拥有单独隐私声明且未纳入本隐私声明的服务。',
+      'Learnmark 致力于保护您的隐私。本隐私声明说明我们如何处理通过网站、客户项目请求、专家网络活动、筛选、咨询协调及相关支持收集的个人信息。本声明适用于未另行提供独立隐私通知的 Learnmark 服务。',
     tableOfContentsTitle: '目录',
     tableOfContents: {
       informationWeCollect: '我们收集的信息',
@@ -122,11 +122,19 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     },
     informationWeCollectTitle: '我们收集的信息',
     informationWeCollectIntro:
-      '当您使用我们的产品和服务（包括我们的网站）时，Learnmark 会收集与您相关的信息。这些信息可能包括：',
+      '当您访问网站、提交项目、表达加入专家网络的意向、参与筛选或咨询时，Learnmark 会收集相关信息。这些信息可能包括：',
     collectedInformationItems: [
       {
         name: '联系信息。',
-        description: '当您注册或联系我们时提供的姓名、电子邮件地址及其他联系方式。',
+        description: '您的姓名、工作邮箱、公司、专业联系方式及通信偏好。',
+      },
+      {
+        name: '项目与咨询信息。',
+        description: '客户项目简报、研究主题、目标画像、筛选答复、可用时间、约定条件、排期及合作记录。',
+      },
+      {
+        name: '专业档案信息。',
+        description: '对于专家，包括任职经历、职位、行业、市场、语言、专业能力、资质及披露的限制或冲突。',
       },
       {
         name: '使用数据。',
@@ -139,15 +147,16 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     howWeUseYourInformationTitle: '我们如何使用您的信息',
     howWeUseYourInformationBody:
-      'Learnmark 使用我们收集的信息来提供、维护、保护和改进我们的产品与服务，并保护 Learnmark 及其用户。我们还可能使用这些信息向您提供有关我们产品和服务的信息，并就更新、安全警报和支持消息与您沟通。',
+      'Learnmark 使用所收集的信息评估和确定客户项目范围；识别、筛选并展示相关专家；评估潜在冲突与限制；协调咨询条件、排期、支持与付款；维护和改进服务；与参与者沟通；防止滥用；并遵守法律义务。我们不会利用项目或专家信息要求披露机密、专有或重大非公开信息。',
     informationSharingTitle: '信息共享',
     informationSharingBody:
       '除本隐私声明所述情形外，Learnmark 不会向第三方出售、出租或共享您的个人信息。在以下情况下，我们可能会与第三方共享您的个人信息：',
     informationSharingItems: [
       '在获得您的同意后。',
+      '在评估适配度、协调获批合作或提供所需服务时，在客户与候选专家之间进行必要共享。',
       '为遵守法律义务或回应合法请求。',
       '为保护 Learnmark、我们的用户及其他人的权利与安全。',
-      '与代表我们提供服务的服务提供商共享（例如托管、分析）。',
+      '与代表我们提供服务的供应商共享，例如表单处理、托管、分析、通信、排期及付款支持。',
     ],
     securityTitle: '安全',
     securityBody:
@@ -160,14 +169,14 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
   },
   'zh-TW': {
     seoTitle: '隱私權政策',
-    seoDescription: '閱讀我們的隱私權政策，了解我們如何蒐集、使用並保護您的資料。',
-    seoKeywords: ['Learnmark 隱私權政策', '隱私權聲明', '資料保護'],
+    seoDescription: '瞭解 Learnmark 如何蒐集、使用、分享並保護與網站及專家顧問服務相關的資訊。',
+    seoKeywords: ['Learnmark 隱私權政策', '專家網絡隱私', '顧問資料保護'],
     legalLabel: '法律聲明',
     title: '隱私權政策',
     effectiveDateLabel: '生效日期',
-    effectiveDateValue: '2024年8月7日',
+    effectiveDateValue: '2026年8月13日',
     introduction:
-      'Learnmark 致力於保護您的隱私。本隱私權聲明說明 Learnmark 的隱私實務，以及當您使用我們的產品與服務（包括我們的網站）時，我們如何處理向您蒐集的個人資訊。本隱私權聲明適用於 Learnmark 提供的所有服務（包括我們的網站），但不包含具有獨立隱私權聲明且未納入本隱私權聲明的服務。',
+      'Learnmark 致力於保護您的隱私。本隱私權聲明說明我們如何處理透過網站、客戶專案請求、專家網絡活動、篩選、顧問服務協調與相關支援所蒐集的個人資訊。本聲明適用於未另行提供獨立隱私通知的 Learnmark 服務。',
     tableOfContentsTitle: '目錄',
     tableOfContents: {
       informationWeCollect: '我們蒐集的資訊',
@@ -179,11 +188,19 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     },
     informationWeCollectTitle: '我們蒐集的資訊',
     informationWeCollectIntro:
-      '當您使用我們的產品與服務（包括我們的網站）時，Learnmark 會蒐集與您相關的資訊。這些資訊可能包括：',
+      '當您瀏覽網站、提交專案、表達加入專家網絡的意願、參與篩選或顧問服務時，Learnmark 會蒐集相關資訊。這些資訊可能包括：',
     collectedInformationItems: [
       {
         name: '聯絡資訊。',
-        description: '當您註冊或聯絡我們時所提供的姓名、電子郵件地址及其他聯絡資料。',
+        description: '您的姓名、工作電子郵件、公司、專業聯絡方式與通訊偏好。',
+      },
+      {
+        name: '專案與顧問服務資訊。',
+        description: '客戶專案簡報、研究主題、目標輪廓、篩選答覆、可用時間、約定條件、排程與合作紀錄。',
+      },
+      {
+        name: '專業檔案資訊。',
+        description: '對於專家，包括任職經歷、職位、產業、市場、語言、專業能力、資格及揭露的限制或衝突。',
       },
       {
         name: '使用資料。',
@@ -196,15 +213,16 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     howWeUseYourInformationTitle: '我們如何使用您的資訊',
     howWeUseYourInformationBody:
-      'Learnmark 使用我們蒐集的資訊來提供、維護、保護與改進我們的產品和服務，並保護 Learnmark 及其使用者。我們也可能使用這些資訊向您提供我們產品與服務的資訊，並就更新、安全警示與支援訊息與您聯繫。',
+      'Learnmark 使用所蒐集的資訊評估並確定客戶專案範圍；識別、篩選並呈現相關專家；評估潛在衝突與限制；協調顧問服務條件、排程、支援與付款；維護與改進服務；與參與者溝通；防止濫用；並遵守法律義務。我們不會利用專案或專家資訊要求揭露機密、專有或重大非公開資訊。',
     informationSharingTitle: '資訊分享',
     informationSharingBody:
       '除本隱私權聲明所述情況外，Learnmark 不會向第三方出售、出租或分享您的個人資訊。在下列情況下，我們可能會與第三方分享您的個人資訊：',
     informationSharingItems: [
       '在取得您的同意後。',
+      '在評估適配度、協調獲准合作或提供所需服務時，於客戶與候選專家之間進行必要分享。',
       '為遵守法律義務或回應合法要求。',
       '為保護 Learnmark、我們的使用者及其他人的權利與安全。',
-      '與代表我們提供服務的服務供應商分享（例如託管、分析）。',
+      '與代表我們提供服務的供應商分享，例如表單處理、託管、分析、通訊、排程與付款支援。',
     ],
     securityTitle: '安全性',
     securityBody:
@@ -217,14 +235,14 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
   },
   ja: {
     seoTitle: 'プライバシーポリシー',
-    seoDescription: '当社がどのようにお客様のデータを収集、利用、保護するかについて、プライバシーポリシーをご確認ください。',
-    seoKeywords: ['Learnmark プライバシーポリシー', 'プライバシーに関する声明', 'データ保護'],
+    seoDescription: 'Learnmark がウェブサイトと専門家コンサルテーションに関する情報を収集、利用、共有、保護する方法をご確認ください。',
+    seoKeywords: ['Learnmark プライバシーポリシー', '専門家ネットワークのプライバシー', 'コンサルテーションデータ保護'],
     legalLabel: '法的情報',
     title: 'プライバシーポリシー',
     effectiveDateLabel: '発効日',
-    effectiveDateValue: '2024年8月7日',
+    effectiveDateValue: '2026年8月13日',
     introduction:
-      'Learnmark はお客様のプライバシー保護に取り組んでいます。本プライバシーに関する声明は、Learnmark のプライバシー慣行と、当社ウェブサイトを含む当社の製品およびサービスをご利用になる際に収集する個人情報の取扱いについて説明するものです。本プライバシーに関する声明は、当社ウェブサイトを含む Learnmark が提供するすべてのサービスに適用されますが、本声明を組み込まない個別のプライバシー声明があるサービスには適用されません。',
+      'Learnmark はお客様のプライバシー保護に取り組んでいます。本声明は、ウェブサイト、クライアント案件の依頼、専門家ネットワーク活動、適格性確認、コンサルテーションの調整、関連サポートを通じて収集する個人情報の取扱いを説明します。個別のプライバシー通知がない Learnmark サービスに適用されます。',
     tableOfContentsTitle: '目次',
     tableOfContents: {
       informationWeCollect: '当社が収集する情報',
@@ -236,11 +254,19 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     },
     informationWeCollectTitle: '当社が収集する情報',
     informationWeCollectIntro:
-      'Learnmark は、当社ウェブサイトを含む製品およびサービスのご利用時にお客様に関する情報を収集します。これには次の情報が含まれる場合があります。',
+      'Learnmark は、ウェブサイトの閲覧、案件の送信、専門家ネットワークへの参加意向、適格性確認、コンサルテーションへの参加時に情報を収集します。これには次の情報が含まれる場合があります。',
     collectedInformationItems: [
       {
         name: '連絡先情報。',
-        description: '登録またはお問い合わせ時に提供される氏名、メールアドレス、その他の連絡先情報。',
+        description: '氏名、勤務先メール、会社、職業上の連絡先、コミュニケーション設定。',
+      },
+      {
+        name: '案件・コンサルテーション情報。',
+        description: '案件概要、調査テーマ、対象プロフィール、質問票回答、対応可能性、合意条件、日程、実施記録。',
+      },
+      {
+        name: '専門プロフィール情報。',
+        description: '専門家の職歴、役職、業界、市場、言語、専門分野、資格、申告された制限や利益相反。',
       },
       {
         name: '利用データ。',
@@ -253,15 +279,16 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     howWeUseYourInformationTitle: '情報の利用方法',
     howWeUseYourInformationBody:
-      'Learnmark は、収集した情報を当社の製品およびサービスの提供、維持、保護、改善、ならびに Learnmark とユーザーの保護のために利用します。また、当社の製品およびサービスに関する情報提供、更新情報、セキュリティ警告、サポートメッセージに関する連絡にも利用する場合があります。',
+      'Learnmark は、案件の評価とスコープ設定、専門家の特定・適格性確認・提示、利益相反と制限の評価、条件・日程・サポート・支払の調整、サービス改善、参加者との連絡、不正防止、法的義務の履行に情報を利用します。機密、専有、重要な未公開情報の開示を求めるためには利用しません。',
     informationSharingTitle: '情報共有',
     informationSharingBody:
       '本プライバシーに関する声明に記載する場合を除き、Learnmark はお客様の個人情報を第三者に販売、賃貸、または共有しません。以下の場合に限り、第三者と個人情報を共有することがあります。',
     informationSharingItems: [
       'お客様の同意がある場合。',
+      '適合性の評価、承認済み案件の調整、依頼されたサービスの提供に必要な範囲で、クライアントと候補専門家の間で共有する場合。',
       '法的義務の遵守または適法な要請への対応が必要な場合。',
       'Learnmark、当社ユーザー、その他の権利と安全を保護するために必要な場合。',
-      '当社に代わってサービスを提供する事業者（例: ホスティング、分析）と共有する場合。',
+      'フォーム処理、ホスティング、分析、通信、日程調整、支払支援など、当社に代わってサービスを提供する事業者と共有する場合。',
     ],
     securityTitle: 'セキュリティ',
     securityBody:
@@ -274,14 +301,14 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
   },
   fr: {
     seoTitle: 'Politique de confidentialité',
-    seoDescription: 'Consultez notre politique de confidentialité pour comprendre comment nous collectons, utilisons et protégeons vos données.',
-    seoKeywords: ['politique de confidentialité Learnmark', 'déclaration de confidentialité', 'protection des données'],
+    seoDescription: 'Découvrez comment Learnmark collecte, utilise, partage et protège les informations liées au site et aux consultations d’experts.',
+    seoKeywords: ['politique de confidentialité Learnmark', 'confidentialité réseau d’experts', 'protection des données de consultation'],
     legalLabel: 'Mentions légales',
     title: 'Politique de confidentialité',
     effectiveDateLabel: 'Date d\'entrée en vigueur',
-    effectiveDateValue: '7 août 2024',
+    effectiveDateValue: '13 août 2026',
     introduction:
-      'Learnmark s\'engage à protéger votre vie privée. La présente Déclaration de confidentialité décrit les pratiques de confidentialité de Learnmark et la manière dont nous traitons les informations personnelles que nous recueillons lorsque vous utilisez nos produits et services, y compris notre site web. Cette Déclaration de confidentialité s\'applique à l\'ensemble des services proposés par Learnmark, y compris notre site web, à l\'exception des services disposant de déclarations de confidentialité distinctes qui n\'intègrent pas la présente Déclaration de confidentialité.',
+      'Learnmark s\'engage à protéger votre vie privée. La présente déclaration décrit le traitement des informations personnelles recueillies via notre site, les demandes de projets clients, les activités du réseau d’experts, la qualification, la coordination des consultations et l’assistance associée. Elle s’applique aux services Learnmark sans avis de confidentialité distinct.',
     tableOfContentsTitle: 'Table des matières',
     tableOfContents: {
       informationWeCollect: 'Informations que nous collectons',
@@ -293,11 +320,19 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     },
     informationWeCollectTitle: 'Informations que nous collectons',
     informationWeCollectIntro:
-      'Learnmark collecte des informations vous concernant lorsque vous utilisez nos produits et services, y compris notre site web. Ces informations peuvent inclure :',
+      'Learnmark collecte des informations lorsque vous visitez le site, soumettez un projet, exprimez votre intérêt pour le réseau, répondez à une qualification ou participez à une consultation. Elles peuvent inclure :',
     collectedInformationItems: [
       {
         name: 'Informations de contact.',
-        description: 'Votre nom, votre adresse e-mail et d\'autres coordonnées fournies lors de votre inscription ou de votre prise de contact.',
+        description: 'Votre nom, e-mail professionnel, entreprise, coordonnées professionnelles et préférences de communication.',
+      },
+      {
+        name: 'Informations de projet et de consultation.',
+        description: 'Briefs clients, thèmes, profils visés, réponses, disponibilité, conditions convenues, calendrier et traces de mission.',
+      },
+      {
+        name: 'Informations de profil professionnel.',
+        description: 'Pour les experts : emplois, fonctions, secteurs, marchés, langues, expertise, qualifications, restrictions et conflits déclarés.',
       },
       {
         name: 'Données d\'utilisation.',
@@ -310,15 +345,16 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     howWeUseYourInformationTitle: 'Comment nous utilisons vos informations',
     howWeUseYourInformationBody:
-      'Learnmark utilise les informations que nous collectons pour fournir, maintenir, protéger et améliorer nos produits et services, ainsi que pour protéger Learnmark et ses utilisateurs. Nous pouvons également utiliser ces informations pour vous communiquer des informations sur nos produits et services, ainsi que des mises à jour, alertes de sécurité et messages d\'assistance.',
+      'Learnmark utilise ces informations pour évaluer et cadrer les projets ; identifier, qualifier et présenter les experts ; évaluer conflits et restrictions ; coordonner conditions, calendrier, assistance et paiement ; maintenir et améliorer les services ; communiquer ; prévenir les abus ; et respecter ses obligations légales. Nous ne les utilisons pas pour demander des informations confidentielles, propriétaires ou importantes non publiques.',
     informationSharingTitle: 'Partage d\'informations',
     informationSharingBody:
       'Learnmark ne vend, ne loue et ne partage pas vos informations personnelles avec des tiers, sauf dans les cas décrits dans la présente Déclaration de confidentialité. Nous pouvons partager vos informations personnelles avec des tiers dans les circonstances suivantes :',
     informationSharingItems: [
       'Avec votre consentement.',
+      'Entre clients et experts potentiels lorsque cela est nécessaire pour évaluer l’adéquation, coordonner une mission approuvée ou fournir le service demandé.',
       'Pour respecter des obligations légales ou répondre à des demandes légitimes.',
       'Pour protéger les droits et la sécurité de Learnmark, de nos utilisateurs et d\'autrui.',
-      'Avec des prestataires de services agissant pour notre compte (par exemple, hébergement, analyses).',
+      'Avec des prestataires agissant pour notre compte, notamment pour les formulaires, l’hébergement, l’analyse, les communications, la planification et les paiements.',
     ],
     securityTitle: 'Sécurité',
     securityBody:
@@ -331,14 +367,14 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
   },
   de: {
     seoTitle: 'Datenschutzerklärung',
-    seoDescription: 'Lesen Sie unsere Datenschutzerklärung, um zu verstehen, wie wir Ihre Daten erfassen, verwenden und schützen.',
-    seoKeywords: ['Learnmark Datenschutzerklärung', 'Datenschutzstatement', 'Datenschutz'],
+    seoDescription: 'Erfahren Sie, wie Learnmark Informationen zu Website und Expertenberatung erfasst, verwendet, weitergibt und schützt.',
+    seoKeywords: ['Learnmark Datenschutzerklärung', 'Datenschutz Expertennetzwerk', 'Datenschutz Beratungsdaten'],
     legalLabel: 'Rechtliches',
     title: 'Datenschutzerklärung',
     effectiveDateLabel: 'Gültig ab',
-    effectiveDateValue: '7. August 2024',
+    effectiveDateValue: '13. August 2026',
     introduction:
-      'Learnmark verpflichtet sich zum Schutz Ihrer Privatsphäre. Diese Datenschutzerklärung beschreibt die Datenschutzpraktiken von Learnmark und wie wir mit den personenbezogenen Informationen umgehen, die wir von Ihnen erfassen, wenn Sie unsere Produkte und Dienstleistungen einschließlich unserer Website nutzen. Diese Datenschutzerklärung gilt für alle von Learnmark angebotenen Dienste einschließlich unserer Website, ausgenommen Dienste mit separaten Datenschutzerklärungen, die diese Datenschutzerklärung nicht einbeziehen.',
+      'Learnmark verpflichtet sich zum Schutz Ihrer Privatsphäre. Diese Erklärung beschreibt den Umgang mit personenbezogenen Daten aus unserer Website, Kundenprojektanfragen, Aktivitäten im Expertennetzwerk, Qualifizierung, Koordination von Beratungen und zugehörigem Support. Sie gilt für Learnmark-Dienste ohne gesonderten Datenschutzhinweis.',
     tableOfContentsTitle: 'Inhaltsverzeichnis',
     tableOfContents: {
       informationWeCollect: 'Welche Informationen wir erfassen',
@@ -350,11 +386,19 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     },
     informationWeCollectTitle: 'Welche Informationen wir erfassen',
     informationWeCollectIntro:
-      'Learnmark erfasst Informationen von Ihnen, wenn Sie unsere Produkte und Dienstleistungen einschließlich unserer Website nutzen. Diese Informationen können Folgendes umfassen:',
+      'Learnmark erfasst Informationen, wenn Sie unsere Website besuchen, ein Projekt einreichen, Interesse am Expertennetzwerk zeigen, an einer Qualifizierung oder Beratung teilnehmen. Dazu können gehören:',
     collectedInformationItems: [
       {
         name: 'Kontaktinformationen.',
-        description: 'Ihr Name, Ihre E-Mail-Adresse und weitere Kontaktdaten, die Sie bei der Registrierung oder Kontaktaufnahme angeben.',
+        description: 'Name, geschäftliche E-Mail-Adresse, Unternehmen, berufliche Kontaktdaten und Kommunikationseinstellungen.',
+      },
+      {
+        name: 'Projekt- und Beratungsinformationen.',
+        description: 'Kundenbriefings, Themen, Zielprofile, Antworten, Verfügbarkeit, vereinbarte Bedingungen, Termine und Leistungsnachweise.',
+      },
+      {
+        name: 'Berufliche Profilinformationen.',
+        description: 'Für Fachleute etwa Beschäftigung, Rollen, Branchen, Märkte, Sprachen, Fachwissen, Qualifikationen und gemeldete Einschränkungen oder Konflikte.',
       },
       {
         name: 'Nutzungsdaten.',
@@ -367,15 +411,16 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     howWeUseYourInformationTitle: 'Wie wir Ihre Informationen verwenden',
     howWeUseYourInformationBody:
-      'Learnmark nutzt die von uns erfassten Informationen, um unsere Produkte und Dienstleistungen bereitzustellen, zu betreiben, zu schützen und zu verbessern sowie Learnmark und unsere Nutzer zu schützen. Wir können diese Informationen auch nutzen, um Ihnen Informationen zu unseren Produkten und Dienstleistungen bereitzustellen und mit Ihnen über Aktualisierungen, Sicherheitswarnungen und Support-Nachrichten zu kommunizieren.',
+      'Learnmark verwendet Informationen zur Bewertung und Planung von Projekten, Identifizierung und Qualifizierung von Fachleuten, Prüfung von Konflikten und Einschränkungen, Koordination von Bedingungen, Terminen, Support und Zahlungen, Verbesserung der Dienste, Kommunikation, Missbrauchsprävention und Erfüllung gesetzlicher Pflichten. Wir nutzen sie nicht, um vertrauliche, geschützte oder wesentliche nicht öffentliche Informationen anzufordern.',
     informationSharingTitle: 'Weitergabe von Informationen',
     informationSharingBody:
       'Learnmark verkauft, vermietet oder teilt Ihre personenbezogenen Informationen nicht mit Dritten, außer wie in dieser Datenschutzerklärung beschrieben. Wir können Ihre personenbezogenen Informationen in folgenden Fällen an Dritte weitergeben:',
     informationSharingItems: [
       'Mit Ihrer Zustimmung.',
+      'Zwischen Kunden und möglichen Fachleuten, soweit dies zur Eignungsprüfung, Koordination eines genehmigten Auftrags oder Leistungserbringung erforderlich ist.',
       'Zur Erfüllung gesetzlicher Verpflichtungen oder zur Beantwortung rechtmäßiger Anfragen.',
       'Zum Schutz der Rechte und Sicherheit von Learnmark, unseren Nutzern und anderen.',
-      'An Dienstleister, die in unserem Auftrag Leistungen erbringen (z. B. Hosting, Analysen).',
+      'An Dienstleister für Formularverarbeitung, Hosting, Analysen, Kommunikation, Terminplanung und Zahlungsunterstützung.',
     ],
     securityTitle: 'Sicherheit',
     securityBody:

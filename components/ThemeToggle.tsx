@@ -3,7 +3,7 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 import { useTheme } from 'next-themes'
 
-export default function ThemeToggle({ label = 'Toggle color theme' }: { label?: string }) {
+export default function ThemeToggle({ label }: { label: string }) {
   const { resolvedTheme, setTheme } = useTheme()
 
   return (

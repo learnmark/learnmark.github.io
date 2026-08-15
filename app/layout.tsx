@@ -8,7 +8,6 @@ import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
 import { commonMessages, headerDirectoryMessages } from "@/i18n/messages/common";
 import { homeMessages } from "@/i18n/messages/home";
-import { disableInternationalization } from "@/i18n/config";
 import { getLocale } from "@/i18n/server";
 import { createSiteJsonLd, defaultKeywords, defaultOpenGraphImage, openGraphLocales, siteName, siteUrl } from "./seo";
 
@@ -26,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
     authors: [{ name: siteName, url: siteUrl }],
     creator: siteName,
     publisher: siteName,
-    category: 'expert research and consultation',
+    category: messages.seoCategory,
     title: {
       template: '%s | Learnmark',
       default: title,
@@ -72,7 +71,7 @@ export default async function RootLayout({
   const locale = await getLocale();
   const messages = commonMessages[locale];
   const pageMessages = homeMessages[locale];
-  const showLanguageSwitcher = !disableInternationalization && process.env.BUILD_OUTPUT_MODE !== 'export';
+  const showLanguageSwitcher = process.env.BUILD_OUTPUT_MODE !== 'export';
   const siteJsonLd = createSiteJsonLd({
     description: pageMessages.seoDescription,
     locale,
@@ -87,7 +86,7 @@ export default async function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
           />
-          <Header locale={locale} messages={messages.header} directoryMessages={headerDirectoryMessages} themeToggleLabel={messages.themeToggleLabel} languageSwitcherLabel={messages.languageSwitcherLabel} showLanguageSwitcher={showLanguageSwitcher} />
+          <Header locale={locale} messages={messages.header} directoryMessages={headerDirectoryMessages[locale]} themeToggleLabel={messages.themeToggleLabel} languageSwitcherLabel={messages.languageSwitcherLabel} showLanguageSwitcher={showLanguageSwitcher} />
           {children}
           <Footer messages={messages.footer} />
         </ThemeProvider>

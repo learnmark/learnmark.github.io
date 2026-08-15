@@ -8,9 +8,9 @@ type ProductEditionProps = {
   description: string
   features: ProductFeature[]
   openSourceHref: string
-  eyebrow?: string
-  title?: string
-  compareLabel?: string
+  eyebrow: string
+  title: string
+  compareLabel: string
 }
 
 export default function ProductEdition({
@@ -18,9 +18,9 @@ export default function ProductEdition({
   description,
   features,
   openSourceHref,
-  eyebrow = 'Learnmark Product',
-  title = `What the managed ${projectName} product adds`,
-  compareLabel = 'Compare with the open-source foundation',
+  eyebrow,
+  title,
+  compareLabel,
 }: ProductEditionProps) {
   return (
     <section className="mt-16 border-y border-slate-200 py-14">

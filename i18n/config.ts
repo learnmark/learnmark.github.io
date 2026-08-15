@@ -2,7 +2,6 @@ export const supportedLocales = ['en', 'zh-CN', 'zh-TW', 'ja', 'fr', 'de'] as co
 
 export type Locale = (typeof supportedLocales)[number]
 
-export const disableInternationalization = true
 export const defaultLocale: Locale = 'en'
 export const localeCookieName = 'learnmark-locale'
 
@@ -24,7 +23,7 @@ export function isLocale(value: string | undefined): value is Locale {
 }
 
 function localeFromLanguageTag(languageTag: string): Locale | undefined {
-  const normalized = languageTag.trim().replace('_', '-').toLowerCase()
+  const normalized = languageTag.trim().replaceAll('_', '-').toLowerCase()
 
   if (normalized === 'zh-tw' || normalized === 'zh-hk' || normalized === 'zh-mo' || normalized.startsWith('zh-hant')) {
     return 'zh-TW'
@@ -53,6 +52,7 @@ export function detectLocale(acceptLanguage: string | null): Locale {
     .sort((left, right) => right.quality - left.quality || left.index - right.index)
 
   for (const candidate of candidates) {
+    if (candidate.quality <= 0) continue
     const locale = localeFromLanguageTag(candidate.languageTag)
     if (locale) return locale
   }

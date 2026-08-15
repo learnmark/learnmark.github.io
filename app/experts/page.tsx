@@ -1,6 +1,6 @@
 import ExpertServiceRoute, { createExpertServiceMetadata } from '@/components/ExpertServiceRoute'
 
-const expertInterestHref = '/contact?interest=Expert%20network'
+const expertInterestHref = '/contact?interest=expert-network'
 
 export function generateMetadata() {
   return createExpertServiceMetadata('experts', '/experts')

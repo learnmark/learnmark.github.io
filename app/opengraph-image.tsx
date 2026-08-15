@@ -45,14 +45,28 @@ export default function Image() {
             <h1 style={{ fontSize: 76, fontWeight: 800, lineHeight: 0.96, margin: 0, maxWidth: 920 }}>
               {siteName}
             </h1>
-            <p style={{ color: '#475569', fontSize: 30, lineHeight: 1.35, margin: 0, maxWidth: 920 }}>
-              Expert research and consultation
-            </p>
+            <div style={{ background: '#900000', display: 'flex', height: 8, width: 180 }} />
           </div>
-          <div style={{ color: '#334155', display: 'flex', fontSize: 26, gap: 20 }}>
-            <span>Scope</span>
-            <span>Match</span>
-            <span>Consult</span>
+          <div style={{ display: 'flex', gap: 18 }}>
+            {['01', '02', '03', '04'].map((step) => (
+              <span
+                key={step}
+                style={{
+                  alignItems: 'center',
+                  border: '1px solid #cbd5e1',
+                  borderRadius: 999,
+                  color: '#334155',
+                  display: 'flex',
+                  fontSize: 22,
+                  fontWeight: 700,
+                  height: 54,
+                  justifyContent: 'center',
+                  width: 54,
+                }}
+              >
+                {step}
+              </span>
+            ))}
           </div>
         </div>
       </div>

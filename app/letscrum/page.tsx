@@ -98,7 +98,7 @@ export default async function LetScrum() {
     createBreadcrumbJsonLd([
       { name: messages.breadcrumbHome, path: '/' },
       { name: 'LetScrum', path: '/letscrum' },
-    ]),
+    ], locale),
   ]
 
   return (

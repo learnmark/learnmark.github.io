@@ -9,15 +9,29 @@ import {
   LightBulbIcon,
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
-import type { ContactMessages } from "@/i18n/messages/contact";
+import {
+  contactInterestValues,
+  contactTimelineValues,
+  type ContactInterest,
+  type ContactMessages,
+  type ContactTimeline,
+} from "@/i18n/messages/contact";
 
-const initialFormData = {
+const initialFormData: {
+  firstName: string;
+  lastName: string;
+  company: string;
+  email: string;
+  interest: ContactInterest;
+  timeline: ContactTimeline;
+  message: string;
+} = {
   firstName: "",
   lastName: "",
   company: "",
   email: "",
-  interest: "Client project",
-  timeline: "Exploring options",
+  interest: "client-project",
+  timeline: "exploring-options",
   message: "",
 };
 
@@ -35,9 +49,26 @@ const contactHighlights = [
     icon: ShieldCheckIcon,
   },
 ];
-const interestOptions = ["Client project", "Expert network", "Institutional partnership", "Compliance and privacy", "Pilot eligibility"];
-const legacyInterestOptions = new Set(["Expert Consultation", "Market Research", "Commercial Due Diligence", "Technical Due Diligence", "Customer or Channel Research", "Strategic Research", "Shopify Store Development", "AI Consulting", "Cloud Consulting", "Platform Engineering", "API and AI Gateway", "llmxy", "LetScrum"]);
-const timelineOptions = ["As soon as possible", "Within 2 weeks", "This month", "Exploring options"];
+const legacyInterestOptions: Record<string, ContactInterest> = {
+  "Client project": "client-project",
+  "Expert network": "expert-network",
+  "Institutional partnership": "institutional-partnership",
+  "Compliance and privacy": "compliance-privacy",
+  "Pilot eligibility": "pilot-eligibility",
+  "Expert Consultation": "client-project",
+  "Market Research": "client-project",
+  "Commercial Due Diligence": "client-project",
+  "Technical Due Diligence": "client-project",
+  "Customer or Channel Research": "client-project",
+  "Strategic Research": "client-project",
+  "Shopify Store Development": "client-project",
+  "AI Consulting": "client-project",
+  "Cloud Consulting": "client-project",
+  "Platform Engineering": "client-project",
+  "API and AI Gateway": "client-project",
+  llmxy: "client-project",
+  LetScrum: "client-project",
+};
 
 export default function ContactForm({ messages }: { messages: ContactMessages }) {
   const [agreed, setAgreed] = useState(false);
@@ -47,10 +78,10 @@ export default function ContactForm({ messages }: { messages: ContactMessages })
   useEffect(() => {
     const requestedInterest = new URLSearchParams(window.location.search).get("interest");
 
-    if (requestedInterest && interestOptions.includes(requestedInterest)) {
-      setFormData((prev) => ({ ...prev, interest: requestedInterest }));
-    } else if (requestedInterest && legacyInterestOptions.has(requestedInterest)) {
-      setFormData((prev) => ({ ...prev, interest: "Client project" }));
+    if (requestedInterest && contactInterestValues.includes(requestedInterest as ContactInterest)) {
+      setFormData((prev) => ({ ...prev, interest: requestedInterest as ContactInterest }));
+    } else if (requestedInterest && legacyInterestOptions[requestedInterest]) {
+      setFormData((prev) => ({ ...prev, interest: legacyInterestOptions[requestedInterest] }));
     }
   }, []);
 
@@ -220,8 +251,8 @@ export default function ContactForm({ messages }: { messages: ContactMessages })
                   onChange={handleInputChange}
                   className="mt-2 block w-full rounded-xl border-0 bg-slate-50 px-4 py-3 text-slate-900 ring-1 ring-inset ring-slate-200 transition focus:bg-white focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm"
                 >
-                  {interestOptions.map((option, index) => (
-                    <option key={option} value={option}>{messages.interestOptions[index]}</option>
+                  {contactInterestValues.map((option) => (
+                    <option key={option} value={option}>{messages.interestOptions[option]}</option>
                   ))}
                 </select>
               </div>
@@ -236,8 +267,8 @@ export default function ContactForm({ messages }: { messages: ContactMessages })
                   onChange={handleInputChange}
                   className="mt-2 block w-full rounded-xl border-0 bg-slate-50 px-4 py-3 text-slate-900 ring-1 ring-inset ring-slate-200 transition focus:bg-white focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm"
                 >
-                  {timelineOptions.map((option, index) => (
-                    <option key={option} value={option}>{messages.timelineOptions[index]}</option>
+                  {contactTimelineValues.map((option) => (
+                    <option key={option} value={option}>{messages.timelineOptions[option]}</option>
                   ))}
                 </select>
               </div>

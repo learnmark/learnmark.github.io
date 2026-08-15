@@ -78,7 +78,7 @@ export default async function Llmxy() {
     createBreadcrumbJsonLd([
       { name: messages.breadcrumbHome, path: '/' },
       { name: 'llmxy', path: '/llmxy' },
-    ]),
+    ], locale),
   ]
 
   return (

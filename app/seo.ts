@@ -167,10 +167,11 @@ export const publicRoutes: MetadataRoute.Sitemap = [
   { url: absoluteUrl('/privacy-policy'), lastModified: '2026-08-13', changeFrequency: 'yearly', priority: 0.3 },
 ]
 
-export function createBreadcrumbJsonLd(items: BreadcrumbItem[]) {
+export function createBreadcrumbJsonLd(items: BreadcrumbItem[], locale: Locale = 'en') {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    inLanguage: languageTags[locale],
     itemListElement: items.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -189,6 +190,7 @@ export function createServiceJsonLd({ name, description, path, serviceType, keyw
     description,
     serviceType,
     url: absoluteUrl(path),
+    inLanguage: languageTags[locale],
     provider: {
       '@id': `${siteUrl}/#organization`,
     },
@@ -237,6 +239,7 @@ export function createSiteJsonLd({ description, locale, knowsAbout }: { descript
         url: siteUrl,
         logo: absoluteUrl('/logo.svg'),
         description,
+        inLanguage: languageTags[locale],
         knowsAbout,
       },
       {

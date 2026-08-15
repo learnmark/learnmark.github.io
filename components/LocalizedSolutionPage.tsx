@@ -40,7 +40,7 @@ export default async function LocalizedSolutionPage({ solution, path, secondaryH
     createBreadcrumbJsonLd([
       { name: messages.breadcrumbHome, path: '/' },
       { name: messages.seo.title, path },
-    ]),
+    ], locale),
   ]
 
   return (

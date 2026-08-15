@@ -59,7 +59,7 @@ export default async function Sello() {
   const localizedJsonLd = createBreadcrumbJsonLd([
     { name: messages.breadcrumbHome, path: '/' },
     { name: 'Sello', path: '/sello' },
-  ])
+  ], locale)
 
   return (
     <>

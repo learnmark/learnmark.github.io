@@ -49,7 +49,7 @@ export default async function About() {
                   <p className="text-sm font-semibold text-slate-950">{messages.operatingTitle}</p>
                   <p className="text-xs text-slate-500">{messages.operatingSubtitle}</p>
                 </div>
-                <span className="rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-800 ring-1 ring-primary-700/20">Expert research</span>
+                <span className="rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-800 ring-1 ring-primary-700/20">{messages.operatingBadge}</span>
               </div>
               <div className="mt-5 grid gap-3">
                 {messages.operatingModel.map((item, index) => (

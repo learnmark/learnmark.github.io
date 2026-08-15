@@ -1,8 +1,14 @@
+import type { Locale } from '../config'
+import { deExpertServiceMessages } from './expert-services/de'
+import { frExpertServiceMessages } from './expert-services/fr'
+import { jaExpertServiceMessages } from './expert-services/ja'
+import { zhCNExpertServiceMessages } from './expert-services/zh-CN'
+import { zhTWExpertServiceMessages } from './expert-services/zh-TW'
 import type { ExpertServiceMessages } from './expert-services/types'
 
 export type { ExpertServiceKey, ExpertServiceMessages, ExpertServicePageMessages } from './expert-services/types'
 
-export const expertServiceMessages: ExpertServiceMessages = {
+export const enExpertServiceMessages: ExpertServiceMessages = {
     forClients: {
       seo: {
         title: 'Managed Expert Consultation for Clients',
@@ -232,4 +238,13 @@ export const expertServiceMessages: ExpertServiceMessages = {
       ctaTitle: 'Have a sensitive or regulated research question?',
       ctaDescription: 'Share a high-level description so we can determine the right review path before outreach. Do not send confidential or restricted details through the public form.',
     },
+}
+
+export const expertServiceMessages: Record<Locale, ExpertServiceMessages> = {
+  en: enExpertServiceMessages,
+  'zh-CN': zhCNExpertServiceMessages,
+  'zh-TW': zhTWExpertServiceMessages,
+  ja: jaExpertServiceMessages,
+  fr: frExpertServiceMessages,
+  de: deExpertServiceMessages,
 }

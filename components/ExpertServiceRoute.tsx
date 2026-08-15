@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { createBreadcrumbJsonLd, createPageMetadata, createServiceJsonLd } from '@/app/seo'
 import { expertServiceMessages, type ExpertServiceKey } from '@/i18n/messages/expert-services'
+import { getLocale } from '@/i18n/server'
 import ExpertServicePage from './ExpertServicePage'
 import JsonLd from './JsonLd'
 
@@ -13,19 +14,22 @@ type ExpertServiceRouteProps = {
   ctaId?: string
 }
 
-export function createExpertServiceMetadata(service: ExpertServiceKey, path: `/${string}`): Metadata {
-  const messages = expertServiceMessages[service]
+export async function createExpertServiceMetadata(service: ExpertServiceKey, path: `/${string}`): Promise<Metadata> {
+  const locale = await getLocale()
+  const messages = expertServiceMessages[locale][service]
 
   return createPageMetadata({
     title: messages.seo.title,
     description: messages.seo.description,
     path,
     keywords: messages.seo.keywords,
+    locale,
   })
 }
 
-export default function ExpertServiceRoute({ service, path, primaryHref, secondaryHref, ctaId }: ExpertServiceRouteProps) {
-  const messages = expertServiceMessages[service]
+export default async function ExpertServiceRoute({ service, path, primaryHref, secondaryHref, ctaId }: ExpertServiceRouteProps) {
+  const locale = await getLocale()
+  const messages = expertServiceMessages[locale][service]
   const jsonLd = [
     createServiceJsonLd({
       name: messages.seo.title,
@@ -33,11 +37,12 @@ export default function ExpertServiceRoute({ service, path, primaryHref, seconda
       path,
       serviceType: messages.seo.serviceType,
       keywords: messages.seo.keywords,
+      locale,
     }),
     createBreadcrumbJsonLd([
       { name: messages.breadcrumbHome, path: '/' },
       { name: messages.seo.title, path },
-    ]),
+    ], locale),
   ]
 
   return (
