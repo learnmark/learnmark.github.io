@@ -14,6 +14,9 @@ type PrivacyMessages = {
     informationWeCollect: string
     howWeUseYourInformation: string
     informationSharing: string
+    websiteProcessing: string
+    dataLifecycle: string
+    serviceBoundary: string
     security: string
     changesToThisPrivacyStatement: string
     contactUs: string
@@ -26,6 +29,12 @@ type PrivacyMessages = {
   informationSharingTitle: string
   informationSharingBody: string
   informationSharingItems: string[]
+  websiteProcessingTitle: string
+  websiteProcessingBody: string
+  dataLifecycleTitle: string
+  dataLifecycleBody: string
+  serviceBoundaryTitle: string
+  serviceBoundaryBody: string
   securityTitle: string
   securityBody: string
   changesTitle: string
@@ -42,7 +51,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     legalLabel: 'Legal',
     title: 'Privacy Policy',
     effectiveDateLabel: 'Effective Date',
-    effectiveDateValue: 'August 13, 2026',
+    effectiveDateValue: 'August 15, 2026',
     introduction:
       'Learnmark is committed to protecting your privacy. This Privacy Statement describes how we treat personal information collected through our website, client project requests, expert network activities, screening, consultation coordination, and related support. It applies to Learnmark services that do not provide a separate privacy notice.',
     tableOfContentsTitle: 'Table of Contents',
@@ -50,6 +59,9 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       informationWeCollect: 'Information We Collect',
       howWeUseYourInformation: 'How We Use Your Information',
       informationSharing: 'Information Sharing',
+      websiteProcessing: 'Website Forms and Analytics',
+      dataLifecycle: 'Cross-Border Processing, Retention, and Rights',
+      serviceBoundary: 'Public Website and Service Boundary',
       security: 'Security',
       changesToThisPrivacyStatement: 'Changes to this Privacy Statement',
       contactUs: 'Contact Us',
@@ -92,6 +104,15 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       'To protect the rights and safety of Learnmark, our users, and others.',
       'With service providers who perform services on our behalf, such as form processing, hosting, analytics, communications, scheduling, and payment support.',
     ],
+    websiteProcessingTitle: 'Website Forms and Analytics',
+    websiteProcessingBody:
+      'The public contact form sends the fields you enter, request type, timing, message, and consent status to Formspree for form delivery. This website uses Google Analytics to measure visits and interactions; it may process device, browser, IP-derived, cookie, and usage data under Google’s terms. Do not use the public form for identity documents, bank details, confidential project content, or material non-public information.',
+    dataLifecycleTitle: 'Cross-Border Processing, Retention, and Your Rights',
+    dataLifecycleBody:
+      'Website and service providers may process information outside your country. Learnmark keeps information only as reasonably needed to route and answer an inquiry, protect the website, comply with obligations, and resolve disputes. Depending on applicable law, you may request access, correction, deletion, restriction, or withdrawal of consent by contacting privacy@learnmark.com. Controller and processor roles, processing regions, and retention periods for an accepted project will be stated in the applicable contract or privacy notice.',
+    serviceBoundaryTitle: 'Public Website and Service Boundary',
+    serviceBoundaryBody:
+      'This website collects inquiries and explains Learnmark’s operating model. A submission does not create an account, accept a project, invite an expert, approve compliance, or form a contract. Identity verification, sanctions screening, AI audio or transcription, project delivery, and payment processing are not performed through the public contact form and require separate terms and notices before use.',
     securityTitle: 'Security',
     securityBody:
       'Learnmark takes reasonable measures to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission over the Internet or method of electronic storage is 100% secure. Therefore, we cannot guarantee its absolute security.',
@@ -108,7 +129,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     legalLabel: '法律声明',
     title: '隐私政策',
     effectiveDateLabel: '生效日期',
-    effectiveDateValue: '2026年8月13日',
+    effectiveDateValue: '2026年8月15日',
     introduction:
       'Learnmark 致力于保护您的隐私。本隐私声明说明我们如何处理通过网站、客户项目请求、专家网络活动、筛选、咨询协调及相关支持收集的个人信息。本声明适用于未另行提供独立隐私通知的 Learnmark 服务。',
     tableOfContentsTitle: '目录',
@@ -116,6 +137,9 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       informationWeCollect: '我们收集的信息',
       howWeUseYourInformation: '我们如何使用您的信息',
       informationSharing: '信息共享',
+      websiteProcessing: '网站表单与分析',
+      dataLifecycle: '跨境处理、保留与您的权利',
+      serviceBoundary: '公开网站与服务边界',
       security: '安全',
       changesToThisPrivacyStatement: '本隐私声明的变更',
       contactUs: '联系我们',
@@ -158,6 +182,15 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       '为保护 Learnmark、我们的用户及其他人的权利与安全。',
       '与代表我们提供服务的供应商共享，例如表单处理、托管、分析、通信、排期及付款支持。',
     ],
+    websiteProcessingTitle: '网站表单与分析',
+    websiteProcessingBody:
+      '公开联系表单会将您填写的字段、请求类型、期望时间、留言和同意状态发送至 Formspree 以完成表单投递。本网站使用 Google Analytics 衡量访问与互动；Google 可能依据其条款处理设备、浏览器、IP 衍生信息、Cookie 和使用数据。请勿通过公开表单提交身份证件、银行资料、机密项目内容或重大非公开信息。',
+    dataLifecycleTitle: '跨境处理、保留与您的权利',
+    dataLifecycleBody:
+      '网站及服务供应商可能在您所在国家或地区之外处理信息。Learnmark 仅在合理必要期限内保留信息，用于分流和回复咨询、保护网站、履行义务及解决争议。根据适用法律，您可通过 privacy@learnmark.com 请求访问、更正、删除、限制处理或撤回同意。已接受项目的控制者与处理者角色、处理地区和保留期限将在适用合同或隐私通知中说明。',
+    serviceBoundaryTitle: '公开网站与服务边界',
+    serviceBoundaryBody:
+      '本网站用于收集咨询线索并说明 Learnmark 的运营模型。提交信息不会创建账号、接受项目、邀请专家、批准合规或形成合同。身份核验、制裁筛查、AI 音频或转写、项目交付及付款处理不会通过公开联系表单执行，使用前须适用独立条款与通知。',
     securityTitle: '安全',
     securityBody:
       'Learnmark 采取合理措施，防止您的个人信息被未经授权地访问、使用或披露。然而，互联网传输方式或电子存储方式都无法做到 100% 安全。因此，我们无法保证其绝对安全。',
@@ -174,7 +207,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     legalLabel: '法律聲明',
     title: '隱私權政策',
     effectiveDateLabel: '生效日期',
-    effectiveDateValue: '2026年8月13日',
+    effectiveDateValue: '2026年8月15日',
     introduction:
       'Learnmark 致力於保護您的隱私。本隱私權聲明說明我們如何處理透過網站、客戶專案請求、專家網絡活動、篩選、顧問服務協調與相關支援所蒐集的個人資訊。本聲明適用於未另行提供獨立隱私通知的 Learnmark 服務。',
     tableOfContentsTitle: '目錄',
@@ -182,6 +215,9 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       informationWeCollect: '我們蒐集的資訊',
       howWeUseYourInformation: '我們如何使用您的資訊',
       informationSharing: '資訊分享',
+      websiteProcessing: '網站表單與分析',
+      dataLifecycle: '跨境處理、保留與您的權利',
+      serviceBoundary: '公開網站與服務邊界',
       security: '安全性',
       changesToThisPrivacyStatement: '本隱私權聲明的變更',
       contactUs: '聯絡我們',
@@ -224,6 +260,15 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       '為保護 Learnmark、我們的使用者及其他人的權利與安全。',
       '與代表我們提供服務的供應商分享，例如表單處理、託管、分析、通訊、排程與付款支援。',
     ],
+    websiteProcessingTitle: '網站表單與分析',
+    websiteProcessingBody:
+      '公開聯絡表單會將您填寫的欄位、請求類型、期望時間、留言與同意狀態傳送至 Formspree 以完成表單投遞。本網站使用 Google Analytics 衡量造訪與互動；Google 可能依其條款處理裝置、瀏覽器、IP 衍生資訊、Cookie 與使用資料。請勿透過公開表單提交身分證件、銀行資料、機密專案內容或重大非公開資訊。',
+    dataLifecycleTitle: '跨境處理、保留與您的權利',
+    dataLifecycleBody:
+      '網站及服務供應商可能在您所在國家或地區之外處理資訊。Learnmark 僅在合理必要期間內保留資訊，用於分流與回覆諮詢、保護網站、履行義務及解決爭議。依適用法律，您可透過 privacy@learnmark.com 請求存取、更正、刪除、限制處理或撤回同意。已接受專案的控制者與處理者角色、處理地區及保留期限將於適用合約或隱私通知中說明。',
+    serviceBoundaryTitle: '公開網站與服務邊界',
+    serviceBoundaryBody:
+      '本網站用於蒐集諮詢線索並說明 Learnmark 的營運模型。提交資訊不會建立帳號、接受專案、邀請專家、核准合規或形成合約。身分核驗、制裁篩查、AI 音訊或轉寫、專案交付與付款處理不會透過公開聯絡表單執行，使用前須適用獨立條款與通知。',
     securityTitle: '安全性',
     securityBody:
       'Learnmark 採取合理措施，以保護您的個人資訊免於未經授權的存取、使用或揭露。然而，網際網路傳輸方式或電子儲存方式都無法達到 100% 安全。因此，我們無法保證其絕對安全。',
@@ -240,7 +285,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     legalLabel: '法的情報',
     title: 'プライバシーポリシー',
     effectiveDateLabel: '発効日',
-    effectiveDateValue: '2026年8月13日',
+    effectiveDateValue: '2026年8月15日',
     introduction:
       'Learnmark はお客様のプライバシー保護に取り組んでいます。本声明は、ウェブサイト、クライアント案件の依頼、専門家ネットワーク活動、適格性確認、コンサルテーションの調整、関連サポートを通じて収集する個人情報の取扱いを説明します。個別のプライバシー通知がない Learnmark サービスに適用されます。',
     tableOfContentsTitle: '目次',
@@ -248,6 +293,9 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       informationWeCollect: '当社が収集する情報',
       howWeUseYourInformation: '情報の利用方法',
       informationSharing: '情報共有',
+      websiteProcessing: 'ウェブフォームとアクセス解析',
+      dataLifecycle: '国外処理、保持、利用者の権利',
+      serviceBoundary: '公開サイトとサービスの境界',
       security: 'セキュリティ',
       changesToThisPrivacyStatement: '本プライバシーに関する声明の変更',
       contactUs: 'お問い合わせ',
@@ -290,6 +338,15 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       'Learnmark、当社ユーザー、その他の権利と安全を保護するために必要な場合。',
       'フォーム処理、ホスティング、分析、通信、日程調整、支払支援など、当社に代わってサービスを提供する事業者と共有する場合。',
     ],
+    websiteProcessingTitle: 'ウェブフォームとアクセス解析',
+    websiteProcessingBody:
+      '公開お問い合わせフォームは、入力項目、依頼種別、希望時期、メッセージ、同意状態を Formspree へ送信します。本サイトは訪問と操作の計測に Google Analytics を使用し、Google の規約に基づいて端末、ブラウザ、IP 由来情報、Cookie、利用データが処理される場合があります。本人確認書類、銀行情報、機密の案件内容、重要な未公開情報を送信しないでください。',
+    dataLifecycleTitle: '国外処理、保持、利用者の権利',
+    dataLifecycleBody:
+      'ウェブサイトやサービスの事業者は、お客様の国以外で情報を処理する場合があります。Learnmark は、問い合わせの振り分けと回答、サイト保護、義務履行、紛争解決に合理的に必要な期間のみ保持します。適用法に応じて、privacy@learnmark.com へアクセス、訂正、削除、処理制限、同意撤回を請求できます。受諾された案件の管理者・処理者の役割、処理地域、保持期間は契約または個別通知で示します。',
+    serviceBoundaryTitle: '公開サイトとサービスの境界',
+    serviceBoundaryBody:
+      '本サイトは問い合わせを受け付け、Learnmark の運用モデルを説明します。送信によってアカウント、案件受諾、専門家招待、コンプライアンス承認、契約は成立しません。本人確認、制裁確認、AI 音声・文字起こし、案件実施、支払処理は公開フォームでは行わず、利用前に別途の条件と通知が適用されます。',
     securityTitle: 'セキュリティ',
     securityBody:
       'Learnmark は、個人情報への不正アクセス、利用、開示を防ぐために合理的な対策を講じています。ただし、インターネット上の送信方法または電子的な保存方法に 100% 安全なものはありません。したがって、その絶対的な安全性を保証することはできません。',
@@ -306,7 +363,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     legalLabel: 'Mentions légales',
     title: 'Politique de confidentialité',
     effectiveDateLabel: 'Date d\'entrée en vigueur',
-    effectiveDateValue: '13 août 2026',
+    effectiveDateValue: '15 août 2026',
     introduction:
       'Learnmark s\'engage à protéger votre vie privée. La présente déclaration décrit le traitement des informations personnelles recueillies via notre site, les demandes de projets clients, les activités du réseau d’experts, la qualification, la coordination des consultations et l’assistance associée. Elle s’applique aux services Learnmark sans avis de confidentialité distinct.',
     tableOfContentsTitle: 'Table des matières',
@@ -314,6 +371,9 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       informationWeCollect: 'Informations que nous collectons',
       howWeUseYourInformation: 'Comment nous utilisons vos informations',
       informationSharing: 'Partage d\'informations',
+      websiteProcessing: 'Formulaires et mesure d’audience',
+      dataLifecycle: 'Transferts, conservation et droits',
+      serviceBoundary: 'Limite entre site public et services',
       security: 'Sécurité',
       changesToThisPrivacyStatement: 'Modifications de la présente Déclaration de confidentialité',
       contactUs: 'Nous contacter',
@@ -356,6 +416,15 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       'Pour protéger les droits et la sécurité de Learnmark, de nos utilisateurs et d\'autrui.',
       'Avec des prestataires agissant pour notre compte, notamment pour les formulaires, l’hébergement, l’analyse, les communications, la planification et les paiements.',
     ],
+    websiteProcessingTitle: 'Formulaires et mesure d’audience',
+    websiteProcessingBody:
+      'Le formulaire public transmet à Formspree les champs saisis, le type de demande, le calendrier, le message et l’état du consentement. Le site utilise Google Analytics pour mesurer les visites et interactions ; Google peut traiter des données d’appareil, de navigateur, dérivées de l’IP, de cookies et d’usage selon ses conditions. Ne transmettez ni pièce d’identité, ni coordonnées bancaires, ni contenu confidentiel, ni information importante non publique.',
+    dataLifecycleTitle: 'Transferts internationaux, conservation et vos droits',
+    dataLifecycleBody:
+      'Les prestataires du site et des services peuvent traiter les informations hors de votre pays. Learnmark les conserve uniquement pendant la durée raisonnablement nécessaire pour orienter et répondre, protéger le site, respecter ses obligations et résoudre les litiges. Selon la loi applicable, vous pouvez demander accès, rectification, suppression, limitation ou retrait du consentement à privacy@learnmark.com. Les rôles, régions de traitement et durées d’un projet accepté seront précisés dans le contrat ou l’avis applicable.',
+    serviceBoundaryTitle: 'Limite entre site public et services',
+    serviceBoundaryBody:
+      'Ce site recueille des demandes et présente le modèle opérationnel Learnmark. Un envoi ne crée ni compte, ni acceptation de projet, ni invitation expert, ni approbation de conformité, ni contrat. Vérification d’identité, sanctions, audio ou transcription IA, livraison et paiements ne sont pas exécutés via le formulaire public et nécessitent des conditions et avis distincts.',
     securityTitle: 'Sécurité',
     securityBody:
       'Learnmark prend des mesures raisonnables pour protéger vos informations personnelles contre l\'accès, l\'utilisation ou la divulgation non autorisés. Cependant, aucune méthode de transmission sur Internet ni aucune méthode de stockage électronique n\'est sûre à 100 %. Par conséquent, nous ne pouvons pas en garantir la sécurité absolue.',
@@ -372,7 +441,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     legalLabel: 'Rechtliches',
     title: 'Datenschutzerklärung',
     effectiveDateLabel: 'Gültig ab',
-    effectiveDateValue: '13. August 2026',
+    effectiveDateValue: '15. August 2026',
     introduction:
       'Learnmark verpflichtet sich zum Schutz Ihrer Privatsphäre. Diese Erklärung beschreibt den Umgang mit personenbezogenen Daten aus unserer Website, Kundenprojektanfragen, Aktivitäten im Expertennetzwerk, Qualifizierung, Koordination von Beratungen und zugehörigem Support. Sie gilt für Learnmark-Dienste ohne gesonderten Datenschutzhinweis.',
     tableOfContentsTitle: 'Inhaltsverzeichnis',
@@ -380,6 +449,9 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       informationWeCollect: 'Welche Informationen wir erfassen',
       howWeUseYourInformation: 'Wie wir Ihre Informationen verwenden',
       informationSharing: 'Weitergabe von Informationen',
+      websiteProcessing: 'Webformulare und Nutzungsanalyse',
+      dataLifecycle: 'Grenzüberschreitende Verarbeitung, Aufbewahrung und Rechte',
+      serviceBoundary: 'Abgrenzung von Website und Services',
       security: 'Sicherheit',
       changesToThisPrivacyStatement: 'Änderungen dieser Datenschutzerklärung',
       contactUs: 'Kontakt',
@@ -422,6 +494,15 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
       'Zum Schutz der Rechte und Sicherheit von Learnmark, unseren Nutzern und anderen.',
       'An Dienstleister für Formularverarbeitung, Hosting, Analysen, Kommunikation, Terminplanung und Zahlungsunterstützung.',
     ],
+    websiteProcessingTitle: 'Webformulare und Nutzungsanalyse',
+    websiteProcessingBody:
+      'Das öffentliche Kontaktformular sendet Eingabefelder, Anfrageart, Zeitrahmen, Nachricht und Einwilligungsstatus zur Zustellung an Formspree. Diese Website verwendet Google Analytics zur Messung von Besuchen und Interaktionen; Google kann nach eigenen Bedingungen Geräte-, Browser-, IP-abgeleitete, Cookie- und Nutzungsdaten verarbeiten. Senden Sie keine Ausweise, Bankdaten, vertraulichen Projektinhalte oder wesentlichen nicht öffentlichen Informationen.',
+    dataLifecycleTitle: 'Grenzüberschreitende Verarbeitung, Aufbewahrung und Ihre Rechte',
+    dataLifecycleBody:
+      'Website- und Servicedienstleister können Informationen außerhalb Ihres Landes verarbeiten. Learnmark bewahrt sie nur so lange auf, wie es zur Zuordnung und Beantwortung, zum Schutz der Website, zur Pflichterfüllung und Streitbeilegung vernünftigerweise nötig ist. Je nach Recht können Sie unter privacy@learnmark.com Auskunft, Berichtigung, Löschung, Einschränkung oder Widerruf verlangen. Rollen, Verarbeitungsregionen und Fristen eines angenommenen Projekts stehen im Vertrag oder Datenschutzhinweis.',
+    serviceBoundaryTitle: 'Abgrenzung von Website und Services',
+    serviceBoundaryBody:
+      'Diese Website sammelt Anfragen und erläutert das Learnmark-Betriebsmodell. Eine Übermittlung erstellt weder Konto noch Projektannahme, Experteneinladung, Compliance-Freigabe oder Vertrag. Identitäts- und Sanktionsprüfung, KI-Audio oder Transkription, Projektleistung und Zahlungsabwicklung erfolgen nicht über das öffentliche Formular und benötigen eigene Bedingungen und Hinweise.',
     securityTitle: 'Sicherheit',
     securityBody:
       'Learnmark ergreift angemessene Maßnahmen, um Ihre personenbezogenen Informationen vor unbefugtem Zugriff, unbefugter Nutzung oder Offenlegung zu schützen. Allerdings ist keine Übertragungsmethode über das Internet und keine Methode der elektronischen Speicherung zu 100 % sicher. Daher können wir keine absolute Sicherheit garantieren.',

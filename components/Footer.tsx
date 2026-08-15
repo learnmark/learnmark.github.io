@@ -1,6 +1,7 @@
 import type { CommonMessages } from '@/i18n/messages/common'
+import { AnalyticsPreferencesButton } from './AnalyticsConsent'
 
-export default function Footer({ messages }: { messages: CommonMessages['footer'] }) {
+export default function Footer({ messages, analyticsSettingsLabel }: { messages: CommonMessages['footer']; analyticsSettingsLabel: string }) {
   const footerSections = [
     {
       title: messages.companyLabel,
@@ -71,6 +72,11 @@ export default function Footer({ messages }: { messages: CommonMessages['footer'
                       </a>
                     </li>
                   ))}
+                  {section.title === messages.companyLabel && (
+                    <li>
+                      <AnalyticsPreferencesButton label={analyticsSettingsLabel} />
+                    </li>
+                  )}
                 </ul>
               </div>
             ))}

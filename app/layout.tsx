@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
-import { GoogleAnalytics } from '@next/third-parties/google'
 
+import AnalyticsConsent from "@/components/AnalyticsConsent";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
-import { commonMessages, headerDirectoryMessages } from "@/i18n/messages/common";
+import { commonMessages } from "@/i18n/messages/common";
 import { homeMessages } from "@/i18n/messages/home";
 import { getLocale } from "@/i18n/server";
 import { createSiteJsonLd, defaultKeywords, defaultOpenGraphImage, openGraphLocales, siteName, siteUrl } from "./seo";
@@ -86,12 +86,12 @@ export default async function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
           />
-          <Header locale={locale} messages={messages.header} directoryMessages={headerDirectoryMessages[locale]} themeToggleLabel={messages.themeToggleLabel} languageSwitcherLabel={messages.languageSwitcherLabel} showLanguageSwitcher={showLanguageSwitcher} />
+          <Header locale={locale} messages={messages.header} themeToggleLabel={messages.themeToggleLabel} languageSwitcherLabel={messages.languageSwitcherLabel} showLanguageSwitcher={showLanguageSwitcher} />
           {children}
-          <Footer messages={messages.footer} />
+          <Footer messages={messages.footer} analyticsSettingsLabel={messages.analyticsConsent.settings} />
+          <AnalyticsConsent messages={messages.analyticsConsent} gaId="G-R5GXYQ84NP" />
         </ThemeProvider>
       </body>
-      <GoogleAnalytics gaId="G-R5GXYQ84NP" />
     </html>
   );
 }

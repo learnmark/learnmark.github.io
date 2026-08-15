@@ -9,6 +9,7 @@ export type ExpertServicePageMessages = {
   eyebrow: string
   title: string
   description: string
+  availabilityNotice: string
   primaryCta: string
   secondaryCta: string
   panelTitle: string

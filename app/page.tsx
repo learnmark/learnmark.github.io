@@ -23,7 +23,10 @@ export default async function Home() {
 
   return (
     <>
-      <Intro messages={messages.intro} />
+      <Intro
+        messages={messages.intro}
+        availabilityNotice={process.env.BUILD_OUTPUT_MODE === 'export' ? messages.intro.staticAvailabilityNotice : messages.intro.availabilityNotice}
+      />
       <WorkWith messages={messages.workWith} />
       <Stats messages={messages.stats} />
     </>

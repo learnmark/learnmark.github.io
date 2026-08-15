@@ -290,6 +290,13 @@ export default function ContactForm({ messages }: { messages: ContactMessages })
               </div>
 
               <div className="sm:col-span-2">
+                <div className="border-l-2 border-primary-300 pl-4 text-sm leading-6 text-slate-600">
+                  <p>{messages.submissionBoundary}</p>
+                  <p className="mt-2 text-slate-500">{messages.processorNotice}</p>
+                </div>
+              </div>
+
+              <div className="sm:col-span-2">
                 <label htmlFor="offers" className="flex gap-3 rounded-lg border border-slate-200 bg-slate-50/80 p-4 text-sm leading-6 text-slate-600">
                   <input
                     id="offers"

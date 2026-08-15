@@ -1,6 +1,6 @@
 import type { HomeMessages } from '@/i18n/messages/home'
 
-export default function Intro({ messages }: { messages: HomeMessages['intro'] }) {
+export default function Intro({ messages, availabilityNotice = messages.availabilityNotice }: { messages: HomeMessages['intro']; availabilityNotice?: string }) {
   return (
     <section className="relative isolate overflow-hidden bg-transparent pb-20 pt-20 sm:pb-28 sm:pt-28">
       <div className="site-container grid grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_0.92fr]">
@@ -30,6 +30,9 @@ export default function Intro({ messages }: { messages: HomeMessages['intro'] })
                 </span>
               ))}
             </div>
+            <p className="mt-7 max-w-2xl border-l-2 border-primary-300 pl-4 text-sm leading-6 text-slate-500">
+              {availabilityNotice}
+            </p>
           </div>
 
           <div className="relative">

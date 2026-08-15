@@ -194,7 +194,6 @@ export function createServiceJsonLd({ name, description, path, serviceType, keyw
     provider: {
       '@id': `${siteUrl}/#organization`,
     },
-    areaServed: 'Global',
     keywords: keywordsText(keywords, locale),
   }
 }

@@ -30,6 +30,8 @@ export type ContactMessages = {
   consentPrefix: string
   privacyPolicy: string
   consentSuffix: string
+  submissionBoundary: string
+  processorNotice: string
   submit: string
   submitting: string
   replyTime: string
@@ -77,6 +79,8 @@ export const contactMessages: Record<Locale, ContactMessages> = {
     consentPrefix: 'I understand that Learnmark will use this information to route, evaluate, and respond to my request. Review our',
     privacyPolicy: 'Privacy Policy',
     consentSuffix: '.',
+    submissionBoundary: 'Submitting this form creates an inquiry only. It does not accept a project, create an expert account or invitation, approve compliance, or form a contract.',
+    processorNotice: 'Form submissions are processed through Formspree. This website also uses Google Analytics to measure usage. Do not submit identity documents, bank details, or restricted information.',
     submit: 'Send request',
     submitting: 'Submitting...',
     replyTime: 'We will review the request and identify the appropriate next step.',
@@ -122,6 +126,8 @@ export const contactMessages: Record<Locale, ContactMessages> = {
     consentPrefix: '我理解 Learnmark 将使用这些信息分流、评估并回复我的请求。请查看我们的',
     privacyPolicy: '隐私政策',
     consentSuffix: '。',
+    submissionBoundary: '提交表单只会创建咨询线索，不代表项目已接受、专家账号或邀请已创建、合规已放行，也不构成合同。',
+    processorNotice: '表单通过 Formspree 处理；本网站同时使用 Google Analytics 衡量使用情况。请勿提交身份证件、银行资料或受限信息。',
     submit: '提交请求',
     submitting: '提交中...',
     replyTime: '我们会审核请求并确认合适的下一步。',
@@ -167,6 +173,8 @@ export const contactMessages: Record<Locale, ContactMessages> = {
     consentPrefix: '我瞭解 Learnmark 將使用這些資訊分流、評估並回覆我的請求。請查看我們的',
     privacyPolicy: '隱私權政策',
     consentSuffix: '。',
+    submissionBoundary: '提交表單只會建立諮詢線索，不代表專案已接受、專家帳號或邀請已建立、合規已放行，也不構成合約。',
+    processorNotice: '表單透過 Formspree 處理；本網站同時使用 Google Analytics 衡量使用情形。請勿提交身分證件、銀行資料或受限資訊。',
     submit: '提交請求',
     submitting: '提交中...',
     replyTime: '我們會審核請求並確認合適的下一步。',
@@ -212,6 +220,8 @@ export const contactMessages: Record<Locale, ContactMessages> = {
     consentPrefix: 'Learnmark がこの情報を振り分け、評価し、回答するために利用することを理解しました。',
     privacyPolicy: 'プライバシーポリシー',
     consentSuffix: 'をご覧ください。',
+    submissionBoundary: 'フォーム送信は問い合わせの作成に限られます。案件の受諾、専門家アカウントや招待、コンプライアンス承認、契約の成立を意味しません。',
+    processorNotice: 'フォームは Formspree を通じて処理され、利用状況の計測に Google Analytics を使用します。本人確認書類、銀行情報、制限情報を送信しないでください。',
     submit: '依頼を送信',
     submitting: '送信中...',
     replyTime: '内容を確認し、適切な次の手順をご案内します。',
@@ -257,6 +267,8 @@ export const contactMessages: Record<Locale, ContactMessages> = {
     consentPrefix: 'Je comprends que Learnmark utilisera ces informations pour orienter, évaluer et traiter ma demande. Consultez notre',
     privacyPolicy: 'Politique de confidentialité',
     consentSuffix: '.',
+    submissionBoundary: 'Ce formulaire crée uniquement une demande de contact. Il ne vaut ni acceptation de projet, ni compte ou invitation expert, ni approbation de conformité, ni contrat.',
+    processorNotice: 'Les formulaires sont traités par Formspree et le site utilise Google Analytics pour mesurer son usage. Ne transmettez ni pièce d’identité, ni coordonnées bancaires, ni information restreinte.',
     submit: 'Transmettre la demande',
     submitting: 'Envoi...',
     replyTime: 'Nous examinerons la demande et identifierons la prochaine étape adaptée.',
@@ -302,6 +314,8 @@ export const contactMessages: Record<Locale, ContactMessages> = {
     consentPrefix: 'Ich verstehe, dass Learnmark diese Angaben zur Zuordnung, Bewertung und Beantwortung meiner Anfrage verwendet. Lesen Sie unsere',
     privacyPolicy: 'Datenschutzerklärung',
     consentSuffix: '.',
+    submissionBoundary: 'Das Formular erzeugt nur eine Anfrage. Es bedeutet weder Projektannahme, Expertenkonto oder Einladung, Compliance-Freigabe noch Vertragsabschluss.',
+    processorNotice: 'Formulare werden über Formspree verarbeitet; Google Analytics misst die Websitenutzung. Senden Sie keine Ausweise, Bankdaten oder eingeschränkten Informationen.',
     submit: 'Anfrage übermitteln',
     submitting: 'Wird gesendet...',
     replyTime: 'Wir prüfen die Anfrage und bestimmen den passenden nächsten Schritt.',

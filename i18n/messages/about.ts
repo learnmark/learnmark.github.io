@@ -21,10 +21,6 @@ type AboutMessages = {
   principlesTitle: string
   principlesDescription: string
   principles: Array<{ name: string; description: string }>
-  leadershipEyebrow: string
-  leadershipTitle: string
-  leadershipDescription: string
-  people: Array<{ role: string; bio: string }>
 }
 
 export const aboutMessages: Record<Locale, AboutMessages> = {
@@ -63,14 +59,6 @@ export const aboutMessages: Record<Locale, AboutMessages> = {
       { name: 'Human escalation', description: 'Risk signals, hard prohibitions, disputes, and exceptional commercial actions are reviewed by accountable people.' },
       { name: 'Financial separation', description: 'Customer funds, expert compensation, refunds, losses, access rights, and payment status remain separate facts.' },
     ],
-    leadershipEyebrow: 'Leadership',
-    leadershipTitle: 'Experience across research operations, risk, and technology',
-    leadershipDescription: 'Our leadership team combines project operations, compliance-aware product design, financial workflows, and reliable platform engineering.',
-    people: [
-      { role: 'Founder / Platform and Solutions Lead', bio: 'Focuses on responsible expert research, client outcomes, and the operating model connecting them.' },
-      { role: 'Co-Founder / Operations and Architecture Lead', bio: 'Designs auditable workflows, reliable systems, and clear ownership across project states.' },
-      { role: 'Co-Founder / Product and Experience Lead', bio: 'Shapes client, expert, and operations experiences around explicit decisions and safe information boundaries.' },
-    ],
   },
   'zh-CN': {
     seoTitle: '关于我们',
@@ -106,14 +94,6 @@ export const aboutMessages: Record<Locale, AboutMessages> = {
       { name: '渐进披露', description: '信息只在下一阶段确有需要、允许且获得同意时才会披露。' },
       { name: '人工升级', description: '风险信号、硬性禁止、争议及特殊商业行动由明确负责人审核。' },
       { name: '财务分离', description: '客户资金、专家报酬、退款、损失、访问权与付款状态保持独立。' },
-    ],
-    leadershipEyebrow: '运营团队',
-    leadershipTitle: '融合研究运营、风险与技术经验',
-    leadershipDescription: '团队结合项目运营、合规意识产品设计、财务流程及可靠平台工程经验。',
-    people: [
-      { role: '创始人 / 平台与解决方案负责人', bio: '专注于负责任的专家研究、客户成果及连接两者的运营模型。' },
-      { role: '联合创始人 / 运营与架构负责人', bio: '设计可审计流程、可靠系统及跨项目状态的清晰责任。' },
-      { role: '联合创始人 / 产品与体验负责人', bio: '围绕明确决定和安全信息边界设计客户、专家及运营体验。' },
     ],
   },
   'zh-TW': {
@@ -151,14 +131,6 @@ export const aboutMessages: Record<Locale, AboutMessages> = {
       { name: '人工升級', description: '風險訊號、硬性禁止、爭議與特殊商業行動由明確負責人審核。' },
       { name: '財務分離', description: '客戶資金、專家報酬、退款、損失、存取權與付款狀態保持獨立。' },
     ],
-    leadershipEyebrow: '營運團隊',
-    leadershipTitle: '融合研究營運、風險與技術經驗',
-    leadershipDescription: '團隊結合專案營運、合規意識產品設計、財務流程與可靠平台工程經驗。',
-    people: [
-      { role: '創辦人 / 平台與解決方案負責人', bio: '專注於負責任的專家研究、客戶成果與連結兩者的營運模型。' },
-      { role: '共同創辦人 / 營運與架構負責人', bio: '設計可稽核流程、可靠系統與跨專案狀態的清楚責任。' },
-      { role: '共同創辦人 / 產品與體驗負責人', bio: '圍繞明確決定與安全資訊邊界設計客戶、專家與營運體驗。' },
-    ],
   },
   ja: {
     seoTitle: '会社情報',
@@ -194,14 +166,6 @@ export const aboutMessages: Record<Locale, AboutMessages> = {
       { name: '段階的開示', description: '情報は次の段階で必要かつ許可され、同意された場合にのみ開示します。' },
       { name: '人によるエスカレーション', description: 'リスク、強制禁止、異議、例外的な商業対応は責任者が審査します。' },
       { name: '財務の分離', description: '顧客資金、専門家報酬、返金、損失、アクセス権、支払状態を別々に扱います。' },
-    ],
-    leadershipEyebrow: '運用チーム',
-    leadershipTitle: '調査運用、リスク、技術の経験',
-    leadershipDescription: 'プロジェクト運用、コンプライアンスを意識した製品設計、財務ワークフロー、信頼できるプラットフォーム工学を組み合わせます。',
-    people: [
-      { role: '創業者 / プラットフォーム・ソリューション責任者', bio: '責任ある専門家調査、クライアント成果、両者をつなぐ運用モデルを担当します。' },
-      { role: '共同創業者 / 運用・アーキテクチャ責任者', bio: '監査可能なワークフロー、信頼できるシステム、明確な状態責任を設計します。' },
-      { role: '共同創業者 / プロダクト・体験責任者', bio: '明示的な判断と安全な情報境界を中心に、クライアント、専門家、運用体験を設計します。' },
     ],
   },
   fr: {
@@ -239,14 +203,6 @@ export const aboutMessages: Record<Locale, AboutMessages> = {
       { name: 'Escalade humaine', description: 'Risques, interdictions fermes, litiges et actions commerciales exceptionnelles sont examinés par une personne responsable.' },
       { name: 'Séparation financière', description: 'Fonds client, rémunération expert, remboursements, pertes, accès et statut de paiement restent distincts.' },
     ],
-    leadershipEyebrow: 'Équipe opérationnelle',
-    leadershipTitle: 'Une expérience de la recherche, du risque et de la technologie',
-    leadershipDescription: 'L’équipe réunit opérations projet, conception attentive à la conformité, processus financiers et ingénierie de plateforme fiable.',
-    people: [
-      { role: 'Fondateur / Responsable plateforme et solutions', bio: 'Se concentre sur la recherche responsable, les résultats client et le modèle opérationnel qui les relie.' },
-      { role: 'Co-fondateur / Responsable opérations et architecture', bio: 'Conçoit des processus auditables, des systèmes fiables et une responsabilité claire entre les états projet.' },
-      { role: 'Co-fondateur / Responsable produit et expérience', bio: 'Conçoit les expériences client, expert et opérations autour de décisions explicites et de limites sûres.' },
-    ],
   },
   de: {
     seoTitle: 'Über uns',
@@ -282,14 +238,6 @@ export const aboutMessages: Record<Locale, AboutMessages> = {
       { name: 'Stufenweise Offenlegung', description: 'Informationen werden nur offengelegt, wenn sie für den nächsten Schritt nötig, erlaubt und freigegeben sind.' },
       { name: 'Menschliche Eskalation', description: 'Risiken, zwingende Verbote, Streitfälle und besondere Geschäftsmaßnahmen werden verantwortlich geprüft.' },
       { name: 'Finanzielle Trennung', description: 'Kundengelder, Vergütung, Rückerstattung, Verluste, Zugriff und Zahlungsstatus bleiben getrennte Tatsachen.' },
-    ],
-    leadershipEyebrow: 'Betriebsteam',
-    leadershipTitle: 'Erfahrung in Recherchebetrieb, Risiko und Technologie',
-    leadershipDescription: 'Das Team verbindet Projektbetrieb, compliancebewusste Produktgestaltung, Finanzprozesse und zuverlässige Plattformtechnik.',
-    people: [
-      { role: 'Gründer / Leitung Plattform und Lösungen', bio: 'Verantwortet verantwortliche Expertenrecherche, Kundenergebnisse und das verbindende Betriebsmodell.' },
-      { role: 'Mitgründer / Leitung Betrieb und Architektur', bio: 'Entwirft prüfbare Abläufe, zuverlässige Systeme und klare Verantwortung über Projektzustände.' },
-      { role: 'Mitgründer / Leitung Produkt und Erlebnis', bio: 'Gestaltet Kunden-, Experten- und Betriebserlebnisse rund um klare Entscheidungen und sichere Informationsgrenzen.' },
     ],
   },
 }

@@ -29,6 +29,7 @@ export default function ExpertServicePage({ messages, primaryHref, secondaryHref
             <p className="text-sm font-semibold uppercase text-primary-700">{messages.eyebrow}</p>
             <h1 className="mt-5 text-4xl font-bold leading-tight text-slate-950 sm:text-5xl lg:text-6xl">{messages.title}</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">{messages.description}</p>
+            <p className="mt-6 max-w-2xl border-l-2 border-primary-300 pl-4 text-sm leading-6 text-slate-500">{messages.availabilityNotice}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href={primaryHref}

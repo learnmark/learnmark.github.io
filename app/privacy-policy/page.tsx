@@ -40,6 +40,9 @@ export default async function PrivacyPolicyPage() {
               <li><a href="#information-we-collect" className="hover:text-primary-600 hover:underline">{messages.tableOfContents.informationWeCollect}</a></li>
               <li><a href="#how-we-use-your-information" className="hover:text-primary-600 hover:underline">{messages.tableOfContents.howWeUseYourInformation}</a></li>
               <li><a href="#information-sharing" className="hover:text-primary-600 hover:underline">{messages.tableOfContents.informationSharing}</a></li>
+              <li><a href="#website-processing" className="hover:text-primary-600 hover:underline">{messages.tableOfContents.websiteProcessing}</a></li>
+              <li><a href="#data-lifecycle" className="hover:text-primary-600 hover:underline">{messages.tableOfContents.dataLifecycle}</a></li>
+              <li><a href="#service-boundary" className="hover:text-primary-600 hover:underline">{messages.tableOfContents.serviceBoundary}</a></li>
               <li><a href="#security" className="hover:text-primary-600 hover:underline">{messages.tableOfContents.security}</a></li>
               <li><a href="#changes" className="hover:text-primary-600 hover:underline">{messages.tableOfContents.changesToThisPrivacyStatement}</a></li>
               <li><a href="#contact" className="hover:text-primary-600 hover:underline">{messages.tableOfContents.contactUs}</a></li>
@@ -72,6 +75,15 @@ export default async function PrivacyPolicyPage() {
               <li key={item}>{item}</li>
             ))}
           </ul>
+
+          <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900" id="website-processing">{messages.websiteProcessingTitle}</h2>
+          <p className="mt-6">{messages.websiteProcessingBody}</p>
+
+          <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900" id="data-lifecycle">{messages.dataLifecycleTitle}</h2>
+          <p className="mt-6">{messages.dataLifecycleBody}</p>
+
+          <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900" id="service-boundary">{messages.serviceBoundaryTitle}</h2>
+          <p className="mt-6">{messages.serviceBoundaryBody}</p>
 
           <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900" id="security">{messages.securityTitle}</h2>
           <p className="mt-6">
