@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
-import AnalyticsConsent from "@/components/AnalyticsConsent";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -88,10 +88,10 @@ export default async function RootLayout({
           />
           <Header locale={locale} messages={messages.header} themeToggleLabel={messages.themeToggleLabel} languageSwitcherLabel={messages.languageSwitcherLabel} showLanguageSwitcher={showLanguageSwitcher} />
           {children}
-          <Footer messages={messages.footer} analyticsSettingsLabel={messages.analyticsConsent.settings} />
-          <AnalyticsConsent messages={messages.analyticsConsent} gaId="G-R5GXYQ84NP" />
+          <Footer messages={messages.footer} />
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-R5GXYQ84NP" />
     </html>
   );
 }

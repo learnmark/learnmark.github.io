@@ -17,14 +17,6 @@ export type CommonMessages = {
   }
   themeToggleLabel: string
   languageSwitcherLabel: string
-  analyticsConsent: {
-    title: string
-    description: string
-    privacyPolicy: string
-    reject: string
-    accept: string
-    settings: string
-  }
   footer: {
     logoAlt: string
     description: string
@@ -265,14 +257,6 @@ const en: CommonMessages = {
   },
   themeToggleLabel: 'Toggle color theme',
   languageSwitcherLabel: 'Change language',
-  analyticsConsent: {
-    title: 'Optional website analytics',
-    description: 'Allow Google Analytics to help us understand website usage. Analytics remains off unless you accept, and you can change this choice later.',
-    privacyPolicy: 'Privacy details',
-    reject: 'Keep analytics off',
-    accept: 'Allow analytics',
-    settings: 'Analytics settings',
-  },
   footer: {
     logoAlt: 'Learnmark',
     description: 'Managed expert consultation for teams that need clear scope, qualified experience, controlled delivery, and accountable settlement.',
@@ -311,14 +295,6 @@ const zhCN: CommonMessages = {
   },
   themeToggleLabel: '切换颜色主题',
   languageSwitcherLabel: '切换语言',
-  analyticsConsent: {
-    title: '可选网站分析',
-    description: '允许 Google Analytics 帮助我们了解网站使用情况。您同意前不会加载分析，并可随时更改选择。',
-    privacyPolicy: '隐私详情',
-    reject: '保持关闭',
-    accept: '允许分析',
-    settings: '分析设置',
-  },
   footer: {
     logoAlt: 'Learnmark',
     description: '为需要清晰范围、合格经验、受控交付和责任结算的团队提供托管式专家咨询。',
@@ -357,14 +333,6 @@ const zhTW: CommonMessages = {
   },
   themeToggleLabel: '切換色彩主題',
   languageSwitcherLabel: '切換語言',
-  analyticsConsent: {
-    title: '可選網站分析',
-    description: '允許 Google Analytics 協助我們瞭解網站使用情形。您同意前不會載入分析，並可隨時變更選擇。',
-    privacyPolicy: '隱私詳情',
-    reject: '保持關閉',
-    accept: '允許分析',
-    settings: '分析設定',
-  },
   footer: {
     logoAlt: 'Learnmark',
     description: '為需要清楚範圍、合格經驗、受控交付與責任結算的團隊提供託管式專家顧問服務。',
@@ -403,14 +371,6 @@ const ja: CommonMessages = {
   },
   themeToggleLabel: 'カラーテーマを切り替える',
   languageSwitcherLabel: '言語を変更する',
-  analyticsConsent: {
-    title: '任意のウェブ解析',
-    description: 'Google Analytics による利用状況の把握を許可できます。同意するまで解析は無効で、後から変更できます。',
-    privacyPolicy: 'プライバシー詳細',
-    reject: '解析を無効のままにする',
-    accept: '解析を許可',
-    settings: '解析設定',
-  },
   footer: {
     logoAlt: 'Learnmark',
     description: '明確なスコープ、適格な経験、管理された実施、責任ある精算を必要とするチーム向けの専門家コンサルテーション。',
@@ -449,14 +409,6 @@ const fr: CommonMessages = {
   },
   themeToggleLabel: 'Changer le thème de couleur',
   languageSwitcherLabel: 'Changer de langue',
-  analyticsConsent: {
-    title: 'Mesure d’audience facultative',
-    description: 'Autorisez Google Analytics à nous aider à comprendre l’usage du site. La mesure reste désactivée sans votre accord et votre choix peut être modifié.',
-    privacyPolicy: 'Détails de confidentialité',
-    reject: 'Laisser désactivé',
-    accept: 'Autoriser la mesure',
-    settings: 'Réglages d’analyse',
-  },
   footer: {
     logoAlt: 'Learnmark',
     description: 'Des consultations pilotées pour les équipes qui exigent un périmètre clair, une expérience qualifiée, une livraison maîtrisée et un règlement responsable.',
@@ -495,14 +447,6 @@ const de: CommonMessages = {
   },
   themeToggleLabel: 'Farbschema wechseln',
   languageSwitcherLabel: 'Sprache ändern',
-  analyticsConsent: {
-    title: 'Optionale Website-Analyse',
-    description: 'Erlauben Sie Google Analytics, uns die Websitenutzung besser zu verstehen. Ohne Zustimmung bleibt die Analyse aus; die Auswahl kann später geändert werden.',
-    privacyPolicy: 'Datenschutzdetails',
-    reject: 'Analyse ausgeschaltet lassen',
-    accept: 'Analyse erlauben',
-    settings: 'Analyseeinstellungen',
-  },
   footer: {
     logoAlt: 'Learnmark',
     description: 'Betreute Expertenberatung für Teams, die klaren Umfang, qualifizierte Erfahrung, kontrollierte Leistung und verantwortliche Abrechnung benötigen.',

@@ -106,7 +106,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     websiteProcessingTitle: 'Website Forms and Analytics',
     websiteProcessingBody:
-      'The public contact form sends the fields you enter, request type, timing, message, and consent status to Formspree for form delivery. This website uses Google Analytics to measure visits and interactions; it may process device, browser, IP-derived, cookie, and usage data under Google’s terms. Do not use the public form for identity documents, bank details, confidential project content, or material non-public information.',
+      'The public contact form sends the fields you enter, request type, timing, message, and consent status to Formspree for form delivery. This website automatically uses Google Analytics on every visit to measure visits and interactions; it may process device, browser, IP-derived, cookie, and usage data under Google’s terms. Do not use the public form for identity documents, bank details, confidential project content, or material non-public information.',
     dataLifecycleTitle: 'Cross-Border Processing, Retention, and Your Rights',
     dataLifecycleBody:
       'Website and service providers may process information outside your country. Learnmark keeps information only as reasonably needed to route and answer an inquiry, protect the website, comply with obligations, and resolve disputes. Depending on applicable law, you may request access, correction, deletion, restriction, or withdrawal of consent by contacting privacy@learnmark.com. Controller and processor roles, processing regions, and retention periods for an accepted project will be stated in the applicable contract or privacy notice.',
@@ -184,7 +184,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     websiteProcessingTitle: '网站表单与分析',
     websiteProcessingBody:
-      '公开联系表单会将您填写的字段、请求类型、期望时间、留言和同意状态发送至 Formspree 以完成表单投递。本网站使用 Google Analytics 衡量访问与互动；Google 可能依据其条款处理设备、浏览器、IP 衍生信息、Cookie 和使用数据。请勿通过公开表单提交身份证件、银行资料、机密项目内容或重大非公开信息。',
+      '公开联系表单会将您填写的字段、请求类型、期望时间、留言和同意状态发送至 Formspree 以完成表单投递。本网站会在每次访问时自动使用 Google Analytics 衡量访问与互动；Google 可能依据其条款处理设备、浏览器、IP 衍生信息、Cookie 和使用数据。请勿通过公开表单提交身份证件、银行资料、机密项目内容或重大非公开信息。',
     dataLifecycleTitle: '跨境处理、保留与您的权利',
     dataLifecycleBody:
       '网站及服务供应商可能在您所在国家或地区之外处理信息。Learnmark 仅在合理必要期限内保留信息，用于分流和回复咨询、保护网站、履行义务及解决争议。根据适用法律，您可通过 privacy@learnmark.com 请求访问、更正、删除、限制处理或撤回同意。已接受项目的控制者与处理者角色、处理地区和保留期限将在适用合同或隐私通知中说明。',
@@ -262,7 +262,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     websiteProcessingTitle: '網站表單與分析',
     websiteProcessingBody:
-      '公開聯絡表單會將您填寫的欄位、請求類型、期望時間、留言與同意狀態傳送至 Formspree 以完成表單投遞。本網站使用 Google Analytics 衡量造訪與互動；Google 可能依其條款處理裝置、瀏覽器、IP 衍生資訊、Cookie 與使用資料。請勿透過公開表單提交身分證件、銀行資料、機密專案內容或重大非公開資訊。',
+      '公開聯絡表單會將您填寫的欄位、請求類型、期望時間、留言與同意狀態傳送至 Formspree 以完成表單投遞。本網站會在每次造訪時自動使用 Google Analytics 衡量造訪與互動；Google 可能依其條款處理裝置、瀏覽器、IP 衍生資訊、Cookie 與使用資料。請勿透過公開表單提交身分證件、銀行資料、機密專案內容或重大非公開資訊。',
     dataLifecycleTitle: '跨境處理、保留與您的權利',
     dataLifecycleBody:
       '網站及服務供應商可能在您所在國家或地區之外處理資訊。Learnmark 僅在合理必要期間內保留資訊，用於分流與回覆諮詢、保護網站、履行義務及解決爭議。依適用法律，您可透過 privacy@learnmark.com 請求存取、更正、刪除、限制處理或撤回同意。已接受專案的控制者與處理者角色、處理地區及保留期限將於適用合約或隱私通知中說明。',
@@ -340,7 +340,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     websiteProcessingTitle: 'ウェブフォームとアクセス解析',
     websiteProcessingBody:
-      '公開お問い合わせフォームは、入力項目、依頼種別、希望時期、メッセージ、同意状態を Formspree へ送信します。本サイトは訪問と操作の計測に Google Analytics を使用し、Google の規約に基づいて端末、ブラウザ、IP 由来情報、Cookie、利用データが処理される場合があります。本人確認書類、銀行情報、機密の案件内容、重要な未公開情報を送信しないでください。',
+      '公開お問い合わせフォームは、入力項目、依頼種別、希望時期、メッセージ、同意状態を Formspree へ送信します。本サイトはすべての訪問で Google Analytics を自動的に使用して訪問と操作を計測し、Google の規約に基づいて端末、ブラウザ、IP 由来情報、Cookie、利用データが処理される場合があります。本人確認書類、銀行情報、機密の案件内容、重要な未公開情報を送信しないでください。',
     dataLifecycleTitle: '国外処理、保持、利用者の権利',
     dataLifecycleBody:
       'ウェブサイトやサービスの事業者は、お客様の国以外で情報を処理する場合があります。Learnmark は、問い合わせの振り分けと回答、サイト保護、義務履行、紛争解決に合理的に必要な期間のみ保持します。適用法に応じて、privacy@learnmark.com へアクセス、訂正、削除、処理制限、同意撤回を請求できます。受諾された案件の管理者・処理者の役割、処理地域、保持期間は契約または個別通知で示します。',
@@ -418,7 +418,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     websiteProcessingTitle: 'Formulaires et mesure d’audience',
     websiteProcessingBody:
-      'Le formulaire public transmet à Formspree les champs saisis, le type de demande, le calendrier, le message et l’état du consentement. Le site utilise Google Analytics pour mesurer les visites et interactions ; Google peut traiter des données d’appareil, de navigateur, dérivées de l’IP, de cookies et d’usage selon ses conditions. Ne transmettez ni pièce d’identité, ni coordonnées bancaires, ni contenu confidentiel, ni information importante non publique.',
+      'Le formulaire public transmet à Formspree les champs saisis, le type de demande, le calendrier, le message et l’état du consentement. Le site utilise automatiquement Google Analytics à chaque visite pour mesurer les visites et interactions ; Google peut traiter des données d’appareil, de navigateur, dérivées de l’IP, de cookies et d’usage selon ses conditions. Ne transmettez ni pièce d’identité, ni coordonnées bancaires, ni contenu confidentiel, ni information importante non publique.',
     dataLifecycleTitle: 'Transferts internationaux, conservation et vos droits',
     dataLifecycleBody:
       'Les prestataires du site et des services peuvent traiter les informations hors de votre pays. Learnmark les conserve uniquement pendant la durée raisonnablement nécessaire pour orienter et répondre, protéger le site, respecter ses obligations et résoudre les litiges. Selon la loi applicable, vous pouvez demander accès, rectification, suppression, limitation ou retrait du consentement à privacy@learnmark.com. Les rôles, régions de traitement et durées d’un projet accepté seront précisés dans le contrat ou l’avis applicable.',
@@ -496,7 +496,7 @@ export const privacyMessages: Record<Locale, PrivacyMessages> = {
     ],
     websiteProcessingTitle: 'Webformulare und Nutzungsanalyse',
     websiteProcessingBody:
-      'Das öffentliche Kontaktformular sendet Eingabefelder, Anfrageart, Zeitrahmen, Nachricht und Einwilligungsstatus zur Zustellung an Formspree. Diese Website verwendet Google Analytics zur Messung von Besuchen und Interaktionen; Google kann nach eigenen Bedingungen Geräte-, Browser-, IP-abgeleitete, Cookie- und Nutzungsdaten verarbeiten. Senden Sie keine Ausweise, Bankdaten, vertraulichen Projektinhalte oder wesentlichen nicht öffentlichen Informationen.',
+      'Das öffentliche Kontaktformular sendet Eingabefelder, Anfrageart, Zeitrahmen, Nachricht und Einwilligungsstatus zur Zustellung an Formspree. Diese Website verwendet bei jedem Besuch automatisch Google Analytics zur Messung von Besuchen und Interaktionen; Google kann nach eigenen Bedingungen Geräte-, Browser-, IP-abgeleitete, Cookie- und Nutzungsdaten verarbeiten. Senden Sie keine Ausweise, Bankdaten, vertraulichen Projektinhalte oder wesentlichen nicht öffentlichen Informationen.',
     dataLifecycleTitle: 'Grenzüberschreitende Verarbeitung, Aufbewahrung und Ihre Rechte',
     dataLifecycleBody:
       'Website- und Servicedienstleister können Informationen außerhalb Ihres Landes verarbeiten. Learnmark bewahrt sie nur so lange auf, wie es zur Zuordnung und Beantwortung, zum Schutz der Website, zur Pflichterfüllung und Streitbeilegung vernünftigerweise nötig ist. Je nach Recht können Sie unter privacy@learnmark.com Auskunft, Berichtigung, Löschung, Einschränkung oder Widerruf verlangen. Rollen, Verarbeitungsregionen und Fristen eines angenommenen Projekts stehen im Vertrag oder Datenschutzhinweis.',
