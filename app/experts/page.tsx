@@ -1,6 +1,6 @@
 import ExpertServiceRoute, { createExpertServiceMetadata } from '@/components/ExpertServiceRoute'
 
-const expertInterestHref = 'mailto:hello@learnmark.com?subject=Join%20the%20Learnmark%20expert%20network'
+const expertInterestHref = '/contact?interest=Expert%20network'
 
 export function generateMetadata() {
   return createExpertServiceMetadata('experts', '/experts')

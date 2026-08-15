@@ -61,8 +61,8 @@ export type HeaderDirectoryMessages = {
 }
 
 export const headerDirectoryMessages: HeaderDirectoryMessages = {
-  menuLabel: 'Services',
-  panelLabel: 'Products, consulting, and solutions',
+  menuLabel: 'Technology',
+  panelLabel: 'Learnmark technology products, advisory, and solutions',
   groups: {
     products: {
       label: 'Products',
@@ -133,14 +133,14 @@ const en: CommonMessages = {
     compliance: 'Compliance',
     aboutUs: 'About',
     startProject: 'Start a project',
-    mobileEyebrow: 'Expert insight, managed end to end',
-    mobilePitch: 'Reach the right expertise with a dedicated team managing every step.',
+    mobileEyebrow: 'Managed expert consultation',
+    mobilePitch: 'Move from a complex question to qualified expertise, controlled delivery, and clear settlement.',
   },
   themeToggleLabel: 'Toggle color theme',
   languageSwitcherLabel: 'Change language',
   footer: {
     logoAlt: 'Learnmark',
-    description: 'Expert research and consultation services for teams making consequential business and investment decisions.',
+    description: 'Managed expert consultation for teams that need clear scope, qualified experience, controlled delivery, and accountable settlement.',
     startProject: 'Start a project',
     joinExperts: 'Join our expert network',
     companyLabel: 'Company',
@@ -155,7 +155,7 @@ const en: CommonMessages = {
     experts: 'For experts',
     expertApplication: 'Become an expert',
     rightsReserved: 'All Rights Reserved.',
-    closing: 'The right expertise. A fully managed engagement.',
+    closing: 'From business question to accountable expert project.',
   },
 }
 

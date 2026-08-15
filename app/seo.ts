@@ -3,8 +3,8 @@ import type { Locale } from '@/i18n/config'
 
 export const siteUrl = 'https://learnmark.com'
 export const siteName = 'Learnmark'
-export const defaultTitle = 'Learnmark - Expert Network and Consultation Services'
-export const defaultDescription = 'Learnmark helps business and investment teams define research needs, identify relevant experts, and manage expert consultations end to end.'
+export const defaultTitle = 'Learnmark - Managed Expert Consultation Services'
+export const defaultDescription = 'Learnmark manages expert consultation from commercial scope and qualification through controlled delivery, acceptance, and settlement.'
 
 export const defaultKeywords = [
   'expert network',
@@ -12,6 +12,8 @@ export const defaultKeywords = [
   'primary research',
   'industry experts',
   'expert interviews',
+  'managed expert consultation',
+  'expert project workflow',
   'market research',
   'commercial due diligence',
   'technical due diligence',
@@ -155,13 +157,13 @@ export function createPageMetadata({
 }
 
 export const publicRoutes: MetadataRoute.Sitemap = [
-  { url: absoluteUrl('/'), lastModified: '2026-08-13', changeFrequency: 'weekly', priority: 1 },
-  { url: absoluteUrl('/for-clients'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.9 },
-  { url: absoluteUrl('/how-it-works'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.9 },
-  { url: absoluteUrl('/experts'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.8 },
-  { url: absoluteUrl('/compliance'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.8 },
-  { url: absoluteUrl('/about'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.7 },
-  { url: absoluteUrl('/contact'), lastModified: '2026-08-13', changeFrequency: 'monthly', priority: 0.8 },
+  { url: absoluteUrl('/'), lastModified: '2026-08-15', changeFrequency: 'weekly', priority: 1 },
+  { url: absoluteUrl('/for-clients'), lastModified: '2026-08-15', changeFrequency: 'monthly', priority: 0.9 },
+  { url: absoluteUrl('/how-it-works'), lastModified: '2026-08-15', changeFrequency: 'monthly', priority: 0.9 },
+  { url: absoluteUrl('/experts'), lastModified: '2026-08-15', changeFrequency: 'monthly', priority: 0.8 },
+  { url: absoluteUrl('/compliance'), lastModified: '2026-08-15', changeFrequency: 'monthly', priority: 0.8 },
+  { url: absoluteUrl('/about'), lastModified: '2026-08-15', changeFrequency: 'monthly', priority: 0.7 },
+  { url: absoluteUrl('/contact'), lastModified: '2026-08-15', changeFrequency: 'monthly', priority: 0.8 },
   { url: absoluteUrl('/privacy-policy'), lastModified: '2026-08-13', changeFrequency: 'yearly', priority: 0.3 },
 ]
 

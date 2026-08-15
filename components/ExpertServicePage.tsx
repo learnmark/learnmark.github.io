@@ -113,6 +113,27 @@ export default function ExpertServicePage({ messages, primaryHref, secondaryHref
         </div>
       </section>
 
+      <section className="site-section bg-white">
+        <div className="site-container grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
+          <div>
+            <p className="text-sm font-semibold uppercase text-primary-700">{messages.factsEyebrow}</p>
+            <h2 className="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl">{messages.factsTitle}</h2>
+            <p className="mt-5 text-base leading-7 text-slate-600">{messages.factsDescription}</p>
+          </div>
+          <dl className="border-y border-slate-200">
+            {messages.facts.map((fact, index) => (
+              <div key={fact.name} className="grid gap-2 border-b border-slate-200 py-6 last:border-b-0 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
+                <dt className="flex items-start gap-3 text-sm font-bold text-slate-950">
+                  <span className="text-primary-700">{String(index + 1).padStart(2, '0')}</span>
+                  {fact.name}
+                </dt>
+                <dd className="text-sm leading-6 text-slate-600">{fact.description}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
       <section className="site-section bg-slate-50">
         <div className="site-container grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div>

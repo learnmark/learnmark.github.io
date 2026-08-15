@@ -22,6 +22,10 @@ export type ExpertServicePageMessages = {
   processTitle: string
   processDescription: string
   steps: Array<{ name: string; description: string }>
+  factsEyebrow: string
+  factsTitle: string
+  factsDescription: string
+  facts: Array<{ name: string; description: string }>
   scopeEyebrow: string
   scopeTitle: string
   scopeDescription: string

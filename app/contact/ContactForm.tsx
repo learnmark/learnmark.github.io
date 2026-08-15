@@ -16,8 +16,8 @@ const initialFormData = {
   lastName: "",
   company: "",
   email: "",
-  interest: "Expert Consultation",
-  timeline: "Within 2 weeks",
+  interest: "Client project",
+  timeline: "Exploring options",
   message: "",
 };
 
@@ -35,8 +35,8 @@ const contactHighlights = [
     icon: ShieldCheckIcon,
   },
 ];
-const interestOptions = ["Expert Consultation", "Market Research", "Commercial Due Diligence", "Technical Due Diligence", "Customer or Channel Research", "Strategic Research", "Other"];
-const legacyInterestOptions = new Set(["Shopify Store Development", "AI Consulting", "Cloud Consulting", "Platform Engineering", "API and AI Gateway", "llmxy", "LetScrum"]);
+const interestOptions = ["Client project", "Expert network", "Institutional partnership", "Compliance and privacy", "Pilot eligibility"];
+const legacyInterestOptions = new Set(["Expert Consultation", "Market Research", "Commercial Due Diligence", "Technical Due Diligence", "Customer or Channel Research", "Strategic Research", "Shopify Store Development", "AI Consulting", "Cloud Consulting", "Platform Engineering", "API and AI Gateway", "llmxy", "LetScrum"]);
 const timelineOptions = ["As soon as possible", "Within 2 weeks", "This month", "Exploring options"];
 
 export default function ContactForm({ messages }: { messages: ContactMessages }) {
@@ -50,7 +50,7 @@ export default function ContactForm({ messages }: { messages: ContactMessages })
     if (requestedInterest && interestOptions.includes(requestedInterest)) {
       setFormData((prev) => ({ ...prev, interest: requestedInterest }));
     } else if (requestedInterest && legacyInterestOptions.has(requestedInterest)) {
-      setFormData((prev) => ({ ...prev, interest: "Other" }));
+      setFormData((prev) => ({ ...prev, interest: "Client project" }));
     }
   }, []);
 
