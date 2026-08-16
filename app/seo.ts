@@ -3,17 +3,18 @@ import type { Locale } from '@/i18n/config'
 
 export const siteUrl = 'https://learnmark.com'
 export const siteName = 'Learnmark'
-export const defaultTitle = 'Learnmark - Managed Expert Consultation Services'
-export const defaultDescription = 'Learnmark manages expert consultation from commercial scope and qualification through controlled delivery, acceptance, and settlement.'
+export const defaultTitle = 'Learnmark - Global Expert Network & Enterprise Consultation'
+export const defaultDescription = 'Learnmark connects enterprises with global operators and specialists for strategy, research, due diligence, and high-value expert consultation.'
 
 export const defaultKeywords = [
+  'global expert network',
   'expert network',
   'expert consultation',
+  'enterprise consultation',
   'primary research',
   'industry experts',
   'expert interviews',
-  'managed expert consultation',
-  'expert project workflow',
+  'expert sourcing',
   'market research',
   'commercial due diligence',
   'technical due diligence',
