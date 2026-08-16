@@ -1,12 +1,30 @@
 'use client'
 
-import { useState } from 'react'
-import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
+import {
+  Dialog,
+  DialogPanel,
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+} from '@headlessui/react'
+import {
+  Bars3Icon,
+  ChatBubbleLeftRightIcon,
+  ChevronDownIcon,
+  ChevronRightIcon,
+  CubeIcon,
+  WrenchScrewdriverIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
 import type { Locale } from '@/i18n/config'
-import type { CommonMessages } from '@/i18n/messages/common'
+import type { CommonMessages, HeaderDirectoryMessages } from '@/i18n/messages/common'
 import LanguageSwitcher from './LanguageSwitcher'
+import { technologyNavigation } from './technologyNavigation'
 import ThemeToggle from './ThemeToggle'
 
 const navigation = [
@@ -23,17 +41,42 @@ function isCurrentPath(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`)
 }
 
+const directoryGroupIcons = {
+  products: CubeIcon,
+  consulting: ChatBubbleLeftRightIcon,
+  solutions: WrenchScrewdriverIcon,
+} as const
+
+function OutsideClickBoundary({ open, close, children }: { open: boolean; close: () => void; children: ReactNode }) {
+  const boundaryRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (event.target instanceof Node && !boundaryRef.current?.contains(event.target)) close()
+    }
+
+    document.addEventListener('pointerdown', handlePointerDown, true)
+    return () => document.removeEventListener('pointerdown', handlePointerDown, true)
+  }, [close, open])
+
+  return <div ref={boundaryRef} className="contents">{children}</div>
+}
+
 type HeaderProps = {
   locale: Locale
   messages: CommonMessages['header']
+  directoryMessages: HeaderDirectoryMessages
   themeToggleLabel: string
   languageSwitcherLabel: string
   showLanguageSwitcher: boolean
 }
 
-export default function Header({ locale, messages, themeToggleLabel, languageSwitcherLabel, showLanguageSwitcher }: HeaderProps) {
+export default function Header({ locale, messages, directoryMessages, themeToggleLabel, languageSwitcherLabel, showLanguageSwitcher }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const directoryActive = technologyNavigation.some((group) => group.items.some((item) => isCurrentPath(pathname, item.href)))
 
   return (
     <header className="sticky top-0 z-50 px-3 pt-4">
@@ -60,6 +103,75 @@ export default function Header({ locale, messages, themeToggleLabel, languageSwi
               </a>
             )
           })}
+
+          <Popover>
+            {({ open, close }) => (
+              <OutsideClickBoundary open={open} close={close}>
+                <PopoverButton
+                  onClick={(event) => {
+                    if (open && event.detail > 0) {
+                      const button = event.currentTarget
+                      requestAnimationFrame(() => button.blur())
+                    }
+                  }}
+                  aria-current={directoryActive ? 'location' : undefined}
+                  className={`group flex items-center gap-1 whitespace-nowrap text-sm font-semibold leading-6 text-slate-900 transition-colors focus:outline-none focus-visible:text-primary-800 focus-visible:underline focus-visible:underline-offset-4 ${open || directoryActive ? activeNavigationClassName : ''}`}
+                >
+                  {directoryMessages.menuLabel}
+                  <ChevronDownIcon aria-hidden="true" className="h-4 w-4 text-slate-500 transition-transform group-data-open:rotate-180" />
+                </PopoverButton>
+
+                <PopoverPanel
+                  aria-label={directoryMessages.panelLabel}
+                  transition
+                  className="absolute inset-x-0 top-full z-20 mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-white/95 shadow-xl shadow-slate-900/10 backdrop-blur-xl transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-leave:duration-150 data-enter:ease-out data-leave:ease-in"
+                >
+                  <div className="grid grid-cols-3 divide-x divide-slate-200">
+                    {technologyNavigation.map((group) => {
+                      const groupMessages = directoryMessages.groups[group.key]
+                      const GroupIcon = directoryGroupIcons[group.key]
+
+                      return (
+                        <section key={group.key} className="p-5">
+                          <div className="flex items-start gap-3 px-2">
+                            <span className="flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-primary-50 ring-1 ring-primary-100">
+                              <GroupIcon aria-hidden="true" className="h-5 w-5 text-primary-700" />
+                            </span>
+                            <div>
+                              <h2 className="text-sm font-bold text-slate-900">{groupMessages.label}</h2>
+                              <p className="mt-1 text-xs leading-5 text-slate-600">{groupMessages.description}</p>
+                            </div>
+                          </div>
+
+                          <div className="mt-4 grid gap-1">
+                            {group.items.map((item) => {
+                              const linkMessages = directoryMessages.links[item.key]
+                              const active = isCurrentPath(pathname, item.href)
+
+                              return (
+                                <a
+                                  key={`${group.key}-${item.key}`}
+                                  href={item.href}
+                                  aria-current={active ? 'page' : undefined}
+                                  className="group/link block rounded-lg px-3 py-3 transition-colors hover:bg-slate-50"
+                                >
+                                  <span className={`flex items-center justify-between gap-3 text-sm font-semibold text-slate-800 transition-colors group-hover/link:text-primary-800 ${active ? activeNavigationClassName : ''}`}>
+                                    {linkMessages.label}
+                                    <ChevronRightIcon aria-hidden="true" className="h-4 w-4 flex-none text-slate-400 transition-transform group-hover/link:translate-x-0.5" />
+                                  </span>
+                                  <span className="mt-1 block text-xs leading-5 text-slate-600">{linkMessages.description}</span>
+                                </a>
+                              )
+                            })}
+                          </div>
+                        </section>
+                      )
+                    })}
+                  </div>
+                </PopoverPanel>
+              </OutsideClickBoundary>
+            )}
+          </Popover>
 
         </div>
 
@@ -138,6 +250,56 @@ export default function Header({ locale, messages, themeToggleLabel, languageSwi
               )
             })}
           </div>
+
+          <Disclosure as="div" className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-white/4">
+            <DisclosureButton
+              aria-current={directoryActive ? 'location' : undefined}
+              className={`group flex w-full items-center justify-between px-4 py-4 text-left text-base font-semibold ${directoryActive ? 'text-primary-200 underline underline-offset-4' : 'text-white'}`}
+            >
+              {directoryMessages.menuLabel}
+              <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-slate-400 transition-transform group-data-open:rotate-180" />
+            </DisclosureButton>
+            <DisclosurePanel className="border-t border-white/10 px-4 pb-4">
+              {technologyNavigation.map((group, index) => {
+                const groupMessages = directoryMessages.groups[group.key]
+                const GroupIcon = directoryGroupIcons[group.key]
+
+                return (
+                  <section key={group.key} className={index === 0 ? 'py-4' : 'border-t border-white/10 py-4'}>
+                    <div className="flex items-start gap-3">
+                      <GroupIcon aria-hidden="true" className="mt-0.5 h-5 w-5 flex-none text-primary-200" />
+                      <div>
+                        <h2 className="text-sm font-bold text-white">{groupMessages.label}</h2>
+                        <p className="mt-1 text-xs leading-5 text-slate-400">{groupMessages.description}</p>
+                      </div>
+                    </div>
+                    <div className="mt-3 grid grid-cols-1 gap-1 sm:grid-cols-2">
+                      {group.items.map((item) => {
+                        const linkMessages = directoryMessages.links[item.key]
+                        const active = isCurrentPath(pathname, item.href)
+
+                        return (
+                          <a
+                            key={`${group.key}-${item.key}`}
+                            href={item.href}
+                            aria-current={active ? 'page' : undefined}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-start justify-between gap-3 rounded-lg px-3 py-3 transition hover:bg-white/8"
+                          >
+                            <span className="min-w-0">
+                              <span className={`block text-sm font-semibold ${active ? 'text-primary-200 underline underline-offset-4' : 'text-slate-100'}`}>{linkMessages.label}</span>
+                              <span className="mt-1 block text-xs leading-5 text-slate-400">{linkMessages.description}</span>
+                            </span>
+                            <ChevronRightIcon aria-hidden="true" className="mt-0.5 h-4 w-4 flex-none text-slate-500" />
+                          </a>
+                        )
+                      })}
+                    </div>
+                  </section>
+                )
+              })}
+            </DisclosurePanel>
+          </Disclosure>
 
         </DialogPanel>
       </Dialog>

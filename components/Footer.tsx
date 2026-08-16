@@ -1,6 +1,15 @@
-import type { CommonMessages } from '@/i18n/messages/common'
+import type { CommonMessages, HeaderDirectoryMessages } from '@/i18n/messages/common'
+import { technologyNavigation } from './technologyNavigation'
 
-export default function Footer({ messages }: { messages: CommonMessages['footer'] }) {
+export default function Footer({ messages, directoryMessages }: { messages: CommonMessages['footer']; directoryMessages: HeaderDirectoryMessages }) {
+  const technologySections = technologyNavigation.map((group) => ({
+    title: directoryMessages.groups[group.key].label,
+    links: group.items.map((item) => ({
+      name: directoryMessages.links[item.key].label,
+      href: item.href,
+    })),
+  }))
+
   const footerSections = [
     {
       title: messages.companyLabel,
@@ -26,6 +35,7 @@ export default function Footer({ messages }: { messages: CommonMessages['footer'
         { name: messages.compliance, href: '/compliance' },
       ],
     },
+    ...technologySections,
   ]
 
   return (
@@ -62,11 +72,11 @@ export default function Footer({ messages }: { messages: CommonMessages['footer'
           <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 xl:gap-x-10">
             {footerSections.map((section) => (
               <div key={section.title} className="border-t border-white/10 pt-5 sm:border-t-0 sm:pt-0 xl:border-l xl:pl-5">
-                <h2 className="whitespace-nowrap text-sm font-semibold uppercase text-white">{section.title}</h2>
+                <h2 className="wrap-break-word text-sm font-semibold uppercase text-white">{section.title}</h2>
                 <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-400">
                   {section.links.map((link) => (
                     <li key={link.href}>
-                      <a href={link.href} className="whitespace-nowrap transition hover:text-primary-200">
+                      <a href={link.href} className="wrap-break-word transition hover:text-primary-200">
                         {link.name}
                       </a>
                     </li>
