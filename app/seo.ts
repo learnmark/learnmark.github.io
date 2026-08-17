@@ -84,6 +84,7 @@ type ServiceJsonLdOptions = {
   description: string
   path: `/${string}`
   serviceType: string
+  image?: string
   keywords?: string[]
   locale?: Locale
 }
@@ -182,7 +183,7 @@ export function createBreadcrumbJsonLd(items: BreadcrumbItem[], locale: Locale =
   }
 }
 
-export function createServiceJsonLd({ name, description, path, serviceType, keywords = [], locale = 'en' }: ServiceJsonLdOptions) {
+export function createServiceJsonLd({ name, description, path, serviceType, image, keywords = [], locale = 'en' }: ServiceJsonLdOptions) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -191,6 +192,7 @@ export function createServiceJsonLd({ name, description, path, serviceType, keyw
     description,
     serviceType,
     url: absoluteUrl(path),
+    ...(image ? { image: absoluteUrl(image) } : {}),
     inLanguage: languageTags[locale],
     provider: {
       '@id': `${siteUrl}/#organization`,

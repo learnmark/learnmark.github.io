@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import {
   ArrowRightIcon,
   CalendarDaysIcon,
@@ -12,6 +13,7 @@ import type { ExpertServicePageMessages } from '@/i18n/messages/expert-services/
 
 type ExpertServicePageProps = {
   messages: ExpertServicePageMessages
+  imageSrc: string
   primaryHref: string
   secondaryHref: string
   ctaId?: string
@@ -20,7 +22,7 @@ type ExpertServicePageProps = {
 const panelIcons = [ClipboardDocumentCheckIcon, MagnifyingGlassIcon, CalendarDaysIcon]
 const detailIcons = [UserGroupIcon, CheckBadgeIcon, ShieldCheckIcon, ChatBubbleLeftRightIcon]
 
-export default function ExpertServicePage({ messages, primaryHref, secondaryHref, ctaId }: ExpertServicePageProps) {
+export default function ExpertServicePage({ messages, imageSrc, primaryHref, secondaryHref, ctaId }: ExpertServicePageProps) {
   return (
     <main className="site-page">
       <section className="pb-20 pt-20 sm:pb-28 sm:pt-28">
@@ -101,6 +103,16 @@ export default function ExpertServicePage({ messages, primaryHref, secondaryHref
             <p className="text-sm font-semibold uppercase text-primary-200">{messages.processEyebrow}</p>
             <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">{messages.processTitle}</h2>
             <p className="mt-5 text-base leading-7 text-slate-300">{messages.processDescription}</p>
+            <div className="mt-8 overflow-hidden rounded-lg border border-white/10 bg-slate-900 shadow-2xl shadow-black/25">
+              <Image
+                src={imageSrc}
+                alt={messages.imageAlt}
+                width={1536}
+                height={1024}
+                className="aspect-3/2 w-full object-cover"
+                sizes="(min-width: 1024px) 35vw, calc(100vw - 3rem)"
+              />
+            </div>
           </div>
           <ol className="grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-2">
             {messages.steps.map((step, index) => (

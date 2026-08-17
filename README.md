@@ -102,5 +102,6 @@ The current implementation uses the local filesystem (`/data`) to store form sub
 
 ## Learn More
 
+- [Website image generation prompts](docs/image-generation-prompts.md)
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)

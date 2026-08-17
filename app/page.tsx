@@ -13,6 +13,12 @@ export async function generateMetadata() {
     title: messages.seoTitle,
     description: messages.seoDescription,
     path: '/',
+    images: [{
+      url: '/images/expert-network/home-global-expertise.webp',
+      width: 1536,
+      height: 1024,
+      alt: messages.workWith.imageAlt,
+    }],
     locale,
   });
 }

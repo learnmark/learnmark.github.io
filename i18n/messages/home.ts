@@ -23,6 +23,7 @@ export type HomeMessages = {
     eyebrow: string
     title: string
     description: string
+    imageAlt: string
     links: string[]
     services: Array<{ name: string; value: string; description: string }>
   }
@@ -67,6 +68,7 @@ export const homeMessages: Record<Locale, HomeMessages> = {
       eyebrow: 'Premium, project-led service',
       title: 'One partner from business question to expert insight.',
       description: 'Our team combines a growing global network with targeted recruitment and hands-on project support, giving enterprises a direct path to hard-to-reach knowledge without managing the search themselves.',
+      imageAlt: 'An enterprise team examines a product while consulting an industry specialist by video.',
       links: ['Discuss a project', 'Services for clients', 'See how it works'],
       services: [
         { name: 'Clarify the decision', value: '01', description: 'Define the business question, knowledge gap, target market, and intended outcome.' },
@@ -122,6 +124,7 @@ export const homeMessages: Record<Locale, HomeMessages> = {
       eyebrow: '高端、专属、项目制服务',
       title: '从企业问题到专家洞察，由同一团队全程支持。',
       description: '我们将持续增长的全球专家网络、定向招募能力与专属项目服务结合，让企业无需自行寻找人脉，也能高效获得难以触达的一手专业知识。',
+      imageAlt: '企业团队在视频咨询行业专家时共同研究一个产品。',
       links: ['讨论项目', '企业客户服务', '查看合作流程'],
       services: [
         { name: '厘清决策问题', value: '01', description: '明确业务问题、知识缺口、目标市场和希望支持的决策。' },
@@ -177,6 +180,7 @@ export const homeMessages: Record<Locale, HomeMessages> = {
       eyebrow: '高端、專屬、專案制服務',
       title: '從企業問題到專家洞察，由同一團隊全程支援。',
       description: '我們結合持續成長的全球專家網絡、定向招募能力與專屬專案服務，讓企業無須自行尋找人脈，也能有效取得難以觸及的第一手專業知識。',
+      imageAlt: '企業團隊在透過視訊諮詢產業專家時共同研究一項產品。',
       links: ['討論專案', '企業客戶服務', '查看合作流程'],
       services: [
         { name: '釐清決策問題', value: '01', description: '明確定義商業問題、知識缺口、目標市場與希望支援的決策。' },
@@ -232,6 +236,7 @@ export const homeMessages: Record<Locale, HomeMessages> = {
       eyebrow: '高度で専任のプロジェクトサービス',
       title: '事業上の問いから専門家の知見まで、一つのチームが支援。',
       description: '成長するグローバルネットワーク、個別リクルーティング、専任プロジェクト支援を組み合わせ、企業が自ら人脈を探さずに希少な一次知識へアクセスできるようにします。',
+      imageAlt: '企業チームがビデオ通話で業界専門家に相談しながら製品を検討している様子。',
       links: ['案件を相談', '法人向けサービス', 'ご利用の流れ'],
       services: [
         { name: '意思決定を明確化', value: '01', description: '事業上の問い、知識ギャップ、対象市場、期待する成果を定義します。' },
@@ -287,6 +292,7 @@ export const homeMessages: Record<Locale, HomeMessages> = {
       eyebrow: 'Un service premium, dédié et piloté par projet',
       title: 'Un partenaire unique, de la question métier à l’insight expert.',
       description: 'Nous associons un réseau mondial en croissance, un recrutement ciblé et un accompagnement dédié afin que les entreprises accèdent à des connaissances difficiles à atteindre sans gérer elles-mêmes la recherche.',
+      imageAlt: 'Une équipe d’entreprise examine un produit tout en consultant un spécialiste sectoriel par visioconférence.',
       links: ['Discuter d’un projet', 'Services aux entreprises', 'Voir notre méthode'],
       services: [
         { name: 'Clarifier la décision', value: '01', description: 'Définir la question, le manque d’information, le marché visé et le résultat attendu.' },
@@ -342,6 +348,7 @@ export const homeMessages: Record<Locale, HomeMessages> = {
       eyebrow: 'Hochwertiger, persönlicher Projektservice',
       title: 'Ein Partner von der Geschäftsfrage bis zur Experteneinsicht.',
       description: 'Wir verbinden ein wachsendes globales Netzwerk, gezielte Rekrutierung und persönliche Projektbegleitung, damit Unternehmen schwer erreichbares Wissen erhalten, ohne die Suche selbst zu steuern.',
+      imageAlt: 'Ein Unternehmensteam untersucht ein Produkt während einer Videoberatung mit einem Branchenexperten.',
       links: ['Projekt besprechen', 'Services für Unternehmen', 'So funktioniert es'],
       services: [
         { name: 'Entscheidung klären', value: '01', description: 'Geschäftsfrage, Wissenslücke, Zielmarkt und gewünschtes Ergebnis definieren.' },
